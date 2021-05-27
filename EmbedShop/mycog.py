@@ -4,8 +4,10 @@ import discord
 class EmbedShop(commands.Cog):
     """Embeds for the Elite Embed Updates"""
 
-    @commands.command(name="shop")
-    async def embedshop_shop(self, ctx):
+    @commands.command(name="es_shop")
+    async def es_shop(self, ctx):
+        if(ctx.author.id != 295275466703503372):
+            return await ctx.send("Only the true bot director shall be allowed to do this")
         embed = discord.Embed(title="LeGeND Shop", description="Note: to purchase any item that doesn't have a command specified, dm <@598662722821029888>")
         embed.add_field(name="__Custom background__", value="Change the picture of your !profile background.\nCost: 800,000 credits", inline=False)
         embed.add_field(name="__Emoji Flair__", value="Add/Change an emoji in your nickname. No custom emojis allowed.\nCost: 200,000 credits", inline=False)
@@ -21,8 +23,10 @@ class EmbedShop(commands.Cog):
         embed.add_field(name="__Elite Embed update__", value="The simple update isn't enought for you? You can add links, picture and other cool stuff to you embed with this powerful update.\nThe Elite Embed update lets you personalize your embed command almost as you wish.\n||The result will be similar to the shop embed.||\nCost: 15,000,000.\n<@&815958696982872075> or <@&815958379624529931> required.", inline=False)
         await ctx.send(embed=embed)
         
-    @commands.command(name="tshop")
-    async def embedshop_tshop(self, ctx):
+    @commands.command(name="es_tshop")
+    async def es_tshop(self, ctx):
+        if(ctx.author.id != 295275466703503372):
+            return await ctx.send("Only the true bot director shall be allowed to do this")
         embed = discord.Embed(title="LeGeND Shop", description="Note: to purchase any item that doesn't have a command specified, dm <@598662722821029888>")
         embed.add_field(name="__Custom background__", value="Change the picture of your !profile background.\nCost: 800,000 credits", inline=False)
         embed.add_field(name="__Emoji Flair__", value="Add/Change an emoji in your nickname. No custom emojis allowed.\nCost: 200,000 credits", inline=False)
@@ -33,8 +37,10 @@ class EmbedShop(commands.Cog):
         embed.add_field(name="__Elite__", value="Join the most outstanding and limited club and appear higher than <@&815958673770807317> with a private LeGeND Channel.\nCost: 35,000,000 credits.\nCommand: `!buyelite`", inline=False)
         await ctx.send(embed=embed)
         
-    @commands.command(name="yuuki")
-    async def embedshop_yuuki(self, ctx):
+    @commands.command(name="es_yuuki")
+    async def es_yuuki(self, ctx):
+        if(ctx.author.id != 295275466703503372):
+            return await ctx.send("Only the true bot director shall be allowed to do this")
         embed = discord.Embed(title="Yuuki's greatest achievements", icon="https://cdn.discordapp.com/avatars/295275466703503372/e1153ef5605d28556064ebd2881fd14b.png?size=4096")
         embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/295275466703503372/e1153ef5605d28556064ebd2881fd14b.png?size=4096")
         embed.add_field(name="**5th august 2020**", value="[Played the first 1,000,000,000 credits roulette with Jaymin](https://discord.com/channels/374596069989810176/698629712481747046/740519465837396029)", inline=False)
