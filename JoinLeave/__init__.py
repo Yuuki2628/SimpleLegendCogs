@@ -1,5 +1,5 @@
-from .mycog import EmbedShop
+from .mycog import JoinLeave
 
 
 def setup(bot):
-    bot.add_cog(EmbedShop())
+    bot.add_cog(JoinLeave())
