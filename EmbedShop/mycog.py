@@ -39,8 +39,6 @@ class EmbedShop(commands.Cog):
         
     @commands.command(name="es_yuuki")
     async def es_yuuki(self, ctx):
-        if(ctx.author.id != 295275466703503372):
-            return await ctx.send("Only the true bot director shall be allowed to do this")
         embed = discord.Embed(title="Yuuki's greatest achievements", icon="https://cdn.discordapp.com/avatars/295275466703503372/e1153ef5605d28556064ebd2881fd14b.png?size=4096")
         embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/295275466703503372/e1153ef5605d28556064ebd2881fd14b.png?size=4096")
         embed.add_field(name="**5th august 2020**", value="[Played the first 1,000,000,000 credits roulette with Jaymin](https://discord.com/channels/374596069989810176/698629712481747046/740519465837396029)", inline=False)
