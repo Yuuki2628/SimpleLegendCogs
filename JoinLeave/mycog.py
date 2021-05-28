@@ -7,6 +7,8 @@ class JoinLeave(commands.Cog):
     @commands.Cog.listener()
     async def on_member_join(self, member):
         channel = discord.utils.get(member.guild.channels, name="gate-in-out")
+        if(channel in member.guild.channels):
+            return
         #message = f"{member.mention} has joined the server\nUser id: {member.id}\nCurrent name: {member.name}#{member.discriminator}"
         embed = discord.Embed(title="A member joined", color = 0x2ECC71)
         embed.set_thumbnail(url=member.avatar_url)
