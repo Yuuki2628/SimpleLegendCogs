@@ -8,23 +8,23 @@ class JoinLeave(commands.Cog):
     async def on_member_join(self, member):
         channel = discord.utils.get(member.guild.channels, name="gate-in-out")
         if(channel in member.guild.channels):
-            return
-        embed = discord.Embed(title="A member joined", color = 0x2ECC71)
-        embed.set_thumbnail(url=member.avatar_url)
-        embed.add_field(name="**Member**", value=member.mention, inline=False)
-        embed.add_field(name="**Name**", value=f"{member.name}#{member.discriminator}", inline=False)
+            embed = discord.Embed(title="A member joined", color = 0x2ECC71)
+            embed.set_thumbnail(url=member.avatar_url)
+            embed.add_field(name="**Member**", value=member.mention, inline=False)
+            embed.add_field(name="**Name**", value=f"{member.name}#{member.discriminator}", inline=False)
 
-        await channel.send(embed=embed)
+            await channel.send(embed=embed)
+        return
 
     @commands.Cog.listener()
     async def on_member_remove(self, member):
         channel = discord.utils.get(member.guild.channels, name="gate-in-out")
         if(channel in member.guild.channels):
-            return
-        embed = discord.Embed(title="A member left", color = 0xff0000)
-        embed.set_thumbnail(url=member.avatar_url)
-        embed.add_field(name="**Member**", value=member.mention, inline=False)
-        embed.add_field(name="**Name**", value=f"{member.name}#{member.discriminator}", inline=False)
+            embed = discord.Embed(title="A member left", color = 0xff0000)
+            embed.set_thumbnail(url=member.avatar_url)
+            embed.add_field(name="**Member**", value=member.mention, inline=False)
+            embed.add_field(name="**Name**", value=f"{member.name}#{member.discriminator}", inline=False)
 
-        await channel.send(embed=embed)
+            await channel.send(embed=embed)
+        return
         
