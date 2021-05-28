@@ -11,7 +11,7 @@ class JoinLeave(commands.Cog):
         embed = discord.Embed(title="A new member joined")
         embed.set_thumbnail(url=member.avatar_url)
         embed.add_field(name="**Member**", value=member.mention, inline=False)
-        embed.add_field(name="**Name**", value="{member.name}#{member.discriminator}", inline=False)
+        embed.add_field(name="**Name**", value=f"{member.name}#{member.discriminator}", inline=False)
 
         await channel.send(embed=embed)
 
@@ -22,7 +22,7 @@ class JoinLeave(commands.Cog):
         embed = discord.Embed(title="A member left")
         embed.set_thumbnail(url=member.avatar_url)
         embed.add_field(name="**Member**", value=member.mention, inline=False)
-        embed.add_field(name="**Name**", value="{member.name}#{member.discriminator}", inline=False)
+        embed.add_field(name="**Name**", value=f"{member.name}#{member.discriminator}", inline=False)
 
         await channel.send(embed=embed)
         
