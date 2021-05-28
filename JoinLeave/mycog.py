@@ -8,7 +8,7 @@ class JoinLeave(commands.Cog):
     async def on_member_join(self, member):
         channel = discord.utils.get(member.guild.channels, name="gate-in-out")
         #message = f"{member.mention} has joined the server\nUser id: {member.id}\nCurrent name: {member.name}#{member.discriminator}"
-        embed = discord.Embed(title="A member joined", color = discord.Color.green)
+        embed = discord.Embed(title="A member joined", color = 0x2ECC71)
         embed.set_thumbnail(url=member.avatar_url)
         embed.add_field(name="**Member**", value=member.mention, inline=False)
         embed.add_field(name="**Name**", value=f"{member.name}#{member.discriminator}", inline=False)
@@ -19,7 +19,7 @@ class JoinLeave(commands.Cog):
     async def on_member_remove(self, member):
         channel = discord.utils.get(member.guild.channels, name="gate-in-out")
         #message = f"{member.mention} has left the server\nUser id: {member.id}\nCurrent name: {member.name}#{member.discriminator}"
-        embed = discord.Embed(title="A member left", color = discord.colour.red())
+        embed = discord.Embed(title="A member left", color = 0xff0000)
         embed.set_thumbnail(url=member.avatar_url)
         embed.add_field(name="**Member**", value=member.mention, inline=False)
         embed.add_field(name="**Name**", value=f"{member.name}#{member.discriminator}", inline=False)
