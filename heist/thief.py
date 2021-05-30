@@ -311,9 +311,9 @@ class Thief:
             if chance <= success_rate:
                 good_thing = random.choice(good_out)
                 good_out.remove(good_thing)
-                crew[player.id] = {"Name": player.mention, "Bonus": good_thing[1]}
+                crew[player.id] = {"Name": player.display_name, "Bonus": good_thing[1]}
                 await self.config.guild(guild).Crew.set(crew)
-                await self.add_member_spree(player)
+                await self.add_member_spree(player.mention)
                 results.append(good_thing[0].format(player.name))
             else:
                 bad_thing = random.choice(bad_out)
