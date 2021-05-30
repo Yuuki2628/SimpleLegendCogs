@@ -470,7 +470,7 @@ class Heist(commands.Cog):
             config["Heist author"] = unique_id
             await self.thief.config.guild(guild).Config.set(config)
             crew = await self.thief.add_crew_member(author)
-            hrole = iscord.utils.get(guild.roles,name="Heist")
+            hrole = discord.utils.get(guild.roles,name="Heist")
             if hrole:
                 await ctx.send(f"A {hrole} is being planned by {author.name}\nThe {hrole} "
                             f"will begin in {wait_time} seconds. Type ```{ctx.prefix}heist play``` to join their "
