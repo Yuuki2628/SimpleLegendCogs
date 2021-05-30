@@ -30,6 +30,7 @@ class Heist(commands.Cog):
         self.version = "a0.0.1"
         self.redver = "3.1.2"
         self.cycle_task = bot.loop.create_task(self.thief.vault_updater(bot))
+        allowed_mentions = discord.AllowedMentions(roles=True, users=True, everyone=True),
 
     @commands.group(no_pm=True)
     async def heist(self, ctx):
@@ -472,11 +473,9 @@ class Heist(commands.Cog):
             crew = await self.thief.add_crew_member(author)
             hrole = discord.utils.get(ctx.guild.roles,name="Heist")
             if hrole:
-                await ctx.send(f"A {hrole.mention} is being planned by {author.name}\nThe {hrole.mention} will begin in {wait_time} seconds.\nType `{ctx.prefix}f  or  {ctx.prefix}heist play` to join their {t_crew}."),
-                allowed_mentions=discord.AllowedMentions(roles=True)
+                await ctx.send(f"A {hrole.mention} is being planned by {author.name}\nThe {hrole.mention} will begin in {wait_time} seconds.\nType `{ctx.prefix}f  or  {ctx.prefix}heist play` to join their {t_crew}.")
             else:
-                await ctx.send(f"A {t_heist} is being planned by {author.name}\nThe {t_heist} will begin in {wait_time} seconds.\nType `{ctx.prefix}f  or  {ctx.prefix}heist play` to join their {t_crew}."),
-                allowed_mentions=discord.AllowedMentions(roles=False)
+                await ctx.send(f"A {t_heist} is being planned by {author.name}\nThe {t_heist} will begin in {wait_time} seconds.\nType `{ctx.prefix}f  or  {ctx.prefix}heist play` to join their {t_crew}.")
             await asyncio.sleep(wait_time)
             
             crew = await self.thief.config.guild(guild).Crew()
