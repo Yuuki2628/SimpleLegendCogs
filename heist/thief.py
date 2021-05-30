@@ -311,7 +311,7 @@ class Thief:
             if chance <= success_rate:
                 good_thing = random.choice(good_out)
                 good_out.remove(good_thing)
-                crew[player.id] = {"Name": player.display_name, "Bonus": good_thing[1]}
+                crew[player.id] = {"Name": player.mention, "Bonus": good_thing[1]}
                 await self.config.guild(guild).Crew.set(crew)
                 await self.add_member_spree(player)
                 results.append(good_thing[0].format(player.name))
@@ -419,7 +419,7 @@ class Thief:
         names = [player.name for player in players]
         bonuses = [subdict["Bonus"] for subdict in crew.values()]
         vault = targets[target]["Vault"]
-        credits_stolen = int(int(vault) * 0.75 / len(crew))
+        credits_stolen = int(int(vault) * 1 / len(crew))
         stolen_data = [credits_stolen] * len(crew)
         total_winnings = [x + y for x, y in zip(stolen_data, bonuses)]
         targets[target]["Vault"] -= credits_stolen * len(crew)
