@@ -470,14 +470,14 @@ class Heist(commands.Cog):
             config["Heist author"] = unique_id
             await self.thief.config.guild(guild).Config.set(config)
             crew = await self.thief.add_crew_member(author)
-            hrole = discord.utils.get(guild.roles,name="Heist")
+            hrole = discord.utils.get(ctx.guild.roles,name="Heist")
             if hrole:
                 await ctx.send(f"A {hrole.mention} is being planned by {author.name}\nThe {hrole.mention} "
-                            f"will begin in {wait_time} seconds. Type ```{ctx.prefix}heist play``` to join their "
+                            f"will begin in {wait_time} seconds. Type ```{ctx.prefix}f  or  {ctx.prefix}heist play``` to join their "
                             f"{t_crew}.")
             else:
                 await ctx.send(f"A {t_heist} is being planned by {author.name}\nThe {t_heist} "
-                            f"will begin in {wait_time} seconds. Type ```{ctx.prefix}heist play``` to join their "
+                            f"will begin in {wait_time} seconds. Type ```{ctx.prefix}f  or  {ctx.prefix}heist play``` to join their "
                             f"{t_crew}.")
             await asyncio.sleep(wait_time)
             
