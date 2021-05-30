@@ -507,7 +507,7 @@ class Heist(commands.Cog):
         start_output = await self.thief.message_handler(guild, crew, players)
         await ctx.send(f"Get ready! The {t_heist} is starting with {start_output}\nThe {t_crew} has decided to "
                        f"hit **{target}**.")
-        await ctx.channel.set_permissions(ctx.guild.default_role, send_messages=True)
+        await ctx.channel.set_permissions(ctx.guild.default_role, send_messages=False)
         await asyncio.sleep(2)
         await self.thief.show_results(ctx, guild, results)
         curcrew = await self.thief.get_guild_crew(guild)
@@ -520,7 +520,7 @@ class Heist(commands.Cog):
                    f"C\n{t}```")
         else:
             msg = "No one made it out safe."
-        await ctx.channel.set_permissions(ctx.guild.default_role, send_messages=False)
+        await ctx.channel.set_permissions(ctx.guild.default_role, send_messages=True)
         config["Alert"] = int(time.time())
         await self.thief.config.guild(guild).Config.set(config)
         await self.thief.reset_heist(guild)
