@@ -313,8 +313,8 @@ class Thief:
                 good_out.remove(good_thing)
                 crew[player.id] = {"Name": player.display_name, "Bonus": good_thing[1]}
                 await self.config.guild(guild).Crew.set(crew)
-                await self.add_member_spree(player.mention)
-                results.append(good_thing[0].format(player.name))
+                await self.add_member_spree(player)
+                results.append(good_thing[0].format(player.mention))
             else:
                 bad_thing = random.choice(bad_out)
                 dropout_msg = bad_thing[0].format(player.name) + f"```\n{player.name} dropped out of the game.```"
