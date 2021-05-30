@@ -82,7 +82,7 @@ class AdventureZ(commands.Cog):
 
     @commands.command(name="grindsquad", aliases=["gs"])
     async def grindsquad(ctx):
-        file = open("grindsquad.txt", "r")
+        file = open(".grindsquad.txt", "r")
         flines = file.read()
         gs = flines.split("\n")
 
@@ -98,7 +98,7 @@ class AdventureZ(commands.Cog):
 
     @commands.command(name="grindsquad add", aliases=["gsa"])
     async def grindsquad_add(ctx, grinder: discord.Member = None):
-        file = open("grindsquad.txt", "r")
+        file = open(".grindsquad.txt", "r")
         flines = file.read()
         gs = flines.split("\n")
         if grinder:
@@ -107,7 +107,7 @@ class AdventureZ(commands.Cog):
             gs.append(ctx.author.id)
         file.truncate(0)
         file.close()
-        with open("grindsquad.txt", "w") as flines:
+        with open(".grindsquad.txt", "w") as flines:
             flines = "\n".join(gs)
             file.write(flines)
 
