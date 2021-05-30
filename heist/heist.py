@@ -495,7 +495,7 @@ class Heist(commands.Cog):
             await bank.withdraw_credits(author, cost)
             crew = await self.thief.add_crew_member(author)
             crew_size = len(crew)
-            await ctx.send(f"{author.display_name} has joined the {t_crew}.\nThe {t_crew} now has {crew_size} members.")
+            await ctx.send(f"{author.mention} has joined the {t_crew}.\nThe {t_crew} now has {crew_size} members.")
 
     async def heist_game(self, ctx, guild, t_heist, t_crew, t_vault):
         config = await self.thief.get_guild_settings(guild)
