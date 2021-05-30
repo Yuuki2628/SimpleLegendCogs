@@ -472,9 +472,11 @@ class Heist(commands.Cog):
             crew = await self.thief.add_crew_member(author)
             hrole = discord.utils.get(ctx.guild.roles,name="Heist")
             if hrole:
-                await ctx.send(f"A {hrole.mention} is being planned by {author.name}\nThe {hrole.mention} will begin in {wait_time} seconds.\nType `{ctx.prefix}f  or  {ctx.prefix}heist play` to join their {t_crew}.")
+                await ctx.send(f"A {hrole.mention} is being planned by {author.name}\nThe {hrole.mention} will begin in {wait_time} seconds.\nType `{ctx.prefix}f  or  {ctx.prefix}heist play` to join their {t_crew}."),
+                allowed_mentions=discord.AllowedMentions(roles=True)
             else:
-                await ctx.send(f"A {t_heist} is being planned by {author.name}\nThe {t_heist} will begin in {wait_time} seconds.\nType `{ctx.prefix}f  or  {ctx.prefix}heist play` to join their {t_crew}.")
+                await ctx.send(f"A {t_heist} is being planned by {author.name}\nThe {t_heist} will begin in {wait_time} seconds.\nType `{ctx.prefix}f  or  {ctx.prefix}heist play` to join their {t_crew}."),
+                allowed_mentions=discord.AllowedMentions(roles=False)
             await asyncio.sleep(wait_time)
             
             crew = await self.thief.config.guild(guild).Crew()
