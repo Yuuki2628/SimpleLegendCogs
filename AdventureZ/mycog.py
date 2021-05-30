@@ -80,6 +80,7 @@ class AdventureZ(commands.Cog):
         else:
             await ctx.send("You just mentioned a non existent-personality\nFor personalities with spaces in them replace the spaces with a -")
 
+"""
     @commands.command(name="grindsquad", aliases=["gs"])
     async def grindsquad(ctx):
         file = open(".grindsquad.txt", "r")
@@ -132,4 +133,4 @@ class AdventureZ(commands.Cog):
         file.truncate(0)
         del gs[pos]
         for line in gs:
-            file.write(line)
+            file.write(line)"""
