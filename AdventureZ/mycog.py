@@ -16,13 +16,13 @@ class AdventureZ(commands.Cog):
         elif msg == "delirious":
             await ctx.send("0.6 / 0.8")
         elif msg == "disgusting":
-            await ctx.send("0.8 / 2")
+            await ctx.send("1 / 0.7")
         elif msg == "dumb":
-            await ctx.send("0.8 / 2")
+            await ctx.send("1 / 0.8")
         elif msg == "enlightened":
-            await ctx.send("0.8 / 2")
+            await ctx.send("1.2 / 1.8")
         elif msg == "fairly-intelligent":
-            await ctx.send("0.8 / 2")
+            await ctx.send("1 / 1.2")
         elif msg == "fat":
             await ctx.send("1.1 / 0.9")
         elif msg == "flustered":
