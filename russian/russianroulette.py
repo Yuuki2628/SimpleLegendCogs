@@ -126,7 +126,7 @@ class RussianRoulette(commands.Cog):
             num_players = len(players)
 
         allowed_mentions = discord.AllowedMentions(roles = True)
-        rrole = discord.utils.get(ctx.guild.roles, "Roulette")
+        rrole = discord.utils.get(ctx.guild.roles, name="Roulette")
 
         if num_players == 1:
             wait = await self.config.guild(ctx.guild).Wait_Time()
