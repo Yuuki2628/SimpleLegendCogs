@@ -125,12 +125,14 @@ class RussianRoulette(commands.Cog):
             players.append(ctx.author.id)
             num_players = len(players)
 
+        allowed_mentions = discord.AllowedMentions(roles = True)
+        
         if num_players == 1:
             wait = await self.config.guild(ctx.guild).Wait_Time()
             await ctx.send(
                 "{0.author.mention} is gathering players for a game of russian "
-                "roulette!\nType `{0.prefix}russian` to enter. "
-                "The round will start in {1} seconds.".format(ctx, wait)
+                "roulette!\nType `{0.prefix}rr  or  {0.prefix}russian` to enter. "
+                "The round will start in {1} seconds.".format(ctx, wait), allowed_mentions = allowed_mentions
             )
             await asyncio.sleep(wait)
             await self.start_game(ctx)
