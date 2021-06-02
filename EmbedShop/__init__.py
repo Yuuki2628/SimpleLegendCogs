@@ -1,4 +1,4 @@
-from .mycog import EmbedShop
+from .embedshop import EmbedShop
 
 
 def setup(bot):

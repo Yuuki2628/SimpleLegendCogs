@@ -1,4 +1,4 @@
-from .mycog import AdventureZ
+from .adventurez import AdventureZ
 
 
 def setup(bot):

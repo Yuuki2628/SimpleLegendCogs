@@ -1,4 +1,4 @@
-from .mycog import JoinLeave
+from .joinleave import JoinLeave
 
 
 def setup(bot):
