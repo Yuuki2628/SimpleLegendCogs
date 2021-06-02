@@ -14,7 +14,7 @@ class EmbedShop(commands.Cog):
     async def es_shop(self, ctx):
         if(ctx.author.id != 295275466703503372):
             return await ctx.send("Only the true bot director shall be allowed to do this")
-        embed = discord.Embed(title="LeGeND Shop", description="Note: to purchase any item that doesn't have a command specified, dm <@598662722821029888>")
+        embed = discord.Embed(title="LeGeND Shop")
         embed.add_field(name="__Custom background__", value="Change the picture of your `!profile` background.", inline=False)
         embed.add_field(name="__Emoji Flair__", value="Add/Change an emoji in your nickname. No custom emojis allowed.", inline=False)
         embed.add_field(name="__Custom Command__", value="Have LeGeND Bot say a line of text or perform a command when people type !<a custom word>.", inline=False)
@@ -28,19 +28,20 @@ class EmbedShop(commands.Cog):
         embed.add_field(name="__Simple Embed update__", value="Your command turns into a simple embed (no links or pictures).", inline=False)
         embed.add_field(name="__Elite Embed update__", value="The simple update isn't enought for you? You can add links, picture and other cool stuff to you embed with this powerful update.\nThe Elite Embed update lets you personalize your embed command almost as you wish.\n||The result will be similar to the shop, the roles or the rules embed.||", inline=False)
         embed.add_field(name="**Items prices**", value="```\n"
-            "Item name                   Price     Elite price        Command\n"
-            "Custom background:        800,000\n"
-            "Emoji flair:              200,000\n"
-            "Custom command:           500,000\n"
-            "Rare:                   1,500,000                        !buyrare\n"
-            "Epic:                   3,500,000                        !buyepic\n"
-            "Legendary:             10,000,000                        !buylegendary\n"
-            "Elite:                 35,000,000                        !buyelite\n"
-            "Custom adventure boss: 10,000,000       5,000,000\n"
-            "x10 set loot chests:    5,000,000       2,500,000\n"
-            "Simple embed update:    5,000,000       2,500,000\n"
-            "Elite embed update:    15,000,000      15,000,000\n"
+            "Item name                   Price     Elite price    Command        Role requirement      \n"
+            "Emoji flair:              200,000               ~    ~              ~                     \n"
+            "Custom background:        800,000               ~    ~              ~                     \n"
+            "Custom command:           500,000               ~    ~              ~                     \n"
+            "Rare:                   1,500,000               ~    !buyrare       ~                     \n"
+            "Epic:                   3,500,000               ~    !buyepic       ~                     \n"
+            "Legendary:             10,000,000               ~    !buylegendary  ~                     \n"
+            "Elite:                 35,000,000               ~    !buyelite      ~                     \n"
+            "Custom adventure boss: 10,000,000       5,000,000    ~              <@&815958673770807317>\n"
+            "x10 set loot chests:    5,000,000       2,500,000    ~              <@&815958673770807317>\n"
+            "Simple embed update:    5,000,000       2,500,000    ~              <@&815958673770807317>\n"
+            "Elite embed update:    15,000,000      15,000,000    ~              <@&815958696982872075>\n"
             "```", inline=False)
+        embed.add_field(name="**Note**", value="To purchase any item that doesn't have a command specified, dm <@598662722821029888>\n<@&815958379624529931> and <@&815958696982872075> are equivalent regarding shop purchases")
         await ctx.send(embed=embed)
         
     @commands.command(name="es_yuuki")
