@@ -133,7 +133,8 @@ class RussianRoulette(commands.Cog):
             await ctx.send(
                 f"{rrole.mention} {ctx.author.mention} is gathering players for a game of russian "
                 f"roulette!\nType `{ctx.prefix}rr  or  {ctx.prefix}russian` to enter. "
-                f"The round will start in {wait} seconds.", allowed_mentions = allowed_mentions
+                f"The round will start in {wait} seconds. "
+                f"The bet is set to {cost}", allowed_mentions = allowed_mentions
             )
             await asyncio.sleep(wait)
             await self.start_game(ctx)
