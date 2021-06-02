@@ -42,7 +42,7 @@ class EmbedShop(commands.Cog):
             "Elite embed update:    15,000,000   15,000,000  ~              Elite    \n"
             "```", inline=False)
         embed.add_field(name="**Note**", value="To purchase any item that doesn't have a command specified, dm <@598662722821029888>\n<@&815958379624529931> and <@&815958696982872075> are equivalent regarding shop purchases")
-        embed.add_field(name="-----------------------------------------------------------------------------------------------", value="\u200b")
+        embed.add_field(name="-----------------------------------------------------------------------------------------------", value="\u200b", inline=false)
         await ctx.send(embed=embed)
         
     @commands.command(name="es_yuuki")
