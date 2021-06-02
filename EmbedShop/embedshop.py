@@ -28,7 +28,7 @@ class EmbedShop(commands.Cog):
         embed.add_field(name="__Simple Embed update__", value="Your command turns into a simple embed (no links or pictures).", inline=False)
         embed.add_field(name="__Elite Embed update__", value="The simple update isn't enought for you? You can add links, picture and other cool stuff to you embed with this powerful update.\nThe Elite Embed update lets you personalize your embed command almost as you wish.\n||The result will be similar to the shop, the roles or the rules embed.||", inline=False)
         embed.add_field(name="**Items prices**", value="```\n"
-            "Item name                   Price     Elite price        Command"
+            "Item name                   Price     Elite price        Command\n"
             "Custom background:        800,000\n"
             "Emoji flair:              200,000\n"
             "Custom command:           500,000\n"
