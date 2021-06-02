@@ -27,7 +27,7 @@ class EmbedShop(commands.Cog):
         embed.add_field(name="**__NEW EMBED UPDATE__**", value="Do you want to make your custom commands look unique and special? Look no further, we (I) are proud to introduce the Embed update.\nThere are 2 different embed updates available for purchase:", inline=False)
         embed.add_field(name="__Simple Embed update__", value="Your command turns into a simple embed (no links or pictures).", inline=False)
         embed.add_field(name="__Elite Embed update__", value="The simple update isn't enought for you? You can add links, picture and other cool stuff to you embed with this powerful update.\nThe Elite Embed update lets you personalize your embed command almost as you wish.\n||The result will be similar to the shop, the roles or the rules embed.||", inline=False)
-        embed.add_field(name="**Items prices**", value="```\n"
+        embed.add_field(name="**Items prices**", value="\n"
             "Item name                   Price     Elite price    Command        Role requirement\n"
             "Emoji flair:              200,000               ~    ~              ~\n"
             "Custom background:        800,000               ~    ~              ~\n"
@@ -40,7 +40,7 @@ class EmbedShop(commands.Cog):
             "x10 set loot chests:    5,000,000       2,500,000    ~              <@&815958673770807317>\n"
             "Simple embed update:    5,000,000       2,500,000    ~              <@&815958673770807317>\n"
             "Elite embed update:    15,000,000      15,000,000    ~              <@&815958696982872075>\n"
-            "```", inline=False)
+            "", inline=False)
         embed.add_field(name="**Note**", value="To purchase any item that doesn't have a command specified, dm <@598662722821029888>\n<@&815958379624529931> and <@&815958696982872075> are equivalent regarding shop purchases")
         await ctx.send(embed=embed)
         
