@@ -520,7 +520,7 @@ class Heist(commands.Cog):
                    f"C\n{t}```")
         else:
             msg = "No one made it out safe."
-        await ctx.channel.set_permissions(ctx.guild.default_role, send_messages=True)
+        await ctx.channel.set_permissions(ctx.guild.default_role, send_messages=True, read_messages=False)
         config["Alert"] = int(time.time())
         await self.thief.config.guild(guild).Config.set(config)
         await self.thief.reset_heist(guild)
