@@ -47,17 +47,17 @@ class EmbedShop(commands.Cog):
         
     @commands.command(name="es_yuuki")
     async def es_yuuki(self, ctx):
-        embed = discord.Embed(title="Yuuki's greatest achievements", icon="https://cdn.discordapp.com/avatars/295275466703503372/a_f9f080269db484bb6dabe197bb1a867f.gif?size=4096")
-        embed.set_thumbnail(url="https://cdn.discordapp.com/avatars/295275466703503372/a_f9f080269db484bb6dabe197bb1a867f.gif?size=4096")
-        embed.add_field(name="**5th august 2020**", value="[link](https://discord.com/channels/374596069989810176/698629712481747046/740519465837396029)Played the first 1,000,000,000 credits roulette with Jaymin", inline=False)
-        embed.add_field(name="**7th august 2020**", value="[link](https://discord.com/channels/374596069989810176/698629712481747046/741318683460370535)Reached 1,000,000,000 credits becoming the first <@&815958379624529931> ever on the server", inline=False)
-        embed.add_field(name="**18th august 2020**", value="[link](https://discord.com/channels/374596069989810176/735808553872392262/745209602265579571)Reached 2,000,000,000 credits\nGot the Billionaire role", inline=False)
-        embed.add_field(name="**21st august 2020**", value="[link](https://discord.com/channels/374596069989810176/735808553872392262/746466988888424621)Had 476 tickets as the season ends (which are worth 2,380,000,000 credits)", inline=False)
-        embed.add_field(name="**25th september 2020**", value="[link](https://discord.com/channels/374596069989810176/381338682298466315/759074225209737316)Organized the biggest heist ever seen, with well over 80 players, breaking the bot", inline=False)
-        embed.add_field(name="**24th december 2020**", value="[link](https://discord.com/channels/374596069989810176/735808553872392262/791705199751856140)Got 100,000,000 credits on the first day of the season", inline=False)
-        embed.add_field(name="**25th january 2021**", value="[link](https://discord.com/channels/374596069989810176/727787873834631200/803306026190241804)Got to 1B credits with the help of numerous community members and got the 1.5M stats item\n"
-                                                            "[link](https://discord.com/channels/374596069989810176/735808553872392262/803366302634213407)This day Yuuki killed an immortal, first recorded immortal kill in history\n"
-                                                            "[link](https://discord.com/channels/374596069989810176/727787873834631200/803684594246615120)Total credits at the end of the day: 5,442,400,000", inline=False)
-        embed.add_field(name="**18th february 2021**", value="[link](https://discord.com/channels/374596069989810176/708402441850323075/812055743368790046)Caught a Greninja-Ash, the rarest pokemon for find in the wild", inline=False)
+        embed = discord.Embed(title="Yuuki's greatest achievements", icon="https://cdn.discordapp.com/attachments/374597952813137931/850344030936236052/G-PFP4.gif")
+        embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/374597952813137931/850344030936236052/G-PFP4.gif")
+        embed.add_field(name="**5th august 2020**", value="[[link] ](https://discord.com/channels/374596069989810176/698629712481747046/740519465837396029)Played the first 1,000,000,000 credits roulette with Jaymin", inline=False)
+        embed.add_field(name="**7th august 2020**", value="[[link] ](https://discord.com/channels/374596069989810176/698629712481747046/741318683460370535)Reached 1,000,000,000 credits becoming the first <@&815958379624529931> ever on the server", inline=False)
+        embed.add_field(name="**18th august 2020**", value="[[link] ](https://discord.com/channels/374596069989810176/735808553872392262/745209602265579571)Reached 2,000,000,000 credits\nGot the Billionaire role", inline=False)
+        embed.add_field(name="**21st august 2020**", value="[[link] ](https://discord.com/channels/374596069989810176/735808553872392262/746466988888424621)Had 476 tickets as the season ends (which are worth 2,380,000,000 credits)", inline=False)
+        embed.add_field(name="**25th september 2020**", value="[[link] ](https://discord.com/channels/374596069989810176/381338682298466315/759074225209737316)Organized the biggest heist ever seen, with well over 80 players, breaking the bot", inline=False)
+        embed.add_field(name="**24th december 2020**", value="[[link] ](https://discord.com/channels/374596069989810176/735808553872392262/791705199751856140)Got 100,000,000 credits on the first day of the season", inline=False)
+        embed.add_field(name="**25th january 2021**", value="[[link] ](https://discord.com/channels/374596069989810176/727787873834631200/803306026190241804)Got to 1B credits with the help of numerous community members and got the 1.5M stats item\n"
+                                                            "[[link] ](https://discord.com/channels/374596069989810176/735808553872392262/803366302634213407)This day Yuuki killed an immortal, first recorded immortal kill in history\n"
+                                                            "[[link] ](https://discord.com/channels/374596069989810176/727787873834631200/803684594246615120)Total credits at the end of the day: 5,442,400,000", inline=False)
+        embed.add_field(name="**18th february 2021**", value="[[link] ](https://discord.com/channels/374596069989810176/708402441850323075/812055743368790046)Caught a Greninja-Ash, the rarest pokemon for find in the wild", inline=False)
         embed.set_footer(text="")        
         await ctx.send(embed=embed)
