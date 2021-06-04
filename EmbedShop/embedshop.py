@@ -48,7 +48,7 @@ class EmbedShop(commands.Cog):
     @commands.command(name="es_yuuki")
     async def es_yuuki(self, ctx):
         embed = discord.Embed()
-        embed.set_author(title="Yuuki's greatest achievements", url="https://discordapp.com/users/295275466703503372/", icon_url="https://cdn.discordapp.com/attachments/374597952813137931/850344030936236052/G-PFP4.gif")
+        embed.set_author(name="Yuuki's greatest achievements", url="https://discordapp.com/users/295275466703503372/", icon_url="https://cdn.discordapp.com/attachments/374597952813137931/850344030936236052/G-PFP4.gif")
         embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/374597952813137931/850344030936236052/G-PFP4.gif")
         embed.add_field(name="**5th august 2020**", value="[[link] ](https://discord.com/channels/374596069989810176/698629712481747046/740519465837396029)Played the first 1,000,000,000 credits roulette with Jaymin", inline=False)
         embed.add_field(name="**7th august 2020**", value="[[link] ](https://discord.com/channels/374596069989810176/698629712481747046/741318683460370535)Reached 1,000,000,000 credits becoming the first <@&815958379624529931> ever on the server", inline=False)
