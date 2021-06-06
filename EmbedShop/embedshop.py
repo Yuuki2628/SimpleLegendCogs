@@ -42,9 +42,34 @@ class EmbedShop(commands.Cog):
             "Elite embed update: 15,000,000  15,000,000  Elite        \n"
            #"-------------------------------------------------------------"
             "```", inline=False)
-        embed.add_field(name="**Note**", value="To purchase any item that doesn't have a command specified, dm <@598662722821029888>\n<@&815958379624529931> and <@&815958696982872075> are equivalent regarding shop purchases")
+        embed.add_field(name="**Note**", value="To purchase any item that doesn't have a command specified, dm <@598662722821029888>\n"
+                                                "<@&815958379624529931> and <@&815958696982872075> are equivalent regarding shop purchases\n"
+                                                "When buying <@&815958696982872075> you will receive an addition item of choise for free from the shop")
         await ctx.send(embed=embed)
-        
+    
+    @commands.command(name="es_minishop")
+    async def es_minishop(self, ctx):
+        shop = bot.get_channel(381339305769041922)
+        if shop is None:
+            return await ctx.send("I can't find the shop, please contact <@295275466703503372>")
+        embed = discord.Embed(title="LeGeND Shop")
+        embed.add_field(name="**Items prices**", value="```\n"
+            "Item name                Price       Elite  Cmd/Req\n"
+            "Emoji flair:           200,000           ~  ~            \n"
+            "Custom background:     800,000           ~  ~            \n"
+            "Custom command:        500,000           ~  ~            \n"
+            "Rare:                1,500,000           ~  !buyrare     \n"
+            "Epic:                3,500,000           ~  !buyepic     \n"
+            "Legendary:          10,000,000           ~  !buylegendary\n"
+            "Elite:              35,000,000           ~  !buyelite    \n"
+            "Custom adv boss:    10,000,000   5,000,000  LeGeNDary    \n"
+            "x10 set loot chests: 5,000,000   2,500,000  LeGeNDary    \n"
+            "Simple embed update: 5,000,000   2,500,000  LeGeNDary    \n"
+            "Elite embed update: 15,000,000  15,000,000  Elite        \n"
+           #"-------------------------------------------------------------"
+            "```", inline=False)
+        embed.add_field(name="Click here to see the full shop", value=f"<#{shop.id}>")
+
     @commands.command(name="es_yuuki")
     async def es_yuuki(self, ctx):
         embed = discord.Embed()
