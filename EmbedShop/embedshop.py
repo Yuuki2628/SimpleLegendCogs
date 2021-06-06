@@ -66,6 +66,7 @@ class EmbedShop(commands.Cog):
            #"-------------------------------------------------------------"
             "```", inline=False)
         embed.add_field(name="Click here to see the full shop", value=f"<#381339305769041922>")
+        await ctx.send(embed=embed)
 
     @commands.command(name="es_yuuki")
     async def es_yuuki(self, ctx):
