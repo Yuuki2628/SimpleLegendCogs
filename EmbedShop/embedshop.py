@@ -49,9 +49,6 @@ class EmbedShop(commands.Cog):
     
     @commands.command(name="es_minishop")
     async def es_minishop(self, ctx):
-        shop = bot.get_channel(381339305769041922)
-        if shop is None:
-            return await ctx.send("I can't find the shop, please contact <@295275466703503372>")
         embed = discord.Embed(title="LeGeND Shop")
         embed.add_field(name="**Items prices**", value="```\n"
             "Item name                Price       Elite  Cmd/Req\n"
@@ -68,7 +65,7 @@ class EmbedShop(commands.Cog):
             "Elite embed update: 15,000,000  15,000,000  Elite        \n"
            #"-------------------------------------------------------------"
             "```", inline=False)
-        embed.add_field(name="Click here to see the full shop", value=f"<#{shop.id}>")
+        embed.add_field(name="Click here to see the full shop", value=f"<#381339305769041922>")
 
     @commands.command(name="es_yuuki")
     async def es_yuuki(self, ctx):
