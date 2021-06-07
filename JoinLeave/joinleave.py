@@ -5,6 +5,10 @@ class JoinLeave(commands.Cog):
     """A cog to notify when someone joins or leaves the server"""
     blacklisted_words = []
     
+    @commands.group(no_pm=True)
+    async def jlblacklist(self, ctx):
+        pass
+
     @jlblacklist.command(name=add)
     async def add_blacklist(self, ctx, *, words: str):
         words = ' '.join(words.split())
