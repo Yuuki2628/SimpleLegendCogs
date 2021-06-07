@@ -3,7 +3,9 @@ import discord
 
 class JoinLeave(commands.Cog):
     """A cog to notify when someone joins or leaves the server"""
-    blacklisted_words = []
+    default_guild ={
+        "blacklisted_words": list()
+    }
     
     @commands.group(pass_context=True)
     async def jlblacklist(self, ctx):
