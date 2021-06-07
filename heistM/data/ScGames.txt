@@ -1,0 +1,55 @@
+Jail = jail
+OOB = out on bail
+Police = Police
+Bail = bail
+Crew = group
+Sentence = sentence
+Heist = heist
+Vault = treasure
+
+|Good| "{} placed the P.E.K.K.A. at the right time. +100 credits.", 100
+|Good| "{} found the miner's tunnel. +200 credits", 200
+|Good| "{} upgraded the princess at the right time. +150 credits.", 150
+|Good| "{} destroyed a princess tower using a rocket. +200 credits.", 200
+|Good| "{} used the log to knock back the enemies. +150 credits.", 150
+|Good| "{} defeated the minion horde with the help of the wizard. +250 credits.", 250
+|Good| "{} sinked the enemy ship. +200 credits.", 200
+|Good| "{} sent a goblin drill on the enemy tower. +100 credits.", 100
+|Good| "{} bought 100,000,000 gems and got a maxed account. +1000 credits.", 1000
+|Good| "{} countered the enemy mega knight. +150 credits.", 150
+|Good| "{} opened a brawl box and found Leon. +200 credits.", 200
+|Good| "{} teamed in showdown and got easy trophies. +250 credits.", 250
+|Good| "{} found some teamers and defeated them all. +250 credits.", 250
+|Good| "{} ate a dinamike for lunch using mortis. +150 credits.", 150
+|Good| "{} defeated the insane 16 boss. +1000 credits.", 1000
+|Good| "{} dreamt of finding  a legendary, and found one. +100 credits.", 100
+|Good| "{} joined the club. +150 credits.", 150
+|Good| "{} found an inactive base and obtained over a million loot. +500 credits.", 500
+|Good| "{} defeated the gold dragon. +500 credits.", 500
+|Good| "{} collected the loot cart. +150 credits.", 150
+|Good| "{} removed the gem box. +250 credits.", 250
+|Good| "{} donated maxed bowlers to the clan. +100 credits.", 100
+
+|Bad| "{0} tried to hack into the game, but was found by the devs", "Apprehended"
+|Bad| "{0} tried to play 2.6 against lava hound", "Apprehended"
+|Bad| "{0} was sniped by the princess.", "Dead"
+|Bad| "{0} tried to stab the P.E.K.K.A.", "Dead"
+|Bad| "{0} was surrounded by the royal recruits", "Apprehended"
+|Bad| "{0} brought knifes againts a ballon.", "Apprehended"
+|Bad| "A mega knight fell right on {0}", "Dead"
+|Bad| "{0} tried to counter the mother witch using a skeleton army.", "Dead"
+|Bad| "{0} tried to predict the goblin drill", "Dead"
+|Bad| "{0} was surrounded by teamers", "Dead"
+|Bad| "{0} tried to defeat the insane 16 boss, but forgot to bring an Edgard", "Dead"
+|Bad| "{0} opened a mega box, but found only gold", "Apprehended"
+|Bad| "{0} walked into a Shelly", "Dead"
+|Bad| "{0} was attacked by an invisible Leon", "dead"
+|Bad| "{0} got shot by a Piper", "Dead"
+|Bad| "{0} managed to get a belle's shot bounce at least 15 times on their teammates", "Dead"
+|Bad| "{0} was attacked by a townhall 14 in bronze league.", "Apprehended"
+|Bad| "{0} attempted to defeat the gold dragon, but had their butt coocked", "Dead"
+|Bad| "{0} tried joining a top clan but got rejected immediatly", "Apprehended"
+|Bad| "{0} tried to use baloons in Fireworks Inc.", "Dead"
+|Bad| "{0} had all their precious gold stolen by goblins", "Apprehended"
+|Bad| "{0} was missing 1 dark elixir to upgrade the Archer queen and had a heart attack", "Dead"
+|Bad| "{0} was stabbed to death by barbarians", "Apprehended"
