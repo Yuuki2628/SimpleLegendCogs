@@ -35,7 +35,7 @@ Vault = vault
 |Bad| "{0} was sniped by the princess.", "Dead"
 |Bad| "{0} tried to stab the P.E.K.K.A.", "Dead"
 |Bad| "{0} was surrounded by the royal recruits", "Apprehended"
-|Bad| "{0} brought knifes againts a ballon.", "Apprehended"
+|Bad| "{0} brought knifes againts a balloon.", "Apprehended"
 |Bad| "A mega knight fell right on {0}", "Dead"
 |Bad| "{0} tried to counter the mother witch using a skeleton army.", "Dead"
 |Bad| "{0} tried to predict the goblin drill", "Dead"
