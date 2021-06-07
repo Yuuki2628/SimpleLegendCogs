@@ -6,6 +6,7 @@ class JoinLeave(commands.Cog):
 
     def __init__(self,bot):
         self.bot = bot
+        self.config = config.get_conf(self, identifier = 26282562628)
         default_guild = {
             "blacklisted_words": []
         }
