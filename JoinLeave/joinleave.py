@@ -3,10 +3,13 @@ import discord
 
 class JoinLeave(commands.Cog):
     """A cog to notify when someone joins or leaves the server"""
-    default_guild ={
-        "blacklisted_words": list()
-    }
-    
+
+    def __init__(self,bot):
+        self.bot = bot
+        default_guild = {
+            "blacklisted_words": []
+        }
+
     @commands.group(pass_context=True)
     async def jlblacklist(self, ctx):
         pass
@@ -17,8 +20,9 @@ class JoinLeave(commands.Cog):
         words = ' '.join(words.split())
         wlist = words.split((' '))
         for word in wlist:
-            if not word in blacklisted_words:
-                blacklisted_words.append(word)
+            async with self.config.guild(ctx.guild).blacklisted_words() as lst:
+                if not word in lst:
+                    lst.append(word)
         return ctx.send("Success.")
 
     @jlblacklist.command(name="remove")
@@ -27,8 +31,9 @@ class JoinLeave(commands.Cog):
         words = ' '.join(words.split())
         wlist = words.split((' '))
         for word in wlist:
-            if word in blacklisted_words:
-                blacklisted_words.remove(word)
+            async with self.config.guild(ctx.guild).blacklisted_words() as lst:
+                if word in lst:
+                    lst.remove(word)
         return ctx.send("Success.")
 
     @jlblacklist.command(name="show")
@@ -36,8 +41,9 @@ class JoinLeave(commands.Cog):
         """Displays the list of all blacklisted words"""
         wlist = []
         for word in wlist:
-            if word in blacklisted_words:
-                wlist.append(word)
+            async with self.config.guild(ctx.guild).blacklisted_words() as lst:
+                if word in lst:
+                    wlist.append(word)
         slist = '\n'.join(wlist)
         embed=discord.Embed(title="Blackilsted words", description=slist)
         return ctx.send(embed=embed)
@@ -45,17 +51,18 @@ class JoinLeave(commands.Cog):
     @commands.Cog.listener()
     async def on_member_join(self, member):
         channel = discord.utils.get(member.guild.channels, name="gate-in-out")
-        for word in blacklisted_words:
-            if(word in member.name):
-                embed = discord.Embed(title="Someone tried joining", color = 0x663399)
-                embed.set_thumbnail(url=member.avatar_url)
-                embed.add_field(name="**Member**", value=member.mention, inline=False)
-                embed.add_field(name="**Name**", value=f"{member.name}#{member.discriminator}", inline=False)
+        async with self.config.guild(ctx.guild).blacklisted_words() as lst:
+            for word in lst:
+                if(word.lower() in member.name.lower()):
+                    embed = discord.Embed(title="Someone tried joining", color = 0x663399)
+                    embed.set_thumbnail(url=member.avatar_url)
+                    embed.add_field(name="**Member**", value=member.mention, inline=False)
+                    embed.add_field(name="**Name**", value=f"{member.name}#{member.discriminator}", inline=False)
 
-                dm_channel = await member.create_dm()
-                await channel.send(f"You tried joining the server, but I found that your name contains something that might be self advertisement\nPlease remove {word} from your name and try joining again")
-                await self.kick(member)
-                return await ctx.send(embed=embed)
+                    dm_channel = await member.create_dm()
+                    await channel.send(f"You tried joining the server, but I found that your name contains something that might be self advertisement\nPlease remove {word} from your name and try joining again")
+                    await self.kick(member)
+                    return await ctx.send(embed=embed)
 
         if(channel in member.guild.channels):
             embed = discord.Embed(title="Someone joined", color = 0x2ECC71)
