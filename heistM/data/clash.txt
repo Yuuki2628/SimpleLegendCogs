@@ -2,10 +2,10 @@ Jail = jail
 OOB = out on bail
 Police = Police
 Bail = bail
-Crew = group
+Crew = crew
 Sentence = sentence
 Heist = heist
-Vault = treasure
+Vault = vault
 
 |Good| "{} placed the P.E.K.K.A. at the right time. +100 credits.", 100
 |Good| "{} found the miner's tunnel. +200 credits", 200
@@ -53,3 +53,4 @@ Vault = treasure
 |Bad| "{0} had all their precious gold stolen by goblins", "Apprehended"
 |Bad| "{0} was missing 1 dark elixir to upgrade the Archer queen and had a heart attack", "Dead"
 |Bad| "{0} was stabbed to death by barbarians", "Apprehended"
+
