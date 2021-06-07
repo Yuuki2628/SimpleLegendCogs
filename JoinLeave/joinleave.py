@@ -9,7 +9,7 @@ class JoinLeave(commands.Cog):
     async def jlblacklist(self, ctx):
         pass
 
-    @jlblacklist.command(name=add)
+    @jlblacklist.command(name="add")
     async def add_blacklist(self, ctx, *, words: str):
         """Adds one or more words to the blacklist"""
         words = ' '.join(words.split())
@@ -19,7 +19,7 @@ class JoinLeave(commands.Cog):
                 blacklisted_words.append(word)
         return ctx.send("Success.")
 
-    @jlblacklist.command(name=remove)
+    @jlblacklist.command(name="remove")
     async def rem_blacklist(self, ctx, *, words: str):
         """Removed one or more words to the blacklist"""
         words = ' '.join(words.split())
@@ -29,7 +29,7 @@ class JoinLeave(commands.Cog):
                 blacklisted_words.remove(word)
         return ctx.send("Success.")
 
-    @jlblacklist.command(name=show)
+    @jlblacklist.command(name="show")
     async def show_blacklist(self, ctx):
         """Displays the list of all blacklisted words"""
         wlist = []
