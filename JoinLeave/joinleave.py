@@ -5,12 +5,13 @@ class JoinLeave(commands.Cog):
     """A cog to notify when someone joins or leaves the server"""
     blacklisted_words = []
     
-    @commands.group(no_pm=True)
+    @commands.group(pass_context=True)
     async def jlblacklist(self, ctx):
         pass
 
     @jlblacklist.command(name=add)
     async def add_blacklist(self, ctx, *, words: str):
+        """Adds one or more words to the blacklist"""
         words = ' '.join(words.split())
         wlist = words.split((' '))
         for word in wlist:
@@ -20,6 +21,7 @@ class JoinLeave(commands.Cog):
 
     @jlblacklist.command(name=remove)
     async def rem_blacklist(self, ctx, *, words: str):
+        """Removed one or more words to the blacklist"""
         words = ' '.join(words.split())
         wlist = words.split((' '))
         for word in wlist:
@@ -29,6 +31,7 @@ class JoinLeave(commands.Cog):
 
     @jlblacklist.command(name=show)
     async def show_blacklist(self, ctx):
+        """Displays the list of all blacklisted words"""
         wlist = []
         for word in wlist:
             if word in blacklisted_words:
