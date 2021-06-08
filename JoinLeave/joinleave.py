@@ -58,7 +58,7 @@ class JoinLeave(commands.Cog):
         async with self.config.guild(ctx.guild).blwords() as lst:
             for word in lst:
                 wlist.append(word)
-        slist = '\n'.join(wlist)
+            slist = '\n'.join(wlist)
         embed=discord.Embed(title="Blacklisted words", description=slist)
         return await ctx.send(embed=embed)
 
