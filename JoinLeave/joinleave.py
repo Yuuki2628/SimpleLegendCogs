@@ -97,7 +97,7 @@ class JoinLeave(commands.Cog):
                 dm_channel = await member.create_dm()
                 await dm_channel.send(f"The channel for the JoinLeave cog for the {myguild} server isn't set up\nPlease contact <@295275466703503372> or set it up using `!setchannel`")
 
-        if self.config.guild(myguild).blacklistkick() == True:
+        if await self.config.guild(myguild).blacklistkick() == True:
             async with self.config.guild(myguild).blwords() as lst:
                 for word in lst:
                     if(word.lower() in member.name.lower()):
