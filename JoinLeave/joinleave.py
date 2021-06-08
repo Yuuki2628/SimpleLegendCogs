@@ -17,7 +17,7 @@ class JoinLeave(commands.Cog):
     @commands.guild_only()
     async def setchannel(self, ctx, ch: discord.TextChannel):
         await self.config.guild(ctx.guild).jlchannel.set(ch.id)
-        return ctx.send("Success!")
+        return await ctx.send("Success!")
 
 
     @commands.group(pass_context=True)
@@ -36,7 +36,7 @@ class JoinLeave(commands.Cog):
             for word in wlist:
                 if not word in lst:
                     lst.append(word)
-        return ctx.send("Success.")
+        return await ctx.send("Success.")
 
     @jlblacklist.command(name="remove")
     @commands.guild_only()
@@ -48,7 +48,7 @@ class JoinLeave(commands.Cog):
             for word in wlist:
                 if word in lst:
                     lst.remove(word)
-        return ctx.send("Success.")
+        return await ctx.send("Success.")
 
     @jlblacklist.command(name="show")
     @commands.guild_only()
@@ -59,7 +59,7 @@ class JoinLeave(commands.Cog):
                 wlist.append(word)
         slist = '\n'.join(wlist)
         embed=discord.Embed(title="Blackilsted words", description=slist)
-        return ctx.send(embed=embed)
+        return await ctx.send(embed=embed)
 
 
 
