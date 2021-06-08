@@ -111,7 +111,7 @@ class JoinLeave(commands.Cog):
                             embed.add_field(name="**Member**", value=member.mention, inline=False)
                             embed.add_field(name="**Name**", value=f"{member.name}#{member.discriminator}", inline=False)
                             embed.add_field(name="**Blacklisted word:**", value=f"{word}", inline=False)
-                            embed.add_field(name="Inviter", value = {member.Inviter.mention}, inline=false)
+                            embed.add_field(name="Inviter", value = {member.inviter.mention}, inline=false)
 
                             dm_channel = await member.create_dm()
                             await dm_channel.send(f"You tried to join {myguild.name}, but you were kicked for having an inappropriate word in your username\nPlease remove `{word}` from your name and try joining again")
