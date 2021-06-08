@@ -105,7 +105,7 @@ class JoinLeave(commands.Cog):
             async with self.config.guild(myguild).blwords() as lst:
                 for word in lst:
                     if(word.lower() in member.name.lower()):
-                        embed = discord.Embed(title="Someone tried joining", color = 0x663399)
+                        embed = discord.Embed(title="Someone tried to join", color = 0x663399)
                         embed.set_thumbnail(url=member.avatar_url)
                         embed.add_field(name="**Member**", value=member.mention, inline=False)
                         embed.add_field(name="**Name**", value=f"{member.name}#{member.discriminator}", inline=False)
