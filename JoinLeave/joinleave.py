@@ -12,6 +12,8 @@ class JoinLeave(commands.Cog):
             "jlchannel": None
         }
 
+        self.config.register_guild(**default_guild)
+
     @commands.command()
     @commands.guild_only()
     async def setchannel(self, ctx, ch: discord.TextChannel):
@@ -57,7 +59,7 @@ class JoinLeave(commands.Cog):
             for word in lst:
                 wlist.append(word)
         slist = '\n'.join(wlist)
-        embed=discord.Embed(title="Blackilsted words", description=slist)
+        embed=discord.Embed(title="Blacklisted words", description=slist)
         return await ctx.send(embed=embed)
 
 
