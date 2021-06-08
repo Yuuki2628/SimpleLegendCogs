@@ -82,6 +82,7 @@ class JoinLeave(commands.Cog):
                     embed.set_thumbnail(url=member.avatar_url)
                     embed.add_field(name="**Member**", value=member.mention, inline=False)
                     embed.add_field(name="**Name**", value=f"{member.name}#{member.discriminator}", inline=False)
+                    embed.add_field(name="**Blacklisted word**", value=f"{word}", inline=False)
 
                     dm_channel = await member.create_dm()
                     await dm_channel.send(f"You tried joining the server, but I found that your name contains something that might be self advertisement\nPlease remove `{word}` from your name and try joining again")
