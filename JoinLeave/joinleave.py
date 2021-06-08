@@ -9,50 +9,64 @@ class JoinLeave(commands.Cog):
         self.bot = bot
         self.config = Config.get_conf(self, identifier = 26282562628)
         default_guild = {
-            "blacklisted_words": []
+            "blwords": [],
+            "jlchannel": discord.utils.get(member.guild.channels, name="gate-in-out")
         }
 
+    @commands.command()
+    @commands.guild_only()
+    async def setchannel(self, ctx, ch:discord.Channel):
+        await self.config.guild(ctx.guild).jlchannel.set(ch)
+        return ctx.send("Success!")
+
+
     @commands.group(pass_context=True)
+    @commands.guild_only()
     async def jlblacklist(self, ctx):
+        """Used to manage the words blacklist that people can't have in their name when joining"""
         pass
 
-    # Type of retrieved value must be mutable (i.e. list or dict) in order to use a config value as a contextmanager.
     @jlblacklist.command(name="add")
+    @commands.guild_only()
     async def add_blacklist(self, ctx, *, words: str):
         """Adds one or more words to the blacklist"""
         words = ' '.join(words.split())
         wlist = words.split((' '))
-        async with self.config.guild(ctx.guild).blacklisted_words() as lst:
+        async with self.config.guild(ctx.guild).blwords() as lst:
             for word in wlist:
                 if not word in lst:
                     lst.append(word)
         return ctx.send("Success.")
 
     @jlblacklist.command(name="remove")
+    @commands.guild_only()
     async def rem_blacklist(self, ctx, *, words: str):
         """Removed one or more words to the blacklist"""
         words = ' '.join(words.split())
         wlist = words.split((' '))
-        async with self.config.guild(ctx.guild).blacklisted_words() as lst:
+        async with self.config.guild(ctx.guild).blwords() as lst:
             for word in wlist:
                 if word in lst:
                     lst.remove(word)
         return ctx.send("Success.")
 
     @jlblacklist.command(name="show")
+    @commands.guild_only()
     async def show_blacklist(self, ctx):
         """Displays the list of all blacklisted words"""
-        async with self.config.guild(ctx.guild).blacklisted_words() as lst:
+        async with self.config.guild(ctx.guild).blwords() as lst:
             for word in lst:
                 wlist.append(word)
         slist = '\n'.join(wlist)
         embed=discord.Embed(title="Blackilsted words", description=slist)
         return ctx.send(embed=embed)
 
+
+
     @commands.Cog.listener()
     async def on_member_join(self, member):
-        channel = discord.utils.get(member.guild.channels, name="gate-in-out")
-        async with self.config.guild(ctx.guild).blacklisted_words() as lst:
+        channel = await self.config.guild(ctx.guild).jlchannel()
+        async with self.config.guild(ctx.guild).blwords() as lst:
             for word in lst:
                 if(word.lower() in member.name.lower()):
                     embed = discord.Embed(title="Someone tried joining", color = 0x663399)
@@ -76,7 +90,7 @@ class JoinLeave(commands.Cog):
 
     @commands.Cog.listener()
     async def on_member_remove(self, member):
-        channel = discord.utils.get(member.guild.channels, name="gate-in-out")
+        channel = await self.config.guild(ctx.guild).jlchannel()
         if(channel in member.guild.channels):
             embed = discord.Embed(title="Someone left", color = 0xff0000)
             embed.set_thumbnail(url=member.avatar_url)
