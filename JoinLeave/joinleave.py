@@ -25,11 +25,11 @@ class JoinLeave(commands.Cog):
     @commands.guild_only()
     async def enablekick(self, ctx, bl: bool=None):
         if bl is not None:
-            self.config.guild(ctx.guild).blacklistkick.set(bl)
+            await self.config.guild(ctx.guild).blacklistkick.set(bl)
         else:
-            bl = self.config.guild(ctx.guild).blacklistkick()
+            bl = await self.config.guild(ctx.guild).blacklistkick()
             b1 = not b1
-            self.config.guild(ctx.guild).blacklistkick.set(bl)
+            await self.config.guild(ctx.guild).blacklistkick.set(bl)
         if bl == True:
             await ctx.send("The blacklist is now enabled")
         else:
