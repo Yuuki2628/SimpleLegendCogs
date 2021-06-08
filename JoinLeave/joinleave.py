@@ -10,7 +10,7 @@ class JoinLeave(commands.Cog):
         self.config = Config.get_conf(self, identifier = 26282562628)
         default_guild = {
             "blwords": [],
-            "jlchannel": discord.utils.get(member.guild.channels, name="gate-in-out")
+            "jlchannel": discord.utils.get(self.guild.channels, name="gate-in-out")
         }
 
     @commands.command()
