@@ -86,7 +86,7 @@ class JoinLeave(commands.Cog):
                     dm_channel = await member.create_dm()
                     await dm_channel.send(f"You tried joining the server, but I found that your name contains something that might be self advertisement\nPlease remove `{word}` from your name and try joining again")
                     await kick(member)
-                    return await ctx.send(embed=embed)
+                    return await channel.send(embed=embed)
 
         if(channel in member.guild.channels):
             embed = discord.Embed(title="Someone joined", color = 0x2ECC71)
