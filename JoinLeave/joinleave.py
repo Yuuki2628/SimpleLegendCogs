@@ -64,7 +64,7 @@ class JoinLeave(commands.Cog):
 
 
     @commands.Cog.listener()
-    async def on_member_join(ctx, member):
+    async def on_member_join(self, member, ctx):
         #ctx = await self.get_context(self)
         channel = await self.config.guild(ctx.guild).jlchannel() is discord.TextChannel()
         if channel is None:
@@ -92,7 +92,7 @@ class JoinLeave(commands.Cog):
         return
 
     @commands.Cog.listener()
-    async def on_member_remove(ctx,  member):
+    async def on_member_remove(self,  member, ctx):
         #ctx = await self.get_context(self)
         channel = await self.config.guild(ctx.guild).jlchannel() is discord.TextChannel()
         if channel is None:
