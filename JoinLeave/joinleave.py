@@ -126,9 +126,15 @@ class JoinLeave(commands.Cog):
         myguild = member.guild
         chid = await self.config.guild(myguild).jlchannel()
         channel = discord.utils.get(myguild.channels, id = chid)
+        blacklistedname = False
+        blacklistedwords = await self.config.guild(myguild).blwords()
         if channel is None:
             return
-        if(channel in member.guild.channels):
+        for word in blacklistedwords:
+            if word in member.name:
+                blacklistedname = True
+                break
+        if(channel in member.guild.channels) and (blacklistedname == False):
             embed = discord.Embed(title="Someone left", color = 0xff0000)
             embed.set_thumbnail(url=member.avatar_url)
             embed.add_field(name="**Member**", value=member.mention, inline=False)
