@@ -135,7 +135,7 @@ class JoinLeave(commands.Cog):
         if channel is None:
             return
         for word in blacklistedwords:
-            if word in member.name:
+            if word.lower() in member.name.lower():
                 blacklistedname = True
                 break
         if(channel in member.guild.channels) and (blacklistedname == False):
