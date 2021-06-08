@@ -12,6 +12,7 @@ class JoinLeave(commands.Cog):
             "blwords": [],
             "jlchannel": None
         }
+        self.config.register_guild(**default_guild)
 
     @commands.command()
     @commands.guild_only()
@@ -66,7 +67,7 @@ class JoinLeave(commands.Cog):
     @commands.Cog.listener()
     async def on_member_join(self, member):
         myguild = member.guild
-        channel = await self.config.guild(myguild).jlchannel() is discord.TextChannel()
+        channel = discord.TextChannel(await self.config.guild(myguild).jlchannel())
         if channel is None:
             return
         async with self.config.guild(ctx.guild).blwords() as lst:
@@ -94,7 +95,7 @@ class JoinLeave(commands.Cog):
     @commands.Cog.listener()
     async def on_member_remove(self,  member):
         myguild = member.guild
-        channel = await self.config.guild(myguild).jlchannel() is discord.TextChannel()
+        channel = discord.TextChannel(await self.config.guild(myguild).jlchannel())
         if channel is None:
             return
         if(channel in member.guild.channels):
