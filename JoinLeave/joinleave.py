@@ -22,8 +22,8 @@ class JoinLeave(commands.Cog):
         """Adds one or more words to the blacklist"""
         words = ' '.join(words.split())
         wlist = words.split((' '))
-        for word in wlist:
-            async with self.config.guild(ctx.guild).blacklisted_words() as lst:
+        async with self.config.guild(ctx.guild).blacklisted_words() as lst:
+            for word in wlist:
                 if not word in lst:
                     lst.append(word)
         return ctx.send("Success.")
@@ -33,8 +33,8 @@ class JoinLeave(commands.Cog):
         """Removed one or more words to the blacklist"""
         words = ' '.join(words.split())
         wlist = words.split((' '))
-        for word in wlist:
-            async with self.config.guild(ctx.guild).blacklisted_words() as lst:
+        async with self.config.guild(ctx.guild).blacklisted_words() as lst:
+            for word in wlist:
                 if word in lst:
                     lst.remove(word)
         return ctx.send("Success.")
