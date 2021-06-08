@@ -15,7 +15,7 @@ class JoinLeave(commands.Cog):
 
     @commands.command()
     @commands.guild_only()
-    async def setchannel(self, ctx, ch:discord.Channel):
+    async def setchannel(self, ctx, ch: discord.TextChannel):
         await self.config.guild(ctx.guild).jlchannel.set(ch)
         return ctx.send("Success!")
 
