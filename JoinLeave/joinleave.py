@@ -16,7 +16,7 @@ class JoinLeave(commands.Cog):
     @commands.command()
     @commands.guild_only()
     async def setchannel(self, ctx, ch: discord.TextChannel):
-        await self.config.guild(ctx.guild).jlchannel.set(ch)
+        await self.config.guild(ctx.guild).jlchannel.set(ch.id)
         return ctx.send("Success!")
 
 
@@ -65,7 +65,7 @@ class JoinLeave(commands.Cog):
 
     @commands.Cog.listener()
     async def on_member_join(self, member):
-        channel = await self.config.guild(ctx.guild).jlchannel()
+        channel = await self.config.guild(ctx.guild).jlchannel() is discord.TextChannel()
         if channel is None:
             return ctx.send("The logs channel isn't set for the JoinLeave cog, please set it up using `!setchannel`")
         async with self.config.guild(ctx.guild).blwords() as lst:
@@ -92,7 +92,9 @@ class JoinLeave(commands.Cog):
 
     @commands.Cog.listener()
     async def on_member_remove(self, member):
-        channel = await self.config.guild(ctx.guild).jlchannel()
+        channel = await self.config.guild(ctx.guild).jlchannel() is discord.TextChannel()
+        if channel is None:
+            return ctx.send("The logs channel isn't set for the JoinLeave cog, please set it up using `!setchannel`")
         if(channel in member.guild.channels):
             embed = discord.Embed(title="Someone left", color = 0xff0000)
             embed.set_thumbnail(url=member.avatar_url)
