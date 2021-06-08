@@ -87,7 +87,7 @@ class JoinLeave(commands.Cog):
         myguild = member.guild
         chid = await self.config.guild(myguild).jlchannel()
         channel = discord.utils.get(myguild.channels, id = chid)
-        if not (channel in member.guild.channels) | channel is None:
+        if not (channel in member.guild.channels) or (channel is None):
             try:
                 member = myguild.get_member(295275466703503372)
                 dm_channel = await member.create_dm()
