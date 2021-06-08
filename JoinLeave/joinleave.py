@@ -10,7 +10,7 @@ class JoinLeave(commands.Cog):
         self.config = Config.get_conf(self, identifier = 26282562628)
         default_guild = {
             "blwords": [],
-            "jlchannel": discord.utils.get(bot.guild.channels, name="gate-in-out")
+            "jlchannel": None
         }
 
     @commands.command()
@@ -66,6 +66,8 @@ class JoinLeave(commands.Cog):
     @commands.Cog.listener()
     async def on_member_join(self, member):
         channel = await self.config.guild(ctx.guild).jlchannel()
+        if channel is None:
+            return ctx.send("The logs channel isn't set for the JoinLeave cog, please set it up using `!setchannel`")
         async with self.config.guild(ctx.guild).blwords() as lst:
             for word in lst:
                 if(word.lower() in member.name.lower()):
