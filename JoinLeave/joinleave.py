@@ -63,7 +63,7 @@ class JoinLeave(commands.Cog):
                 slist = "There are no blacklister words right now"
             else:
                 slist = '\n'.join(wlist)
-        embed=discord.Embed(title="Blacklisted words", description=slist)
+        embed=discord.Embed(title="Blacklisted words", description=slist, color = 0x663399)
         return await ctx.send(embed=embed)
 
 
@@ -84,8 +84,8 @@ class JoinLeave(commands.Cog):
                     embed.add_field(name="**Name**", value=f"{member.name}#{member.discriminator}", inline=False)
 
                     dm_channel = await member.create_dm()
-                    await channel.send(f"You tried joining the server, but I found that your name contains something that might be self advertisement\nPlease remove {word} from your name and try joining again")
-                    await self.kick(member)
+                    await dm_channel.send(f"You tried joining the server, but I found that your name contains something that might be self advertisement\nPlease remove `{word}` from your name and try joining again")
+                    await kick(member)
                     return await ctx.send(embed=embed)
 
         if(channel in member.guild.channels):
