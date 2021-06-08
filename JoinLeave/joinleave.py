@@ -27,7 +27,8 @@ class JoinLeave(commands.Cog):
         if bl is not None:
             self.config.guild(ctx.guild).blacklistkick.set(bl)
         else:
-            bl = not self.config.guild(ctx.guild).blacklistkick()
+            bl = self.config.guild(ctx.guild).blacklistkick()
+            b1 = not b1
             self.config.guild(ctx.guild).blacklistkick.set(bl)
         if bl == True:
             await ctx.send("The blacklist is now enabled")
@@ -73,7 +74,7 @@ class JoinLeave(commands.Cog):
             for word in lst:
                 wlist.append(word)
             if len(wlist) == 0:
-                slist = "There are no blacklister words right now"
+                slist = "There are no blacklisted words right now"
             else:
                 slist = '\n'.join(wlist)
         embed=discord.Embed(title="Blacklisted words", description=slist+f"\n\nEnabled: {await self.config.guild(ctx.guild).blacklistkick()}", color = 0x663399)
@@ -109,6 +110,7 @@ class JoinLeave(commands.Cog):
                         dm_channel = await member.create_dm()
                         await dm_channel.send(f"You tried to join {myguild.name}, but you were kicked for having an inappropriate word in your username\nPlease remove `{word}` from your name and try joining again")
                         await myguild.kick(member, reason=f"Username contained: {word}, possible spam")
+                        
                         return await channel.send(embed=embed)
 
         if(channel in member.guild.channels):
