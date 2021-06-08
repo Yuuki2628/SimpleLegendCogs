@@ -59,7 +59,7 @@ class JoinLeave(commands.Cog):
         async with self.config.guild(ctx.guild).blwords() as lst:
             for word in lst:
                 wlist.append(word)
-            if wlist is None:
+            if len(wlist) is 0:
                 slist = "There are no blacklister words right now"
             else:
                 slist = '\n'.join(wlist)
