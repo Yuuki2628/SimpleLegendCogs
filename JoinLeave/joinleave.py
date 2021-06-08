@@ -65,8 +65,7 @@ class JoinLeave(commands.Cog):
 
     @commands.Cog.listener()
     async def on_member_join(self, member):
-        cli = self.client
-        ctx = cli.get_context
+        ctx = await client.get_context(self)
         channel = await self.config.guild(self.guild).jlchannel() is discord.TextChannel()
         if channel is None:
             return ctx.send("The logs channel isn't set for the JoinLeave cog, please set it up using `!setchannel`")
@@ -94,8 +93,7 @@ class JoinLeave(commands.Cog):
 
     @commands.Cog.listener()
     async def on_member_remove(self,  member):
-        cli = self.client
-        ctx = cli.get_context
+        ctx = await client.get_context(self)
         channel = await self.config.guild(self.guild).jlchannel() is discord.TextChannel()
         if channel is None:
             return ctx.send("The logs channel isn't set for the JoinLeave cog, please set it up using `!setchannel`")
