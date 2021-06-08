@@ -16,6 +16,7 @@ class JoinLeave(commands.Cog):
     async def jlblacklist(self, ctx):
         pass
 
+    # Type of retrieved value must be mutable (i.e. list or dict) in order to use a config value as a contextmanager.
     @jlblacklist.command(name="add")
     async def add_blacklist(self, ctx, *, words: str):
         """Adds one or more words to the blacklist"""
@@ -41,11 +42,9 @@ class JoinLeave(commands.Cog):
     @jlblacklist.command(name="show")
     async def show_blacklist(self, ctx):
         """Displays the list of all blacklisted words"""
-        wlist = []
-        for word in wlist:
-            async with self.config.guild(ctx.guild).blacklisted_words() as lst:
-                if word in lst:
-                    wlist.append(word)
+        async with self.config.guild(ctx.guild).blacklisted_words() as lst:
+            for word in lst:
+                wlist.append(word)
         slist = '\n'.join(wlist)
         embed=discord.Embed(title="Blackilsted words", description=slist)
         return ctx.send(embed=embed)
