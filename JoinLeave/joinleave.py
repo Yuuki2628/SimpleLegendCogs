@@ -5,14 +5,13 @@ import discord
 class JoinLeave(commands.Cog):
     """A cog to notify when someone joins or leaves the server"""
 
-    def __init__(self,bot):
+    def __init__(self, bot):
         self.bot = bot
         self.config = Config.get_conf(self, identifier = 26282562628)
         default_guild = {
             "blwords": [],
             "jlchannel": None
         }
-        self.config.register_guild(**default_guild)
 
     @commands.command()
     @commands.guild_only()
