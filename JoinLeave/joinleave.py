@@ -55,6 +55,7 @@ class JoinLeave(commands.Cog):
     @commands.guild_only()
     async def show_blacklist(self, ctx):
         """Displays the list of all blacklisted words"""
+        wlist = []
         async with self.config.guild(ctx.guild).blwords() as lst:
             for word in lst:
                 wlist.append(word)
