@@ -105,24 +105,17 @@ class JoinLeave(commands.Cog):
             async with self.config.guild(myguild).blwords() as lst:
                 for word in lst:
                     if(word.lower() in member.name.lower()):
-                        try:
-                            embed = discord.Embed(title="Someone tried to join", color = 0x663399)
-                            embed.set_thumbnail(url=member.avatar_url)
-                            embed.add_field(name="**Member**", value=member.mention, inline=False)
-                            embed.add_field(name="**Name**", value=f"{member.name}#{member.discriminator}", inline=False)
-                            embed.add_field(name="**Blacklisted word:**", value=f"{word}", inline=False)
-                            embed.add_field(name="Inviter", value = {member.inviter.mention}, inline=false)
+                        embed = discord.Embed(title="Someone tried to join", color = 0x663399)
+                        embed.set_thumbnail(url=member.avatar_url)
+                        embed.add_field(name="**Member**", value=member.mention, inline=False)
+                        embed.add_field(name="**Name**", value=f"{member.name}#{member.discriminator}", inline=False)
+                        embed.add_field(name="**Blacklisted word:**", value=f"{word}", inline=False)
 
-                            dm_channel = await member.create_dm()
-                            await dm_channel.send(f"You tried to join {myguild.name}, but you were kicked for having an inappropriate word in your username\nPlease remove `{word}` from your name and try joining again")
-                            await myguild.kick(member, reason=f"Username contained: {word}, possible spam")
+                        dm_channel = await member.create_dm()
+                        await dm_channel.send(f"You tried to join {myguild.name}, but you were kicked for having an inappropriate word in your username\nPlease remove `{word}` from your name and try joining again")
+                        await myguild.kick(member, reason=f"Username contained: {word}, possible spam")
                             
-                            return await channel.send(embed=embed)
-                        except:
-                            member = myguild.get_member(295275466703503372)
-                            dm_channel = await member.create_dm()
-                            return await dm_channel.send(f"The cog isn't working")
-
+                        return await channel.send(embed=embed)
 
         if(channel in member.guild.channels):
             embed = discord.Embed(title="Someone joined", color = 0x2ECC71)
