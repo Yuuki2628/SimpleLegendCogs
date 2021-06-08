@@ -51,7 +51,7 @@ class JoinLeave(commands.Cog):
 
     @jlblacklist.command(name="show")
     @commands.guild_only()
-    async def show_blacklist(ctx):
+    async def show_blacklist(self, ctx):
         """Displays the list of all blacklisted words"""
         async with self.config.guild(ctx.guild).blwords() as lst:
             for word in lst:
@@ -66,10 +66,10 @@ class JoinLeave(commands.Cog):
     async def on_member_join(self, member):
         myguild = member.guild
         chid = await self.config.guild(myguild).jlchannel()
-        channel = discord.utils.get(guild.channels, id = chid)
+        channel = discord.utils.get(myguild.channels, id = chid)
         if channel is None:
             return
-        async with self.config.guild(ctx.guild).blwords() as lst:
+        async with self.config.guild(myguild).blwords() as lst:
             for word in lst:
                 if(word.lower() in member.name.lower()):
                     embed = discord.Embed(title="Someone tried joining", color = 0x663399)
@@ -95,7 +95,7 @@ class JoinLeave(commands.Cog):
     async def on_member_remove(self,  member):
         myguild = member.guild
         chid = await self.config.guild(myguild).jlchannel()
-        channel = discord.utils.get(guild.channels, id = chid)
+        channel = discord.utils.get(myguild.channels, id = chid)
         if channel is None:
             return
         if(channel in member.guild.channels):
