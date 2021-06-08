@@ -18,12 +18,14 @@ class JoinLeave(commands.Cog):
     @commands.command()
     @commands.guild_only()
     async def setchannel(self, ctx, ch: discord.TextChannel):
+        """Set the channel where you want the welcome/goodbye logs to be sent"""
         await self.config.guild(ctx.guild).jlchannel.set(ch.id)
         return await ctx.send("Success!")
 
     @commands.command()
     @commands.guild_only()
     async def enablekick(self, ctx, bl: bool=None):
+        """Enable or disable the kick function for people who have blacklisted names"""
         if bl is not None:
             await self.config.guild(ctx.guild).blacklistkick.set(bl)
         else:
@@ -51,7 +53,7 @@ class JoinLeave(commands.Cog):
             for word in wlist:
                 if not word in lst:
                     lst.append(word)
-        return await ctx.send("Success.")
+                    await ctx.send(f"Added {word}")
 
     @jlblacklist.command(name="remove")
     @commands.guild_only()
