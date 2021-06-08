@@ -28,7 +28,7 @@ class JoinLeave(commands.Cog):
             await self.config.guild(ctx.guild).blacklistkick.set(bl)
         else:
             bl = await self.config.guild(ctx.guild).blacklistkick()
-            b1 = not b1
+            bl = not bl
             await self.config.guild(ctx.guild).blacklistkick.set(bl)
         if bl == True:
             await ctx.send("The blacklist is now enabled")
