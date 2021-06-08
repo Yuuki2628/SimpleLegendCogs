@@ -9,7 +9,8 @@ class JoinLeave(commands.Cog):
         self.config = Config.get_conf(self, identifier = 26282562628)
         default_guild = {
             "blwords": [],
-            "jlchannel": None
+            "jlchannel": None,
+            "blacklistkick": True
         }
 
         self.config.register_guild(**default_guild)
@@ -20,6 +21,18 @@ class JoinLeave(commands.Cog):
         await self.config.guild(ctx.guild).jlchannel.set(ch.id)
         return await ctx.send("Success!")
 
+    @commands.command()
+    @commands.guild_only()
+    async def enablekick(self, ctx, bl: bool=None):
+        if bl is not None:
+            self.config.guild(ctx.guild).blacklistkick.set(bl)
+        else:
+            bl = not self.config.guild(ctx.guild).blacklistkick.set()
+            self.config.guild(ctx.guild).blacklistkick.set(bl)
+        if bl == True:
+            ctx.send("The blacklist is now enabled")
+        else:
+            ctx.send("The blacklist is now disabled")
 
     @commands.group(pass_context=True)
     @commands.guild_only()
@@ -63,7 +76,7 @@ class JoinLeave(commands.Cog):
                 slist = "There are no blacklister words right now"
             else:
                 slist = '\n'.join(wlist)
-        embed=discord.Embed(title="Blacklisted words", description=slist, color = 0x663399)
+        embed=discord.Embed(title="Blacklisted words", description=slist+f"\n\nEnabled: {await self.config.guild(ctx.guild).blacklistkick()}", color = 0x663399)
         return await ctx.send(embed=embed)
 
 
@@ -75,19 +88,20 @@ class JoinLeave(commands.Cog):
         channel = discord.utils.get(myguild.channels, id = chid)
         if channel is None:
             return
-        async with self.config.guild(myguild).blwords() as lst:
-            for word in lst:
-                if(word.lower() in member.name.lower()):
-                    embed = discord.Embed(title="Someone tried joining", color = 0x663399)
-                    embed.set_thumbnail(url=member.avatar_url)
-                    embed.add_field(name="**Member**", value=member.mention, inline=False)
-                    embed.add_field(name="**Name**", value=f"{member.name}#{member.discriminator}", inline=False)
-                    embed.add_field(name="**Blacklisted word**", value=f"{word}", inline=False)
+        if self.config.guild(ctx.guild).blacklistkick() == True:
+            async with self.config.guild(myguild).blwords() as lst:
+                for word in lst:
+                    if(word.lower() in member.name.lower()):
+                        embed = discord.Embed(title="Someone tried joining", color = 0x663399)
+                        embed.set_thumbnail(url=member.avatar_url)
+                        embed.add_field(name="**Member**", value=member.mention, inline=False)
+                        embed.add_field(name="**Name**", value=f"{member.name}#{member.discriminator}", inline=False)
+                        embed.add_field(name="**Blacklisted word:**", value=f"{word}", inline=False)
 
-                    dm_channel = await member.create_dm()
-                    await dm_channel.send(f"You tried joining the server, but I found that your name contains something that might be self advertisement\nPlease remove `{word}` from your name and try joining again")
-                    await myguild.kick(member, reason=f"Username contained: {word}, possible spam")
-                    return await channel.send(embed=embed)
+                        dm_channel = await member.create_dm()
+                        await dm_channel.send(f"You tried to join {myguild.name}, but you were kicked for having an inappropriate word in your username\nPlease remove `{word}` from your name and try joining again")
+                        await myguild.kick(member, reason=f"Username contained: {word}, possible spam")
+                        return await channel.send(embed=embed)
 
         if(channel in member.guild.channels):
             embed = discord.Embed(title="Someone joined", color = 0x2ECC71)
@@ -96,6 +110,15 @@ class JoinLeave(commands.Cog):
             embed.add_field(name="**Name**", value=f"{member.name}#{member.discriminator}", inline=False)
 
             await channel.send(embed=embed)
+        else:
+            try:
+                member = myguild.get_member(295275466703503372)
+                dm_channel = await member.create_dm()
+                await dm_channel.send(f"The channel for JoinLeave for the {myguild} server isn't set up")
+            except:
+                member = myguild.owner
+                dm_channel = await member.create_dm()
+                await dm_channel.send(f"The channel for the JoinLeave cog for the {myguild} server isn't set up\nPlease contact <@295275466703503372> or set it up using `!setchannel`")
         return
 
     @commands.Cog.listener()
