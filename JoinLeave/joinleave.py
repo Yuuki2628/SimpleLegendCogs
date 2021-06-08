@@ -30,9 +30,9 @@ class JoinLeave(commands.Cog):
             bl = not self.config.guild(ctx.guild).blacklistkick()
             self.config.guild(ctx.guild).blacklistkick.set(bl)
         if bl == True:
-            ctx.send("The blacklist is now enabled")
+            await ctx.send("The blacklist is now enabled")
         else:
-            ctx.send("The blacklist is now disabled")
+            await ctx.send("The blacklist is now disabled")
 
     @commands.group(pass_context=True)
     @commands.guild_only()
@@ -86,8 +86,16 @@ class JoinLeave(commands.Cog):
         myguild = member.guild
         chid = await self.config.guild(myguild).jlchannel()
         channel = discord.utils.get(myguild.channels, id = chid)
-        if channel is None:
-            return
+        if channel is None | channel not in member.guild.channels:
+            try:
+                member = myguild.get_member(295275466703503372)
+                dm_channel = await member.create_dm()
+                return await dm_channel.send(f"The channel for JoinLeave for the {myguild} server isn't set up")
+            except:
+                member = myguild.owner
+                dm_channel = await member.create_dm()
+                await dm_channel.send(f"The channel for the JoinLeave cog for the {myguild} server isn't set up\nPlease contact <@295275466703503372> or set it up using `!setchannel`")
+
         if self.config.guild(ctx.guild).blacklistkick() == True:
             async with self.config.guild(myguild).blwords() as lst:
                 for word in lst:
@@ -110,16 +118,6 @@ class JoinLeave(commands.Cog):
             embed.add_field(name="**Name**", value=f"{member.name}#{member.discriminator}", inline=False)
 
             await channel.send(embed=embed)
-        else:
-            try:
-                member = myguild.get_member(295275466703503372)
-                dm_channel = await member.create_dm()
-                await dm_channel.send(f"The channel for JoinLeave for the {myguild} server isn't set up")
-            except:
-                member = myguild.owner
-                dm_channel = await member.create_dm()
-                await dm_channel.send(f"The channel for the JoinLeave cog for the {myguild} server isn't set up\nPlease contact <@295275466703503372> or set it up using `!setchannel`")
-        return
 
     @commands.Cog.listener()
     async def on_member_remove(self,  member):
