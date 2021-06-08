@@ -17,8 +17,10 @@ class JoinLeave(commands.Cog):
 
     @commands.command()
     @commands.guild_only()
-    async def setchannel(self, ctx, ch: discord.TextChannel):
+    async def setchannel(self, ctx, ch: discord.TextChannel = None):
         """Set the channel where you want the welcome/goodbye logs to be sent"""
+        if ch == None:
+            return await ctx.send("Set the channel where you want the welcome/goodbye logs to be sent")
         await self.config.guild(ctx.guild).jlchannel.set(ch.id)
         return await ctx.send("Success!")
 
