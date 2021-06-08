@@ -49,7 +49,7 @@ class JoinLeave(commands.Cog):
             for word in wlist:
                 if word in lst:
                     lst.remove(word)
-        return await ctx.send("Success.")
+                    await ctx.send(f"Removed {word}")
 
     @jlblacklist.command(name="show")
     @commands.guild_only()
