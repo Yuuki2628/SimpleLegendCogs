@@ -52,7 +52,7 @@ class JoinLeave(commands.Cog):
 
     @jlblacklist.command(name="show")
     @commands.guild_only()
-    async def show_blacklist(self, ctx):
+    async def show_blacklist(ctx):
         """Displays the list of all blacklisted words"""
         async with self.config.guild(ctx.guild).blwords() as lst:
             for word in lst:
@@ -64,7 +64,7 @@ class JoinLeave(commands.Cog):
 
 
     @commands.Cog.listener()
-    async def on_member_join(self, ctx, member):
+    async def on_member_join(ctx, member):
         channel = await self.config.guild(ctx.guild).jlchannel() is discord.TextChannel()
         if channel is None:
             return ctx.send("The logs channel isn't set for the JoinLeave cog, please set it up using `!setchannel`")
