@@ -15,6 +15,7 @@ class EmbedShop(commands.Cog):
         if(ctx.author.id != 295275466703503372):
             return await ctx.send("Only the true bot director shall be allowed to do this")
         embed = discord.Embed(title="LeGeND Shop")
+        embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/722551851891032134/853281697411629097/unknown.png")
         embed.add_field(name="__Custom background__", value="Change the picture of your `!profile` background.", inline=False)
         embed.add_field(name="__Emoji Flair__", value="Add/Change an emoji in your nickname. No custom emojis allowed.", inline=False)
         embed.add_field(name="__Custom Command__", value="Have LeGeND Bot say a line of text or perform a command when people type !<a custom word>.", inline=False)
@@ -50,6 +51,7 @@ class EmbedShop(commands.Cog):
     @commands.command(name="es_minishop")
     async def es_minishop(self, ctx):
         embed = discord.Embed(title="LeGeND Shop")
+        embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/722551851891032134/853281697411629097/unknown.png")
         embed.add_field(name="**Items prices**", value="```\n"
             "Item name                Price       Elite  Cmd/Req\n"
             "Emoji flair:           200,000           ~  ~            \n"
