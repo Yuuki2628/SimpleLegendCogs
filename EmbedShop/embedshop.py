@@ -37,7 +37,7 @@ class EmbedShop(commands.Cog):
             "Legendary:          10,000,000           ~  !buylegendary\n"
             "Elite:              35,000,000           ~  !buyelite    \n"
             "Custom adv boss:    10,000,000   5,000,000  LeGeNDary    \n"
-            "x10 set loot chests: 5,000,000   2,500,000  LeGeNDary    \n"
+            "x5 set loot chests:  4,000,000   2,000,000  LeGeNDary    \n"
             "Simple embed update: 5,000,000   2,500,000  LeGeNDary    \n"
             "Elite embed update: 15,000,000  15,000,000  Elite        \n"
            #"-------------------------------------------------------------"
@@ -60,9 +60,9 @@ class EmbedShop(commands.Cog):
             "Legendary:          10,000,000           ~  !buylegendary\n"
             "Elite:              35,000,000           ~  !buyelite    \n"
             "Custom adv boss:    10,000,000   5,000,000  LeGeNDary    \n"
-            "x10 set loot chests: 5,000,000   2,500,000  LeGeNDary    \n"
+            "x5 set loot chests:  4,000,000   2,000,000  LeGeNDary    \n"
             "Simple embed update: 5,000,000   2,500,000  LeGeNDary    \n"
-            "Elite embed update: 15,000,000  15,000,000  Elite        \n"
+            "Elite embed update: 10,000,000  10,000,000  Elite        \n"
            #"-------------------------------------------------------------"
             "```", inline=False)
         embed.add_field(name="Click here to see the full shop", value=f"<#381339305769041922>")
