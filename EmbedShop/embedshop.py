@@ -39,7 +39,7 @@ class EmbedShop(commands.Cog):
             "Custom adv boss:    10,000,000   5,000,000  LeGeNDary    \n"
             "x5 set loot chests:  4,000,000   2,000,000  LeGeNDary    \n"
             "Simple embed update: 5,000,000   2,500,000  LeGeNDary    \n"
-            "Elite embed update: 15,000,000  15,000,000  Elite        \n"
+            "Elite embed update: 10,000,000  10,000,000  Elite        \n"
            #"-------------------------------------------------------------"
             "```", inline=False)
         embed.add_field(name="**Note**", value="To purchase any item that doesn't have a command specified, dm <@598662722821029888>\n"
