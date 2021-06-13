@@ -85,5 +85,6 @@ class EmbedShop(commands.Cog):
                                                             "[[link] ](https://discord.com/channels/374596069989810176/735808553872392262/803366302634213407)This day Yuuki killed an immortal, first recorded immortal kill in history\n"
                                                             "[[link] ](https://discord.com/channels/374596069989810176/727787873834631200/803684594246615120)Total credits at the end of the day: 5,442,400,000", inline=False)
         embed.add_field(name="**18th february 2021**", value="[[link] ](https://discord.com/channels/374596069989810176/708402441850323075/812055743368790046)Caught a Greninja-Ash, the rarest pokemon for find in the wild", inline=False)
+        embed.add_field(name="**13th june 2021**", value="[[link] ](https://discord.com/channels/374596069989810176/374597952813137931/853616788256063498)Reached 100 rep points", inline=False)
         embed.set_footer(text="")        
         await ctx.send(embed=embed)
