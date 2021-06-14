@@ -46,7 +46,7 @@ class EmbedShop(commands.Cog):
         embed.add_field(name="**Note**", value="`M` stands for million/s, `k` stands for thousand/s\n"
                                                 "To purchase any item that doesn't have a command specified, dm <@598662722821029888>\n"
                                                 "<@&815958379624529931> and <@&815958696982872075> are equivalent regarding shop purchases\n"
-                                                "When buying <@&815958696982872075> you will receive an addition item of choise for free from the shop")
+                                                "When buying <@&815958696982872075> you will receive an additional item of choise for free")
         await ctx.send(embed=embed)
     
     @commands.command(name="es_minishop")
