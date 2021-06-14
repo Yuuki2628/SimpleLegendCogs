@@ -14,7 +14,7 @@ class EmbedShop(commands.Cog):
     async def es_shop(self, ctx):
         if(ctx.author.id != 295275466703503372):
             return await ctx.send("Only the true bot director shall be allowed to do this")
-        embed = discord.Embed(title="LeGeND Shop")
+        embed = discord.Embed(title="LeGeND Shop",color=0x7289DA)
         embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/722551851891032134/853281697411629097/unknown.png")
         embed.add_field(name="__Custom background__", value="Change the picture of your `!profile` background.", inline=False)
         embed.add_field(name="__Emoji Flair__", value="Add/Change an emoji in your nickname. No custom emojis allowed.", inline=False)
@@ -50,7 +50,7 @@ class EmbedShop(commands.Cog):
     
     @commands.command(name="es_minishop")
     async def es_minishop(self, ctx):
-        embed = discord.Embed(title="LeGeND Shop")
+        embed = discord.Embed(title="LeGeND Shop",color=0x7289DA)
         embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/722551851891032134/853281697411629097/unknown.png")
         embed.add_field(name="**Items prices**", value="```\n"
             "Item name                Price       Elite  Cmd/Req\n"
@@ -72,7 +72,7 @@ class EmbedShop(commands.Cog):
 
     @commands.command(name="es_yuuki")
     async def es_yuuki(self, ctx):
-        embed = discord.Embed()
+        embed = discord.Embed(color=0x5C4399)
         embed.set_author(name="Yuuki's greatest achievements", url="https://discordapp.com/users/295275466703503372/", icon_url="https://cdn.discordapp.com/attachments/374597952813137931/850344030936236052/G-PFP4.gif")
         embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/374597952813137931/850344030936236052/G-PFP4.gif")
         embed.add_field(name="**5th august 2020**", value="[[link] ](https://discord.com/channels/374596069989810176/698629712481747046/740519465837396029)Played the first 1,000,000,000 credits roulette with Jaymin", inline=False)
