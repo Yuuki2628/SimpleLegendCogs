@@ -41,7 +41,7 @@ class EmbedShop(commands.Cog):
             "x5 set loot chests:   4M     2M  LeGeNDary    \n"
             "Simple embed update:  5M     2M  LeGeNDary    \n"
             "Elite embed update:  10M    10M  Elite        \n"
-           #"-------------------------------------------------------------"
+           #"-------------------------------------------------"
             "```", inline=False)
         embed.add_field(name="**Note**", value="`M` stands for million/s, `k` stands for thousand/s\n"
                                                 "To purchase any item that doesn't have a command specified, dm <@598662722821029888>\n"
