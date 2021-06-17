@@ -152,7 +152,7 @@ class RussianRoulette(commands.Cog):
             except BalanceTooHigh as e:
                 await bank.set_balance(ctx.author, e.max_balance)
             await self.reset_game(ctx)
-            return await ctx.send("You can't play by youself. That's just suicide.\nGame reset and cost refunded.")
+            return await ctx.send("You can't play by youself. That's just like a Decent Lvl 11 guy playing against a LvL 10 with maxed ebarbs, balloon and wizard.\nGame reset and cost refunded.")
         chamber = await self.config.guild(ctx.guild).Chamber_Size()
 
         counter = 1
