@@ -71,7 +71,7 @@ class EmbedShop(commands.Cog):
         embed.add_field(name="Click here to see the full shop", value=f"<#381339305769041922>")
         await ctx.send(embed=embed)
 
-    @commands.command(name="es_minishop")
+    @commands.command(name="es_dsshop")
     async def es_dsshop(self, ctx):
         embed = discord.Embed(title="LeGeND Shop - Temporary discounted items",color=0x7289DA)
         embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/722551851891032134/853281697411629097/unknown.png")
@@ -83,6 +83,9 @@ class EmbedShop(commands.Cog):
             "x5 set loot chests:   4M    3M     2M\n"
             "Simple embed update:  5M    3M     1M\n"
             "Elite embed update:  10M    5M     5M\n"
+            "\n"
+            "Temporary item     Price"
+            "Adventure item       10M"
            #"-------------------------------------------------"
             "```", inline=False)
         embed.add_field(name="Note", value=f"Buying the discounted Elite will not give you a free additional item\nUsing the ")
