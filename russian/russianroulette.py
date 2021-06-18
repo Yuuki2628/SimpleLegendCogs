@@ -48,7 +48,7 @@ class RussianRoulette(commands.Cog):
         """
         settings = await self.config.guild(ctx.guild).all()
         if(bid is 0):
-            if(settings["Pot"] is 0):
+            if(settings["Session"]["Pot"] is 0):
                 bid = await self.config.guild(ctx.guild).MinCost()
                 await self.config.guild(ctx.guild).Cost.set(bid)
             else:
