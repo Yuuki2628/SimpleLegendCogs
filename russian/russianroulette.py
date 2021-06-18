@@ -135,7 +135,10 @@ class RussianRoulette(commands.Cog):
         else:
             await ctx.send("More players")
 
-        if (bal < cost) or (bal < mcost):
+        if bal < cost:
+            await ctx.send("Insufficient funds! This game requires at least {} {}.".format(settings["Cost"], currency))
+            return False
+        if bal < mcost:
             await ctx.send("Insufficient funds! This game requires at least {} {}.".format(settings["Cost"], currency))
             return False
         await bank.withdraw_credits(ctx.author, settings["Cost"])
