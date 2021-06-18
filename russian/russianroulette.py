@@ -36,7 +36,7 @@ class RussianRoulette(commands.Cog):
 
     @commands.guild_only()
     @commands.command()
-    async def russian(self, ctx, bid):
+    async def russian(self, ctx, bid = 0):
         """Start or join a game of russian roulette.
 
         The game will not start if no players have joined. That's just
@@ -112,9 +112,14 @@ class RussianRoulette(commands.Cog):
             await ctx.send("The roulette circle is full. Wait for this game to finish to join.")
             return False
 
-        num_players = await len(settings["Session"]["Players"])
+        async with self.config.guild(ctx.guild).Session.Players() as players:
+            num_players = len(players)
+
         if(num_players == 1):
-            await settings.Cost.set(bid)
+            if settings.Cost() > settings.MinCost():
+                await settings.Cost.set(bid)
+            else:
+                await settings.Cost.set(settings.MinCost())
 
         try:
             await bank.withdraw_credits(ctx.author, settings["Cost"])
