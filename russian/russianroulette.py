@@ -51,7 +51,7 @@ class RussianRoulette(commands.Cog):
             bid = settings.MinCost()
             await settings.Cost.set(bid)
         if await self.game_checks(ctx, settings, bid):
-            await self.add_player(ctx, bid)
+            await self.add_player(ctx, settings, bid)
 
     @commands.guild_only()
     @checks.admin_or_permissions(administrator=True)
@@ -130,8 +130,7 @@ class RussianRoulette(commands.Cog):
         else:
             return True
 
-    async def add_player(self, ctx, cost):
-        settings = await self.config.guild(ctx.guild).all()
+    async def add_player(self, ctx, settings, cost):
         current_pot = await self.config.guild(ctx.guild).Session.Pot()
         await self.config.guild(ctx.guild).Session.Pot.set(value=(current_pot + cost))
 
