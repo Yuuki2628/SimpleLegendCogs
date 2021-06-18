@@ -134,12 +134,12 @@ class RussianRoulette(commands.Cog):
 
         bal = await bank.get_balance(ctx.author)
 
-        if bal < settings["Cost"]:
+        if (bal < settings["Cost"]) | (bal < settings["MinCost"]):
             await ctx.send("Insufficient funds! This game requires at least {} {}.".format(settings["Cost"], currency))
             return False
         await bank.withdraw_credits(ctx.author, settings["Cost"])
         return True
-        
+
     async def add_player(self, ctx, cost):
         current_pot = await self.config.guild(ctx.guild).Session.Pot()
         await self.config.guild(ctx.guild).Session.Pot.set(value=(current_pot + cost))
