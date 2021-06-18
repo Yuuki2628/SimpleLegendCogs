@@ -121,10 +121,13 @@ class RussianRoulette(commands.Cog):
         if(num_players == 0):
             if bid > settings["MinCost"]:
                 await self.config.guild(ctx.guild).Cost.set(bid)
-                await ctx.send("i'm setting the bid using the bid")
+                price = settings["Cost"]
+                await ctx.send(f"I'm setting the bid using the bid\n{price}")
             else:
-                await self.config.guild(ctx.guild).Cost.set(settings["MinCost"])
-                await ctx.send("i'm setting the bid using the mincost")
+                mcost = settings["MinCost"]
+                await self.config.guild(ctx.guild).Cost.set(mcost)
+                price = settings["Cost"]
+                await ctx.send(f"i'm setting the bid using the mincost\n{price}")
             await ctx.send("One player")
         else:
             await ctx.send("More players")
