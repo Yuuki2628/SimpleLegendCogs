@@ -19,7 +19,8 @@ __author__ = "Redjumpman"
 
 class RussianRoulette(commands.Cog):
     defaults = {
-        "Cost": 50,
+        "MinCost": 99999,
+        "Cost": 0,
         "Chamber_Size": 6,
         "Wait_Time": 60,
         "Session": {"Pot": 0, "Players": [], "Active": False},
@@ -35,7 +36,7 @@ class RussianRoulette(commands.Cog):
 
     @commands.guild_only()
     @commands.command()
-    async def russian(self, ctx):
+    async def russian(self, ctx, bid):
         """Start or join a game of russian roulette.
 
         The game will not start if no players have joined. That's just
@@ -46,8 +47,11 @@ class RussianRoulette(commands.Cog):
         maximum number of players will be 6.
         """
         settings = await self.config.guild(ctx.guild).all()
-        if await self.game_checks(ctx, settings):
-            await self.add_player(ctx, settings["Cost"])
+        if(bid is None):
+            bid = settings.MinCost()
+            await settings.Cost.set(bid)
+        if await self.game_checks(ctx, settings, bid):
+            await self.add_player(ctx, bid)
 
     @commands.guild_only()
     @checks.admin_or_permissions(administrator=True)
@@ -82,7 +86,7 @@ class RussianRoulette(commands.Cog):
         """Sets the required cost to play."""
         if amount < 0:
             return await ctx.send("You are an idiot.")
-        await self.config.guild(ctx.guild).Cost.set(amount)
+        await self.config.guild(ctx.guild).MinCost.set(amount)
         currency = await bank.get_currency_name(ctx.guild)
         await ctx.send("Required cost to play set to {} {}.".format(amount, currency))
 
@@ -94,7 +98,7 @@ class RussianRoulette(commands.Cog):
         await self.config.guild(ctx.guild).Wait_Time.set(seconds)
         await ctx.send("The time before a roulette game starts is now {} seconds.".format(seconds))
 
-    async def game_checks(self, ctx, settings):
+    async def game_checks(self, ctx, settings, bid):
         if settings["Session"]["Active"]:
             with contextlib.suppress(discord.Forbidden):
                 await ctx.author.send("You cannot join or start a game of russian roulette while one is active.")
@@ -107,6 +111,10 @@ class RussianRoulette(commands.Cog):
         if len(settings["Session"]["Players"]) == settings["Chamber_Size"]:
             await ctx.send("The roulette circle is full. Wait for this game to finish to join.")
             return False
+
+        num_players = await len(settings["Session"]["Players"])
+        if(num_players == 1):
+            await settings.Cost.set(bid)
 
         try:
             await bank.withdraw_credits(ctx.author, settings["Cost"])
@@ -136,6 +144,7 @@ class RussianRoulette(commands.Cog):
                 f"The round will start in {wait} seconds. "
                 f"The bet is set to {cost}", allowed_mentions = allowed_mentions
             )
+            settings.Cost.set(cost)
             await asyncio.sleep(wait)
             await self.start_game(ctx)
         else:
