@@ -120,9 +120,9 @@ class RussianRoulette(commands.Cog):
 
         if(num_players == 1):
             if settings["Cost"] > settings["MinCost"]:
-                self.config.guild(ctx.guild).Cost.set(bid)
+                await self.config.guild(ctx.guild).Cost.set(bid)
             else:
-                self.config.guild(ctx.guild).Cost.set(settings["MinCost"])
+                await self.config.guild(ctx.guild).Cost.set(settings["MinCost"])
 
         try:
             await bank.withdraw_credits(ctx.author, settings["Cost"])
