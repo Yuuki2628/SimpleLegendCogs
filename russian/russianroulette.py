@@ -116,13 +116,18 @@ class RussianRoulette(commands.Cog):
             return False
 
         async with self.config.guild(ctx.guild).Session.Players() as players:
-            num_players = len(players) + 1
+            num_players = len(players)
 
-        if(num_players == 1):
+        if(num_players == 0):
             if bid > settings["MinCost"]:
                 await self.config.guild(ctx.guild).Cost.set(bid)
+                await ctx.send("i'm setting the bid using the bid")
             else:
                 await self.config.guild(ctx.guild).Cost.set(settings["MinCost"])
+                await ctx.send("i'm setting the bid using the mincost")
+            await ctx.send("One player")
+        else:
+            await ctx.send("More players")
 
         try:
             await bank.withdraw_credits(ctx.author, settings["Cost"])
