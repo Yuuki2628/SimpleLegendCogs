@@ -85,7 +85,7 @@ class EmbedShop(commands.Cog):
             "Elite embed update:  10M    5M     5M\n"
            #"-------------------------------------------------"
             "```", inline=False)
-        embed.add_field(name="Note", value=f"Buying the discounted Elite will not give you a free additional item\nUsing the ")
+        embed.add_field(name="Note", value=f"Buying the discounted Elite will not give you a free additional item")
         await ctx.send(embed=embed)    
 
     @commands.command(name="es_yuuki")
