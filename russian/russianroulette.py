@@ -119,7 +119,7 @@ class RussianRoulette(commands.Cog):
             num_players = len(players)
 
         bal = await bank.get_balance(ctx.author)
-        cost = settings["MinCost"]
+        cost = settings["Cost"]
         mcost = settings["MinCost"]
 
         if(num_players == 0):
@@ -133,7 +133,10 @@ class RussianRoulette(commands.Cog):
         if bal < cost:
             await ctx.send("Insufficient funds! This game requires at least {} credits.".format(settings["Cost"]))
             return False
-        await bank.withdraw_credits(ctx.author, cost)
+        if bal < mcost:
+            await ctx.send("Insufficient funds! This game requires at least {} credits.".format(settings["MinCost"]))
+            return False
+        await bank.withdraw_credits(ctx.author, settings["Cost"])
         return True
 
     async def add_player(self, ctx, cost):
