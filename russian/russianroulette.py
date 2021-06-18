@@ -118,8 +118,11 @@ class RussianRoulette(commands.Cog):
         async with self.config.guild(ctx.guild).Session.Players() as players:
             num_players = len(players)
 
+        bal = await bank.get_balance(ctx.author)
+        cost = settings["Cost"]
+        mcost = settings["MinCost"]
+
         if(num_players == 0):
-            mcost = settings["MinCost"]
             if bid > mcost:
                 await self.config.guild(ctx.guild).Cost.set(bid)
                 price = settings["Cost"]
@@ -132,9 +135,7 @@ class RussianRoulette(commands.Cog):
         else:
             await ctx.send("More players")
 
-        bal = await bank.get_balance(ctx.author)
-
-        if (bal < settings["Cost"]) | (bal < settings["MinCost"]):
+        if (bal < cost) or (bal < mcost):
             await ctx.send("Insufficient funds! This game requires at least {} {}.".format(settings["Cost"], currency))
             return False
         await bank.withdraw_credits(ctx.author, settings["Cost"])
