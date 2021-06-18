@@ -47,7 +47,7 @@ class RussianRoulette(commands.Cog):
         maximum number of players will be 6.
         """
         settings = await self.config.guild(ctx.guild).all()
-        if(bid is None):
+        if(bid is 0):
             bid = settings.MinCost()
             await settings.Cost.set(bid)
         if await self.game_checks(ctx, settings, bid):
