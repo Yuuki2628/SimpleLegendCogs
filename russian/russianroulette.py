@@ -119,7 +119,7 @@ class RussianRoulette(commands.Cog):
             num_players = len(players)
 
         bal = await bank.get_balance(ctx.author)
-        cost = settings["Cost"]
+        cost = bid
         mcost = settings["MinCost"]
 
         if(num_players == 0):
