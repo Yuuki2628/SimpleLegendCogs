@@ -135,11 +135,15 @@ class RussianRoulette(commands.Cog):
 
         allowed_mentions = discord.AllowedMentions(roles = True)
         rrole = discord.utils.get(ctx.guild.roles, name="Roulette")
+        if(rrole is None):
+            rusrole = ""
+        else:
+            rusrole = rrole.mention
 
         if num_players == 1:
             wait = await self.config.guild(ctx.guild).Wait_Time()
             await ctx.send(
-                f"{rrole.mention} {ctx.author.mention} is gathering players for a game of russian "
+                f"{rusrole} {ctx.author.mention} is gathering players for a game of russian "
                 f"roulette!\nType `{ctx.prefix}rr  or  {ctx.prefix}russian` to enter. "
                 f"The round will start in {wait} seconds. "
                 f"The bet is set to {cost}", allowed_mentions = allowed_mentions
