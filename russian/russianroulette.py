@@ -48,8 +48,11 @@ class RussianRoulette(commands.Cog):
         """
         settings = await self.config.guild(ctx.guild).all()
         if(bid is 0):
-            bid = settings["MinCost"]
-            settings["Cost"].set(bid)
+            if(settings["Pot"] is 0):
+                bid = await self.config.guild(ctx.guild).MinCost()
+                await self.config.guild(ctx.guild).Cost.set(bid)
+            else:
+                bid = await self.config.guild(ctx.guild).Cost()
         if await self.game_checks(ctx, settings, bid):
             await self.add_player(ctx, settings, bid)
 
@@ -117,7 +120,7 @@ class RussianRoulette(commands.Cog):
 
         if(num_players == 1):
             if settings["Cost"] > settings["MinCost"]:
-                settings["Cost"].set(bid)
+                self.config.guild(ctx.guild).Cost.set(bid)
             else:
                 settings["Cost"].set(settings["MinCost"])
 
