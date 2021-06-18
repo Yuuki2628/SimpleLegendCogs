@@ -83,9 +83,6 @@ class EmbedShop(commands.Cog):
             "x5 set loot chests:   4M    3M     2M\n"
             "Simple embed update:  5M    3M     1M\n"
             "Elite embed update:  10M    5M     5M\n"
-            "\n"
-            "Temporary item     Price"
-            "Adventure item       10M"
            #"-------------------------------------------------"
             "```", inline=False)
         embed.add_field(name="Note", value=f"Buying the discounted Elite will not give you a free additional item\nUsing the ")
