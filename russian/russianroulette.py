@@ -19,7 +19,7 @@ __author__ = "Redjumpman"
 
 class RussianRoulette(commands.Cog):
     defaults = {
-        "MinCost": 99999,
+        "MinCost": 100000,
         "Cost": 0,
         "Chamber_Size": 6,
         "Wait_Time": 60,
@@ -119,11 +119,10 @@ class RussianRoulette(commands.Cog):
             num_players = len(players)
 
         bal = await bank.get_balance(ctx.author)
-        cost = settings["Cost"]
         mcost = settings["MinCost"]
 
         if(num_players == 0):
-            if bid > mcost:
+            if bid >= mcost:
                 await self.config.guild(ctx.guild).Cost.set(bid)
                 price = settings["Cost"]
             else:
