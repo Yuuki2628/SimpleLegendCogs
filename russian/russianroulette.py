@@ -126,14 +126,9 @@ class RussianRoulette(commands.Cog):
             if bid > mcost:
                 await self.config.guild(ctx.guild).Cost.set(bid)
                 price = settings["Cost"]
-                await ctx.send(f"I'm setting the bid using the bid\n{price}")
             else:
                 await self.config.guild(ctx.guild).Cost.set(mcost)
                 price = settings["Cost"]
-                await ctx.send(f"i'm setting the bid using the mincost\n{price}")
-            await ctx.send("One player")
-        else:
-            await ctx.send("More players")
 
         if bal < cost:
             await ctx.send("Insufficient funds! This game requires at least {} credits.".format(settings["Cost"]))
