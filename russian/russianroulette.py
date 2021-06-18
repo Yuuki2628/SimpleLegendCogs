@@ -131,6 +131,7 @@ class RussianRoulette(commands.Cog):
             return True
 
     async def add_player(self, ctx, cost):
+        settings = await self.config.guild(ctx.guild).all()
         current_pot = await self.config.guild(ctx.guild).Session.Pot()
         await self.config.guild(ctx.guild).Session.Pot.set(value=(current_pot + cost))
 
