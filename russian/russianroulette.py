@@ -119,7 +119,7 @@ class RussianRoulette(commands.Cog):
             num_players = len(players) + 1
 
         if(num_players == 1):
-            if settings["Cost"] > settings["MinCost"]:
+            if bid > settings["MinCost"]:
                 await self.config.guild(ctx.guild).Cost.set(bid)
             else:
                 await self.config.guild(ctx.guild).Cost.set(settings["MinCost"])
