@@ -121,7 +121,7 @@ class EmbedShop(commands.Cog):
         ]
 
         embed0 = discord.Embed(title="Legend Art competition winners",color=0xFF0000)
-        embed0.add_field(name="Top 3",value="**1st place**\n[https://discordapp.com/users/297069502787485696/](Prafull Jadhav)\n\n**2nd place**\n[https://discordapp.com/users/309150039274422282/](Phantom)\n\n\**n3rd place**\n[https://discordapp.com/users/295275466703503372/](Yuuki)")
+        embed0.add_field(name="Top 3",value="**1st place**\n[Prafull Jadhav](https://discordapp.com/users/297069502787485696/)\n\n**2nd place**\n[Phantom](https://discordapp.com/users/309150039274422282/)\n\n**3rd place**\n[Yuuki](https://discordapp.com/users/295275466703503372/)")
 
         embed1 = discord.Embed(title="Prafull Jadhav",icon_url=avatars[0],color=0xFFD700)
         embed2 = discord.Embed(title="Phantom",icon_url=avatars[1],color=0xD3D3D3)
