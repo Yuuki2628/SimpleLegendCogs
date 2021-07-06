@@ -107,7 +107,7 @@ class EmbedShop(commands.Cog):
         embed.set_footer(text="")        
         await ctx.send(embed=embed)
 
-    @commands.command(name="es_yuuki")
+    @commands.command(name="es_artcontestwinners")
     async def es_artcontestwinners(self, ctx):
         embed0 = discord.Embed(title="Legend Art competition winners",color=0xFF0000)
         embed1 = discord.Embed(title="Prafull Jadhav",color=0xFFD700)
