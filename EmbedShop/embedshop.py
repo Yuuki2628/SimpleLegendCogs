@@ -142,7 +142,7 @@ class EmbedShop(commands.Cog):
 
         embed1.add_field(name="30 votes",value="Scenery")
         embed2.add_field(name="18 votes",value="Jean - Genshin Impact")
-        embed3.add_field(name="13 votes",value="Asuna - Sword Art Online")
+        embed3.add_field(name="13 votes",value="Asuna - S.A.O.")
 
         embed1.set_image(url=img[0])
         embed2.set_image(url=img[1])
