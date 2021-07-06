@@ -140,9 +140,9 @@ class EmbedShop(commands.Cog):
         embed2.set_thumbnail(url=avatars[1])
         embed3.set_thumbnail(url=avatars[2])
 
-        embed1.add_field(name="\u200b",value="Scenery")
-        embed2.add_field(name="\u200b",value="Jean - Genshin Impact")
-        embed3.add_field(name="\u200b",value="Asuna - Sword Art Online")
+        embed1.add_field(name="30 votes",value="Scenery")
+        embed2.add_field(name="18 votes",value="Jean - Genshin Impact")
+        embed3.add_field(name="13 votes",value="Asuna - Sword Art Online")
 
         embed1.set_image(url=img[0])
         embed2.set_image(url=img[1])
