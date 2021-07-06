@@ -106,3 +106,15 @@ class EmbedShop(commands.Cog):
         embed.add_field(name="**13th june 2021**", value="[[link] ](https://discord.com/channels/374596069989810176/374597952813137931/853616788256063498)Reached 100 rep points", inline=False)
         embed.set_footer(text="")        
         await ctx.send(embed=embed)
+
+    @commands.command(name="es_yuuki")
+    async def es_artcontestwinners(self, ctx):
+        embed0 = discord.Embed(title="Legend Art competition winners",color=0xFF0000)
+        embed1 = discord.Embed(title="Prafull Jadhav",color=0xFFD700)
+        embed2 = discord.Embed(title="Phantom",color=0xD3D3D3)
+        embed3 = discord.Embed(title="Yuuki",color=0xcd7f32)
+
+        embed0.set_image("https://cdn.discordapp.com/attachments/423094817371848716/860718528029786163/Screenshot_20210703-083350.jpg")
+
+
+        await ctx.send(embed=embed0)
