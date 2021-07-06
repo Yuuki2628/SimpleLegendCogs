@@ -129,9 +129,9 @@ class EmbedShop(commands.Cog):
         embed2.set_image(url=img[1])
         embed3.set_image(url=img[2])
 
-        embed1.set_thumbnail(url=avatar[0])
-        embed2.set_thumbnail(url=avatar[1])
-        embed3.set_thumbnail(url=avatar[2])
+        embed1.set_thumbnail(url=avatars[0])
+        embed2.set_thumbnail(url=avatars[1])
+        embed3.set_thumbnail(url=avatars[2])
 
         await ctx.send(embed=embed0)
         await ctx.send(embed=embed1)
