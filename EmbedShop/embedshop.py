@@ -109,12 +109,18 @@ class EmbedShop(commands.Cog):
 
     @commands.command(name="es_artcontestwinners")
     async def es_artcontestwinners(self, ctx):
+        img = [
+            "https://cdn.discordapp.com/attachments/423094817371848716/860718528029786163/Screenshot_20210703-083350.jpg",
+            "https://cdn.discordapp.com/attachments/423094817371848716/860714958432894986/IMG-20210703-WA0000.jpg",
+            "https://cdn.discordapp.com/attachments/423094817371848716/860715113555296256/asunaScan.jpg"
+        ]
+
         embed0 = discord.Embed(title="Legend Art competition winners",color=0xFF0000)
         embed1 = discord.Embed(title="Prafull Jadhav",color=0xFFD700)
         embed2 = discord.Embed(title="Phantom",color=0xD3D3D3)
         embed3 = discord.Embed(title="Yuuki",color=0xcd7f32)
 
-        embed0.set_image("https://cdn.discordapp.com/attachments/423094817371848716/860718528029786163/Screenshot_20210703-083350.jpg")
+        embed0.set_image(img[0])
 
 
         await ctx.send(embed=embed0)
