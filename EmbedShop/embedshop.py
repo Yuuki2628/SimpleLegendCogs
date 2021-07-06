@@ -114,6 +114,11 @@ class EmbedShop(commands.Cog):
             "https://cdn.discordapp.com/attachments/423094817371848716/860714958432894986/IMG-20210703-WA0000.jpg",
             "https://cdn.discordapp.com/attachments/423094817371848716/860715113555296256/asunaScan.jpg"
         ]
+        avatars = [
+            "https://cdn.discordapp.com/avatars/297069502787485696/189c24ff1e06f06c126f98c788da4bcd.png?size=4096",
+            "https://cdn.discordapp.com/avatars/309150039274422282/670d3b1fe819d9968764e300a78e8553.png?size=4096",
+            "https://cdn.discordapp.com/avatars/295275466703503372/39542c382bab33b851acd5f69ba138ea.png?size=4096"
+        ]
 
         embed0 = discord.Embed(title="Legend Art competition winners",color=0xFF0000)
         embed1 = discord.Embed(title="Prafull Jadhav",color=0xFFD700)
@@ -123,6 +128,10 @@ class EmbedShop(commands.Cog):
         embed1.set_image(url=img[0])
         embed2.set_image(url=img[1])
         embed3.set_image(url=img[2])
+
+        embed1.set_thumbnail(url=avatar[0])
+        embed2.set_thumbnail(url=avatar[1])
+        embed3.set_thumbnail(url=avatar[2])
 
         await ctx.send(embed=embed0)
         await ctx.send(embed=embed1)
