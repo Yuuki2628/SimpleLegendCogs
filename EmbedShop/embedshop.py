@@ -120,7 +120,12 @@ class EmbedShop(commands.Cog):
         embed2 = discord.Embed(title="Phantom",color=0xD3D3D3)
         embed3 = discord.Embed(title="Yuuki",color=0xcd7f32)
 
-        embed0.set_image(img[0])
-
+        embed1.set_image(url=img[0])
+        embed2.set_image(url=img[1])
+        embed3.set_image(url=img[2])
 
         await ctx.send(embed=embed0)
+        await ctx.send(embed=embed1)
+        await ctx.send(embed=embed2)
+        await ctx.send(embed=embed3)
+        
