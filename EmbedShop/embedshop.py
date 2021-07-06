@@ -119,17 +119,30 @@ class EmbedShop(commands.Cog):
             "https://cdn.discordapp.com/avatars/309150039274422282/670d3b1fe819d9968764e300a78e8553.png?size=4096",
             "https://cdn.discordapp.com/avatars/295275466703503372/39542c382bab33b851acd5f69ba138ea.png?size=4096"
         ]
+        winnersID = [
+            "https://discordapp.com/users/297069502787485696/",
+            "https://discordapp.com/users/309150039274422282/",
+            "https://discordapp.com/users/295275466703503372/"
+        ]
 
         embed0 = discord.Embed(title="Legend Art competition winners",color=0xFF0000)
-        embed0.add_field(name="Top 3",value="**1st place**\n[Prafull Jadhav](https://discordapp.com/users/297069502787485696/)\n\n**2nd place**\n[Phantom](https://discordapp.com/users/309150039274422282/)\n\n**3rd place**\n[Yuuki](https://discordapp.com/users/295275466703503372/)\n\n**[All the partecipant pictures](https://discord.com/channels/374596069989810176/423094817371848716/860714692879188008)**")
+        embed0.add_field(name="Top 3",value=f"**1st place**\n[Prafull Jadhav]({winnersID[0]})\n\n**2nd place**\n[Phantom]({winnersID[1]})\n\n**3rd place**\n[Yuuki]({winnersID[2]})\n\n**[All the partecipant pictures](https://discord.com/channels/374596069989810176/423094817371848716/860714692879188008)**")
 
         embed1 = discord.Embed(color=0xFFD700)
         embed2 = discord.Embed(color=0xD3D3D3)
         embed3 = discord.Embed(color=0xcd7f32)
 
-        embed1.set_author(name="Prafull Jadhav",icon_url=avatars[0])
-        embed2.set_author(name="Phantom",icon_url=avatars[1])
-        embed3.set_author(name="Yuuki",icon_url=avatars[2])
+        embed1.set_author(name="Prafull Jadhav",url=winnersID[0])
+        embed2.set_author(name="Phantom",url=winnersID[1])
+        embed3.set_author(name="Yuuki",url=winnersID[2])
+
+        embed1.set_thumbnail(url=avatars[0])
+        embed2.set_thumbnail(url=avatars[1])
+        embed3.set_thumbnail(url=avatars[2])
+
+        embed1.add_field(name="\u200b",value="Scenery")
+        embed2.add_field(name="\u200b",value="Jean - Genshin Impact")
+        embed3.add_field(name="\u200b",value="Asuna - Sword Art Online")
 
         embed1.set_image(url=img[0])
         embed2.set_image(url=img[1])
