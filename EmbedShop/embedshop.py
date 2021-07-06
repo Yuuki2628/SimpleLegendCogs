@@ -128,8 +128,8 @@ class EmbedShop(commands.Cog):
         embed3 = discord.Embed(color=0xcd7f32)
 
         embed1.set_author(name="Prafull Jadhav",icon_url=avatars[0])
-        embed1.set_author(name="Phantom",icon_url=avatars[1])
-        embed1.set_author(name="Yuuki",icon_url=avatars[2])
+        embed2.set_author(name="Phantom",icon_url=avatars[1])
+        embed3.set_author(name="Yuuki",icon_url=avatars[2])
 
         embed1.set_image(url=img[0])
         embed2.set_image(url=img[1])
