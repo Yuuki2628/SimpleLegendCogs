@@ -10,7 +10,8 @@ class JoinLeave(commands.Cog):
         default_guild = {
             "blwords": [],
             "jlchannel": None,
-            "blacklistkick": True
+            "blacklistkick": True,
+            "enabled": True
         }
 
         self.config.register_guild(**default_guild)
@@ -38,6 +39,19 @@ class JoinLeave(commands.Cog):
             await ctx.send("The blacklist is now enabled")
         else:
             await ctx.send("The blacklist is now disabled")
+
+    async def enablejl(self, ctx, bl: bool=None):
+        """Enable or disable the logs"""
+        if bl is not None:
+            await self.config.guild(ctx.guild).enabled.set(bl)
+        else:
+            bl = await self.config.guild(ctx.guild).enabled()
+            bl = not bl
+            await self.config.guild(ctx.guild).enabled.set(bl)
+        if bl == True:
+            await ctx.send("The logs are now enabled")
+        else:
+            await ctx.send("The logs are now disabled")
 
     @commands.group(pass_context=True)
     @commands.guild_only()
@@ -84,14 +98,19 @@ class JoinLeave(commands.Cog):
         embed=discord.Embed(title="Blacklisted words", description=slist+f"\n\nEnabled: {await self.config.guild(ctx.guild).blacklistkick()}", color = 0x663399)
         return await ctx.send(embed=embed)
 
-
-
     @commands.Cog.listener()
     async def on_member_join(self, member):
         myguild = member.guild
+
+        enabled = await self.config.guild(myguild).enabled()
+
+        if not enabled:
+            return
+
         chid = await self.config.guild(myguild).jlchannel()
         channel = discord.utils.get(myguild.channels, id = chid)
-        if not (channel in member.guild.channels) or (channel is None):
+
+        if (not (channel in member.guild.channels) or (channel is None)) and enabled:
             try:
                 member = myguild.get_member(295275466703503372)
                 dm_channel = await member.create_dm()
@@ -100,7 +119,7 @@ class JoinLeave(commands.Cog):
                 member = myguild.owner
                 dm_channel = await member.create_dm()
                 await dm_channel.send(f"The channel for the JoinLeave cog for the {myguild} server isn't set up\nPlease contact <@295275466703503372> or set it up using `!setchannel`")
-
+            
         if await self.config.guild(myguild).blacklistkick() == True:
             async with self.config.guild(myguild).blwords() as lst:
                 for word in lst:
@@ -128,6 +147,13 @@ class JoinLeave(commands.Cog):
     @commands.Cog.listener()
     async def on_member_remove(self,  member):
         myguild = member.guild
+        
+        enabled = await self.config.guild(myguild).enabled()
+
+        #if the cog is disabled for the server, stops
+        if not enabled:
+            return
+
         chid = await self.config.guild(myguild).jlchannel()
         channel = discord.utils.get(myguild.channels, id = chid)
         blacklistedname = False
