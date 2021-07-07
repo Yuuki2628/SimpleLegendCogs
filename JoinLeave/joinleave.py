@@ -118,7 +118,7 @@ class JoinLeave(commands.Cog):
             except:
                 member = myguild.owner
                 dm_channel = await member.create_dm()
-                await dm_channel.send(f"The channel for the JoinLeave cog for the {myguild} server isn't set up\nPlease contact <@295275466703503372> or set it up using `!setchannel`")
+                await dm_channel.send(f"The channel for the JoinLeave cog for the {myguild} server isn't set up\nPlease contact <@295275466703503372> or set it up using `!setchannel` or disable the cog for this server using `!enablejl`")
             
         if await self.config.guild(myguild).blacklistkick() == True:
             async with self.config.guild(myguild).blwords() as lst:
