@@ -39,7 +39,9 @@ class JoinLeave(commands.Cog):
             await ctx.send("The blacklist is now enabled")
         else:
             await ctx.send("The blacklist is now disabled")
-
+            
+    @commands.command()
+    @commands.guild_only()
     async def enablejl(self, ctx, bl: bool=None):
         """Enable or disable the logs"""
         if bl is not None:
