@@ -113,8 +113,8 @@ class EmbedShop(commands.Cog):
     @commands.command(name="es_artcontests")
     async def es_artcontests(self,ctx):
         embed=discord.Embed(title="Legend Art competitions",color=0x5C4399)
-        embed.add_field(name="First competition, Theme: `digital art`", value="[[link]](https://discord.com/channels/374596069989810176/423094817371848716/860714613312847873)")
-        embed.add_field(name="Second competition, Theme: `thumbnail`", value="[[link]](https://discord.com/channels/374596069989810176/423094817371848716/875936443980214352)")
+        embed.add_field(name="First competition", value="Theme: `digital art`\n[[link]](https://discord.com/channels/374596069989810176/423094817371848716/860714613312847873)",inline=false)
+        embed.add_field(name="Second competition", value="Theme: `thumbnail`\n[[link]](https://discord.com/channels/374596069989810176/423094817371848716/875936443980214352)",inline=false)
         await ctx.send(embed=embed)
 
     @commands.command(name="es_artcontestwinners1")
@@ -135,9 +135,9 @@ class EmbedShop(commands.Cog):
             winner3.avatar_url
         ]
         winners = [
-            "Prafull Jadhav",
-            "Phantom",
-            "Yuuki"
+            winner1.get_member,
+            winner2.get_member,
+            winner3.get_member
         ]
         winnersID = [
             winner1.id,
@@ -187,9 +187,9 @@ class EmbedShop(commands.Cog):
             winner3.avatar_url
         ]
         winners = [
-            "Fyn8",
-            "Ha§nain",
-            "Burning Rocker"
+            winner1.get_member,
+            winner2.get_member,
+            winner3.get_member
         ]
         winnersID = [
             winner1.id,
