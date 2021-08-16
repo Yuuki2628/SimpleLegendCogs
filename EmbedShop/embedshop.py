@@ -120,6 +120,12 @@ class EmbedShop(commands.Cog):
             "https://cdn.discordapp.com/avatars/309150039274422282/670d3b1fe819d9968764e300a78e8553.png?size=4096",
             "https://cdn.discordapp.com/avatars/295275466703503372/39542c382bab33b851acd5f69ba138ea.png?size=4096"
         ]
+        winners = [
+            "Prafull Jadhav",
+            "Phantom",
+            "Yuuki"
+        ]
+
         winnersID = [
             "https://discordapp.com/users/297069502787485696/",
             "https://discordapp.com/users/309150039274422282/",
@@ -127,11 +133,11 @@ class EmbedShop(commands.Cog):
         ]
 
         embed0 = discord.Embed(title="Legend Art competition winners",color=0x5C4399)
-        embed0.add_field(name="Top 3",value=f"**1st place**\n[Prafull Jadhav]({winnersID[0]})\n\n**2nd place**\n[Phantom]({winnersID[1]})\n\n**3rd place**\n[Yuuki]({winnersID[2]})\n\n**[All the partecipants pictures](https://discord.com/channels/374596069989810176/423094817371848716/860714692879188008)**")
+        embed0.add_field(name="Top 3",value=f"**1st place**\n[{winners[0]}]({winnersID[0]})\n\n**2nd place**\n[{winners[1]}]({winnersID[1]})\n\n**3rd place**\n[{winners[2]}]({winnersID[2]})\n\n**[All the partecipants pictures](https://discord.com/channels/374596069989810176/423094817371848716/875936443980214352)**")
 
-        embed1 = discord.Embed(title="Prafull Jadhav", url=winnersID[0], color=0xFFD700)
-        embed2 = discord.Embed(title="Phantom", url=winnersID[1], color=0xD3D3D3)
-        embed3 = discord.Embed(title="Yuuki", url=winnersID[2], color=0xcd7f32)
+        embed1 = discord.Embed(title={winners[0]}, url=winnersID[0], color=0xFFD700)
+        embed2 = discord.Embed(title={winners[1]}, url=winnersID[1], color=0xD3D3D3)
+        embed3 = discord.Embed(title={winners[2]}, url=winnersID[2], color=0xcd7f32)
 
         embed1.set_thumbnail(url=avatars[0])
         embed2.set_thumbnail(url=avatars[1])
@@ -152,7 +158,7 @@ class EmbedShop(commands.Cog):
 
     @commands.command(name="es_artcontestwinners2")
     async def es_artcontestwinners2(self, ctx):
-        #winners: 
+        #winners: Fyn8, Ha§nain, Burning Rocker
         img = [
             "https://cdn.discordapp.com/attachments/423094817371848716/875936637375381555/ks_thumbnail_2.png",
             "https://cdn.discordapp.com/attachments/423094817371848716/875936551761240084/20210806_181622.png",
@@ -163,6 +169,11 @@ class EmbedShop(commands.Cog):
             "https://cdn.discordapp.com/avatars/809814468422664233/1e24483213b0cb9d75e298547027463c.png?size=4096",
             "https://cdn.discordapp.com/avatars/740113949504045097/3e95b3d1f4331a52d1719c7983f7c378.png?size=4096"
         ]
+        winners = [
+            "Fyn8",
+            "Ha§nain",
+            "Burning Rocker"
+        ]
         winnersID = [
             "https://discordapp.com/users/550785477884510208/",
             "https://discordapp.com/users/809814468422664233/",
@@ -170,11 +181,11 @@ class EmbedShop(commands.Cog):
         ]
 
         embed0 = discord.Embed(title="Legend Art competition winners",color=0x5C4399)
-        embed0.add_field(name="Top 3",value=f"**1st place**\n[Prafull Jadhav]({winnersID[0]})\n\n**2nd place**\n[Phantom]({winnersID[1]})\n\n**3rd place**\n[Yuuki]({winnersID[2]})\n\n**[All the partecipants pictures](https://discord.com/channels/374596069989810176/423094817371848716/860714692879188008)**")
+        embed0.add_field(name="Top 3",value=f"**1st place**\n[{winners[0]}]({winnersID[0]})\n\n**2nd place**\n[{winners[1]}]({winnersID[1]})\n\n**3rd place**\n[{winners[2]}]({winnersID[2]})\n\n**[All the partecipants pictures](https://discord.com/channels/374596069989810176/423094817371848716/875936443980214352)**")
 
-        embed1 = discord.Embed(title="Prafull Jadhav", url=winnersID[0], color=0xFFD700)
-        embed2 = discord.Embed(title="Phantom", url=winnersID[1], color=0xD3D3D3)
-        embed3 = discord.Embed(title="Yuuki", url=winnersID[2], color=0xcd7f32)
+        embed1 = discord.Embed(title={winners[0]}, url=winnersID[0], color=0xFFD700)
+        embed2 = discord.Embed(title={winners[1]}, url=winnersID[1], color=0xD3D3D3)
+        embed3 = discord.Embed(title={winners[2]}, url=winnersID[2], color=0xcd7f32)
 
         embed1.set_thumbnail(url=avatars[0])
         embed2.set_thumbnail(url=avatars[1])
