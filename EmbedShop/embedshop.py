@@ -138,9 +138,9 @@ class EmbedShop(commands.Cog):
         embed0 = discord.Embed(title="Legend Art competition winners",color=0x5C4399)
         embed0.add_field(name="Top 3",value=f"**1st place**\n[{winners[0]}]({winnersID[0]})\n\n**2nd place**\n[{winners[1]}]({winnersID[1]})\n\n**3rd place**\n[{winners[2]}]({winnersID[2]})\n\n**[All the partecipants pictures](https://discord.com/channels/374596069989810176/423094817371848716/875936443980214352)**")
 
-        embed1 = discord.Embed(title=winners[0], url=winnersID[0], color=0xFFD700)
-        embed2 = discord.Embed(title=winners[1], url=winnersID[1], color=0xD3D3D3)
-        embed3 = discord.Embed(title=winners[2], url=winnersID[2], color=0xcd7f32)
+        embed1 = discord.Embed(title=winners[0], url="https://discordapp.com/users/{winnersID[0]}/", color=0xFFD700)
+        embed2 = discord.Embed(title=winners[1], url="https://discordapp.com/users/{winnersID[1]}/", color=0xD3D3D3)
+        embed3 = discord.Embed(title=winners[2], url="https://discordapp.com/users/{winnersID[2]}/", color=0xcd7f32)
 
         embed1.set_thumbnail(url=avatars[0])
         embed2.set_thumbnail(url=avatars[1])
