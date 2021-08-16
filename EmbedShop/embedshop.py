@@ -107,8 +107,9 @@ class EmbedShop(commands.Cog):
         embed.set_footer(text="")        
         await ctx.send(embed=embed)
 
-    @commands.command(name="es_artcontestwinners")
-    async def es_artcontestwinners(self, ctx):
+    @commands.command(name="es_artcontestwinners1")
+    async def es_artcontestwinners1(self, ctx):
+        #winners: Prafull Jadhav, Phantom, Yuuki
         img = [
             "https://cdn.discordapp.com/attachments/423094817371848716/860718528029786163/Screenshot_20210703-083350.jpg",
             "https://cdn.discordapp.com/attachments/423094817371848716/860714958432894986/IMG-20210703-WA0000.jpg",
@@ -139,6 +140,49 @@ class EmbedShop(commands.Cog):
         embed1.add_field(name="30 votes",value="Scenery")
         embed2.add_field(name="18 votes",value="Jean\nGenshin Impact")
         embed3.add_field(name="13 votes",value="Asuna\nSword Art Online")
+
+        embed1.set_image(url=img[0])
+        embed2.set_image(url=img[1])
+        embed3.set_image(url=img[2])
+
+        await ctx.send(embed=embed0)
+        await ctx.send(embed=embed1)
+        await ctx.send(embed=embed2)
+        await ctx.send(embed=embed3)
+
+    @commands.command(name="es_artcontestwinners2")
+    async def es_artcontestwinners2(self, ctx):
+        #winners: 
+        img = [
+            "https://cdn.discordapp.com/attachments/423094817371848716/875936637375381555/ks_thumbnail_2.png",
+            "https://cdn.discordapp.com/attachments/423094817371848716/875936551761240084/20210806_181622.png",
+            "https://cdn.discordapp.com/attachments/423094817371848716/875936610456326154/image0-1.png"
+            ]
+        avatars = [
+            "https://cdn.discordapp.com/avatars/550785477884510208/a01290b3e694c51cb32df127fef80a0e.png?size=4096",
+            "https://cdn.discordapp.com/avatars/809814468422664233/1e24483213b0cb9d75e298547027463c.png?size=4096",
+            "https://cdn.discordapp.com/avatars/740113949504045097/3e95b3d1f4331a52d1719c7983f7c378.png?size=4096"
+        ]
+        winnersID = [
+            "https://discordapp.com/users/550785477884510208/",
+            "https://discordapp.com/users/809814468422664233/",
+            "https://discordapp.com/users/740113949504045097/"
+        ]
+
+        embed0 = discord.Embed(title="Legend Art competition winners",color=0x5C4399)
+        embed0.add_field(name="Top 3",value=f"**1st place**\n[Prafull Jadhav]({winnersID[0]})\n\n**2nd place**\n[Phantom]({winnersID[1]})\n\n**3rd place**\n[Yuuki]({winnersID[2]})\n\n**[All the partecipants pictures](https://discord.com/channels/374596069989810176/423094817371848716/860714692879188008)**")
+
+        embed1 = discord.Embed(title="Prafull Jadhav", url=winnersID[0], color=0xFFD700)
+        embed2 = discord.Embed(title="Phantom", url=winnersID[1], color=0xD3D3D3)
+        embed3 = discord.Embed(title="Yuuki", url=winnersID[2], color=0xcd7f32)
+
+        embed1.set_thumbnail(url=avatars[0])
+        embed2.set_thumbnail(url=avatars[1])
+        embed3.set_thumbnail(url=avatars[2])
+
+        embed1.add_field(name="30 votes",value="Noobcraft: episode 69 - Raiding bastions like a noob")
+        embed2.add_field(name="16 votes",value="Ranked games with Legend family members")
+        embed3.add_field(name="14 votes",value="LeGeND Gaming Family")
 
         embed1.set_image(url=img[0])
         embed2.set_image(url=img[1])
