@@ -107,6 +107,16 @@ class EmbedShop(commands.Cog):
         embed.set_footer(text="")        
         await ctx.send(embed=embed)
 
+
+
+
+    @commands.command(name="es_artcontests")
+    async def es_artcontests(self,ctx):
+        embed=discord.Embed(title="Legend Art competitions",color=0x5C4399)
+        embed.add_field(name="First competition, Theme: `digital art`", value="[[link]](https://discord.com/channels/374596069989810176/423094817371848716/860714613312847873)")
+        embed.add_field(name="Second competition, Theme: `thumbnail`", value="[[link]](https://discord.com/channels/374596069989810176/423094817371848716/875936443980214352)")
+        await ctx.send(embed=embed)
+
     @commands.command(name="es_artcontestwinners1")
     async def es_artcontestwinners1(self, ctx):
         #winners: Prafull Jadhav, Phantom, Yuuki
@@ -136,11 +146,11 @@ class EmbedShop(commands.Cog):
         ]
 
         embed0 = discord.Embed(title="Legend Art competition winners",color=0x5C4399)
-        embed0.add_field(name="Top 3",value=f"**1st place**\n[{winners[0]}]({winnersID[0]})\n\n**2nd place**\n[{winners[1]}]({winnersID[1]})\n\n**3rd place**\n[{winners[2]}]({winnersID[2]})\n\n**[All the partecipants pictures](https://discord.com/channels/374596069989810176/423094817371848716/875936443980214352)**")
+        embed0.add_field(name="Top 3",value=f"**1st place**\n[{winners[0]}](https://discordapp.com/users/{winnersID[0]})\n\n**2nd place**\n[{winners[1]}](https://discordapp.com/users/{winnersID[1]})\n\n**3rd place**\n[{winners[2]}](https://discordapp.com/users/{winnersID[2]})\n\n**[All the partecipants pictures](https://discord.com/channels/374596069989810176/423094817371848716/860714613312847873)**")
 
-        embed1 = discord.Embed(title=winners[0], url="https://discordapp.com/users/{winnersID[0]}/", color=0xFFD700)
-        embed2 = discord.Embed(title=winners[1], url="https://discordapp.com/users/{winnersID[1]}/", color=0xD3D3D3)
-        embed3 = discord.Embed(title=winners[2], url="https://discordapp.com/users/{winnersID[2]}/", color=0xcd7f32)
+        embed1 = discord.Embed(title=winners[0], url=f"https://discordapp.com/users/{winnersID[0]}/", color=0xFFD700)
+        embed2 = discord.Embed(title=winners[1], url=f"https://discordapp.com/users/{winnersID[1]}/", color=0xD3D3D3)
+        embed3 = discord.Embed(title=winners[2], url=f"https://discordapp.com/users/{winnersID[2]}/", color=0xcd7f32)
 
         embed1.set_thumbnail(url=avatars[0])
         embed2.set_thumbnail(url=avatars[1])
@@ -188,11 +198,11 @@ class EmbedShop(commands.Cog):
         ]
 
         embed0 = discord.Embed(title="Legend Art competition winners",color=0x5C4399)
-        embed0.add_field(name="Top 3",value=f"**1st place**\n[{winners[0]}]({winnersID[0]})\n\n**2nd place**\n[{winners[1]}]({winnersID[1]})\n\n**3rd place**\n[{winners[2]}]({winnersID[2]})\n\n**[All the partecipants pictures](https://discord.com/channels/374596069989810176/423094817371848716/875936443980214352)**")
+        embed0.add_field(name="Top 3",value=f"**1st place**\n[{winners[0]}](https://discordapp.com/users/{winnersID[0]})\n\n**2nd place**\n[{winners[1]}](https://discordapp.com/users/{winnersID[1]})\n\n**3rd place**\n[{winners[2]}](https://discordapp.com/users/{winnersID[2]})\n\n**[All the partecipants pictures](https://discord.com/channels/374596069989810176/423094817371848716/875936443980214352)**")
 
-        embed1 = discord.Embed(title=winners[0], url="https://discordapp.com/users/{winnersID[0]}/", color=0xFFD700)
-        embed2 = discord.Embed(title=winners[1], url="https://discordapp.com/users/{winnersID[1]}/", color=0xD3D3D3)
-        embed3 = discord.Embed(title=winners[2], url="https://discordapp.com/users/{winnersID[2]}/", color=0xcd7f32)
+        embed1 = discord.Embed(title=winners[0], url=f"https://discordapp.com/users/{winnersID[0]}/", color=0xFFD700)
+        embed2 = discord.Embed(title=winners[1], url=f"https://discordapp.com/users/{winnersID[1]}/", color=0xD3D3D3)
+        embed3 = discord.Embed(title=winners[2], url=f"https://discordapp.com/users/{winnersID[2]}/", color=0xcd7f32)
 
         embed1.set_thumbnail(url=avatars[0])
         embed2.set_thumbnail(url=avatars[1])
