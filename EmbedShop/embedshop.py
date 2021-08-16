@@ -135,9 +135,9 @@ class EmbedShop(commands.Cog):
             winner3.avatar_url
         ]
         winners = [
-            winner1.get_member,
-            winner2.get_member,
-            winner3.get_member
+            "Prafull Jadhav",
+            "Phantom",
+            "Yuuki"
         ]
         winnersID = [
             winner1.id,
@@ -187,9 +187,9 @@ class EmbedShop(commands.Cog):
             winner3.avatar_url
         ]
         winners = [
-            winner1.get_member,
-            winner2.get_member,
-            winner3.get_member
+            "Fyn8",
+            "Ha§nain",
+            "Burning Rocker"
         ]
         winnersID = [
             winner1.id,
