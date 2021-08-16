@@ -110,26 +110,29 @@ class EmbedShop(commands.Cog):
     @commands.command(name="es_artcontestwinners1")
     async def es_artcontestwinners1(self, ctx):
         #winners: Prafull Jadhav, Phantom, Yuuki
+        winner1 = ctx.guild.get_member(297069502787485696)
+        winner2 = ctx.guild.get_member(309150039274422282)
+        winner3 = ctx.guild.get_member(295275466703503372)
+
         img = [
             "https://cdn.discordapp.com/attachments/423094817371848716/860718528029786163/Screenshot_20210703-083350.jpg",
             "https://cdn.discordapp.com/attachments/423094817371848716/860714958432894986/IMG-20210703-WA0000.jpg",
             "https://cdn.discordapp.com/attachments/423094817371848716/860715113555296256/asunaScan.jpg"
         ]
         avatars = [
-            "https://cdn.discordapp.com/avatars/297069502787485696/189c24ff1e06f06c126f98c788da4bcd.png?size=4096",
-            "https://cdn.discordapp.com/avatars/309150039274422282/670d3b1fe819d9968764e300a78e8553.png?size=4096",
-            "https://cdn.discordapp.com/avatars/295275466703503372/39542c382bab33b851acd5f69ba138ea.png?size=4096"
+            winner1.avatar_url,
+            winner2.avatar_url,
+            winner3.avatar_url
         ]
         winners = [
             "Prafull Jadhav",
             "Phantom",
             "Yuuki"
         ]
-
         winnersID = [
-            "https://discordapp.com/users/297069502787485696/",
-            "https://discordapp.com/users/309150039274422282/",
-            "https://discordapp.com/users/295275466703503372/"
+            winner1.id,
+            winner2.id,
+            winner3.id
         ]
 
         embed0 = discord.Embed(title="Legend Art competition winners",color=0x5C4399)
@@ -159,15 +162,19 @@ class EmbedShop(commands.Cog):
     @commands.command(name="es_artcontestwinners2")
     async def es_artcontestwinners2(self, ctx):
         #winners: Fyn8, Ha§nain, Burning Rocker
+        winner1 = ctx.guild.get_member(550785477884510208)
+        winner2 = ctx.guild.get_member(809814468422664233)
+        winner3 = ctx.guild.get_member(740113949504045097)
+
         img = [
             "https://cdn.discordapp.com/attachments/423094817371848716/875936637375381555/ks_thumbnail_2.png",
             "https://cdn.discordapp.com/attachments/423094817371848716/875936551761240084/20210806_181622.png",
             "https://cdn.discordapp.com/attachments/423094817371848716/875936610456326154/image0-1.png"
             ]
         avatars = [
-            "https://cdn.discordapp.com/avatars/550785477884510208/a01290b3e694c51cb32df127fef80a0e.png?size=4096",
-            "https://cdn.discordapp.com/avatars/809814468422664233/1e24483213b0cb9d75e298547027463c.png?size=4096",
-            "https://cdn.discordapp.com/avatars/740113949504045097/3e95b3d1f4331a52d1719c7983f7c378.png?size=4096"
+            winner1.avatar_url,
+            winner2.avatar_url,
+            winner3.avatar_url
         ]
         winners = [
             "Fyn8",
@@ -175,9 +182,9 @@ class EmbedShop(commands.Cog):
             "Burning Rocker"
         ]
         winnersID = [
-            "https://discordapp.com/users/550785477884510208/",
-            "https://discordapp.com/users/809814468422664233/",
-            "https://discordapp.com/users/740113949504045097/"
+            winner1.id,
+            winner2.id,
+            winner3.id
         ]
 
         embed0 = discord.Embed(title="Legend Art competition winners",color=0x5C4399)
