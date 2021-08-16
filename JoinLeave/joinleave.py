@@ -50,10 +50,10 @@ class JoinLeave(commands.Cog):
             bl = await self.config.guild(ctx.guild).enabled()
             bl = not bl
             await self.config.guild(ctx.guild).enabled.set(bl)
-        if bl == True:
-            await ctx.send("The logs are now enabled")
+        if bl == true:
+            await ctx.send("Logs are now enabled")
         else:
-            await ctx.send("The logs are now disabled")
+            await ctx.send("Logs are now disabled")
 
     @commands.group(pass_context=True)
     @commands.guild_only()
