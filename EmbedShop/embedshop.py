@@ -96,8 +96,8 @@ class EmbedShop(commands.Cog):
     @commands.command(name="es_artcontests")
     async def es_artcontests(self,ctx):
         embed=discord.Embed(title="Legend Art competitions",color=0x5C4399)
-        embed.add_field(name="First competition", value="Theme: `digital art`\n[[link]](https://discord.com/channels/374596069989810176/423094817371848716/860714613312847873)",inline=False)
-        embed.add_field(name="Second competition", value="Theme: `thumbnail`\n[[link]](https://discord.com/channels/374596069989810176/423094817371848716/875936443980214352)",inline=False)
+        embed.add_field(name="First competition", value="Theme: `digital art`\n[[link]](https://discord.com/channels/374596069989810176/423094817371848716/860714613312847873)\nCommand: `!art1`",inline=False)
+        embed.add_field(name="Second competition", value="Theme: `thumbnail`\n[[link]](https://discord.com/channels/374596069989810176/423094817371848716/875936443980214352)\nCommand: `!art2`",inline=False)
         await ctx.send(embed=embed)
 
     @commands.command(name="es_artcontestwinners1")
