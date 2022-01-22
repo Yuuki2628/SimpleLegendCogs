@@ -28,44 +28,53 @@ class EmbedShop(commands.Cog):
         embed.add_field(name="**__NEW EMBED UPDATE__**", value="Do you want to make your custom commands look unique and special? Look no further, we (I) are proud to introduce the Embed update.\nThere are 2 different embed updates available for purchase:", inline=False)
         embed.add_field(name="Embed update__", value="Turn your command into a simple embed (no links or pictures).", inline=False)
         embed.add_field(name="__Elite Embed update__", value="The simple update isn't enought for you? You can add links, picture and other cool stuff to you embed with this powerful update.\nThe Elite Embed update lets you personalize your embed command almost as you wish.\n||The result will be similar to the shop, the roles or the rules embed.||", inline=False)
-        embed.add_field(name="**Items prices**", value="```\n"
-            "Item name          Price  Elite  Cmd/Req\n"
-            "Emoji flair:        200k      ~  ~            \n"
-            "Custom background:  800k      ~  ~            \n"
-            "Custom command:     500k      ~  ~            \n"
-            "Rare:               1,5M      ~  !buyrare     \n"
-            "Epic:               3,5M      ~  !buyepic     \n"
-            "Legendary:           10M      ~  !buylegendary\n"
-            "Elite:               35M      ~  !buyelite    \n"
-            "Custom adv boss:     10M     5M  LeGeNDary    \n"
-            "x5 set loot chests:   4M     2M  LeGeNDary    \n"
-            "Simple embed update:  5M     2M  LeGeNDary    \n"
-            "Elite embed update:  10M    10M  Elite        \n"
+        embed.add_field(name="**Items**", value="```\n"
+            "Item name          Price   Commands     \n"
+            "Emoji flair:        200k   ~            \n"
+            "Custom background:  800k   ~            \n"
+            "Custom command:     500k   ~            \n"
+            "Rare:               1,5M   !buyrare     \n"
+            "Epic:               3,5M   !buyepic     \n"
+            "Legendary:           10M   !buylegendary\n"
+            "Elite:               35M   !buyelite    \n"
            #"-------------------------------------------------"
             "```", inline=False)
+        embed.add_field(name="**Legendary Items**", value="```\n"
+            "Item name               Price  Elite  \n"
+            "Custom adventure boss:    10M     5M  \n"
+            "x5 set loot chests:        5M   2.5M  \n"
+            "Simple embed update:       5M     1M  \n"
+            "Elite embed update:       25M    10M  \n"
+           #"-------------------------------------------------"
+            "```", inline=False)
+
         embed.add_field(name="**Note**", value="`M` stands for million/s, `k` stands for thousand/s\n"
                                                 "To purchase any item that doesn't have a command specified, dm <@598662722821029888>\n"
                                                 "<@&815958379624529931> and <@&815958696982872075> are equivalent regarding shop purchases\n"
-                                                "When buying <@&815958696982872075> you will receive an additional item of choise for free")
+                                                "When buying <@&815958696982872075> you will receive a legendary item of choise for free")
         await ctx.send(embed=embed)
     
     @commands.command(name="es_minishop")
     async def es_minishop(self, ctx):
         embed = discord.Embed(title="LeGeND Shop",color=0x7289DA)
         embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/722551851891032134/853281697411629097/unknown.png")
-        embed.add_field(name="**Items prices**", value="```\n"
-            "Item name          Price  Elite  Cmd/Req\n"
-            "Emoji flair:        200k      ~  ~            \n"
-            "Custom background:  800k      ~  ~            \n"
-            "Custom command:     500k      ~  ~            \n"
-            "Rare:               1,5M      ~  !buyrare     \n"
-            "Epic:               3,5M      ~  !buyepic     \n"
-            "Legendary:           10M      ~  !buylegendary\n"
-            "Elite:               35M      ~  !buyelite    \n"
-            "Custom adv boss:     10M     5M  LeGeNDary    \n"
-            "x5 set loot chests:   4M     2M  LeGeNDary    \n"
-            "Simple embed update:  5M     2M  LeGeNDary    \n"
-            "Elite embed update:  10M    10M  Elite        \n"
+        embed.add_field(name="**Items**", value="```\n"
+            "Item name          Price   Commands     \n"
+            "Emoji flair:        200k   ~            \n"
+            "Custom background:  800k   ~            \n"
+            "Custom command:     500k   ~            \n"
+            "Rare:               1,5M   !buyrare     \n"
+            "Epic:               3,5M   !buyepic     \n"
+            "Legendary:           10M   !buylegendary\n"
+            "Elite:               35M   !buyelite    \n"
+           #"-------------------------------------------------"
+            "```", inline=False)
+        embed.add_field(name="**Legendary Items**", value="```\n"
+            "Item name          Price  Elite  \n"
+            "Custom adv boss:     10M     5M  \n"
+            "x5 set loot chests:   4M     2M  \n"
+            "Simple embed update:  5M     2M  \n"
+            "Elite embed update:  10M    10M  \n"
            #"-------------------------------------------------"
             "```", inline=False)
         embed.add_field(name="Click here to see the full shop", value=f"<#381339305769041922>")
