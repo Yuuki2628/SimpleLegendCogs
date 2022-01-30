@@ -55,6 +55,7 @@ class Roleplay(BaseCog):
                 "https://tenor.com/view/anime-happy-girl-hug-shocked-gif-15788552",
                 "https://media.giphy.com/media/lrr9rHuoJOE0w/giphy.gif",
                 "https://c.tenor.com/QLOZ4PqNz2sAAAAC/anime-slap.gif",
+                "https://cdn-live.warthunder.com/uploads/5f/8f903f513e363b978150babb9297f4be9c90d8_mq/tumblr_n8wr8siAyx1qa94xto2_500.gif",
             ],
             "cuddle": [
                 "https://cdn.weeb.sh/images/BkTe8U7v-.gif",
@@ -137,7 +138,6 @@ class Roleplay(BaseCog):
                 "https://cdn.weeb.sh/images/SJ-CQytvW.gif",
                 "https://i.gifer.com/9OQv.gif",
             ],
-            #done so far ^
             "pat": [
                 "https://cdn.weeb.sh/images/r180y1Yvb.gif",
                 "http://i.imgur.com/10VrpFZ.gif",
@@ -162,7 +162,6 @@ class Roleplay(BaseCog):
                 "https://cdn.weeb.sh/images/r1AsJ1twZ.gif",
                 "https://cdn.weeb.sh/images/ry1tlj2AW.gif",
                 "https://cdn.weeb.sh/images/HyqTkyFvb.gif",
-                "https://cdn.weeb.sh/images/H1jnJktPb.gif",
                 "https://cdn.weeb.sh/images/ryLKqTVCW.gif",
                 "https://cdn.weeb.sh/images/rJJXgJFDW.gif",
                 "https://i.imgur.com/grAHcaB.gif",
@@ -173,8 +172,6 @@ class Roleplay(BaseCog):
                 "https://cdn.weeb.sh/images/rktsca40-.gif",
                 "https://cdn.weeb.sh/images/ryh6x04Rb.gif",
                 "https://cdn.weeb.sh/images/rkTC896_f.gif",
-                "https://cdn.weeb.sh/images/SJudB96_f.gif",
-                "https://cdn.weeb.sh/images/SJudB96_f.gif",
                 "https://cdn.weeb.sh/images/r1lVQgcyG.gif",
             ],
             "lick": [
@@ -203,6 +200,10 @@ class Roleplay(BaseCog):
                 "https://media1.tenor.com/images/16267f3a34efb42598bd822effaccd11/tenor.gif?itemid=14137081",
                 "https://media1.tenor.com/images/9730876547cb3939388cf79b8a641da9/tenor.gif?itemid=8073516",
                 "https://media1.tenor.com/images/ce85a2843f52309b85515f56a0a49d06/tenor.gif?itemid=14137077",
+                "https://c.tenor.com/JBBZ9mQntx8AAAAC/anime-high-five.gif",
+                "https://c.tenor.com/YCub_pFV2uAAAAAd/anime-high.gif",
+                "https://c.tenor.com/Ajl4l3PWf8sAAAAC/high-five-anime.gif",
+
             ],
             "feed": [
                 "https://media1.tenor.com/images/93c4833dbcfd5be9401afbda220066ee/tenor.gif?itemid=11223742",
@@ -216,11 +217,21 @@ class Roleplay(BaseCog):
                 "https://media1.tenor.com/images/6bde17caa5743a22686e5f7b6e3e23b4/tenor.gif?itemid=13726430",
                 "https://media1.tenor.com/images/fd3616d34ade61e1ac5cd0975c25a917/tenor.gif?itemid=13653906",
                 "https://imgur.com/v7jsPrv",
+                "https://c.tenor.com/Aflxvrwa0woAAAAC/kawaii-wholesome.gif",
             ],
             "tickle": [
                 "https://media1.tenor.com/images/02f62186ccb7fa8a2667f3216cfd7e13/tenor.gif?itemid=13269751",
                 "https://media1.tenor.com/images/d38554c6e23b86c81f8d4a3764b38912/tenor.gif?itemid=11379131",
                 "https://media1.tenor.com/images/05a64a05e5501be2b1a5a734998ad2b2/tenor.gif?itemid=11379130",
+                "https://c.tenor.com/WBwonvADeCoAAAAC/mareva-tickle.gif",
+                "https://c.tenor.com/9KCaFFBc_lkAAAAC/anime-tickle.gif",
+                "https://c.tenor.com/PXL1ONAO9CEAAAAC/tickle-laugh.gif",
+                "https://imgur.com/phuXt6Z",
+                "https://imgur.com/bCGFQne",
+                "https://imgur.com/bt2ZRjJ",
+                "https://64.media.tumblr.com/cb5805241c30e6ae7d05c17583f795de/tumblr_o505jxtnWk1vpbklao3_500.gifv",
+                "https://64.media.tumblr.com/e3c4b41622e3a39c5810aff8f29dc11e/tumblr_o505jxtnWk1vpbklao8_640.gifv",
+                "https://64.media.tumblr.com/eb8a0282d62c9697b93cd546b77106f8/tumblr_o505jxtnWk1vpbklao2_500.gifv",
             ],
             "poke": [
                 "https://media1.tenor.com/images/3b2bfd09965bd77f2a8cb9ba59cedbe4/tenor.gif?itemid=5607667",
@@ -238,7 +249,7 @@ class Roleplay(BaseCog):
                 "https://i.kym-cdn.com/photos/images/original/001/087/562/93c.gif",
                 "https://i.kym-cdn.com/photos/images/newsfeed/001/161/167/eda.gif",
                 "https://media1.tenor.com/images/d9b3127da3f9419cbb28f9f7c00860d8/tenor.gif?itemid=9588226",
-                "https://media1.tenor.com/images/0097fa7f957477f9edc5ff147bb9a5ad/tenor.gif?itemid=12390496",
+                "https://64.media.tumblr.com/032cf8372b4aa18dcd361fb182af6e1d/tumblr_om31io9rsP1qehrvso1_540.gifv",
             ],
         }
         self.config.register_global(**default_global)
