@@ -226,12 +226,7 @@ class Roleplay(BaseCog):
                 "https://c.tenor.com/WBwonvADeCoAAAAC/mareva-tickle.gif",
                 "https://c.tenor.com/9KCaFFBc_lkAAAAC/anime-tickle.gif",
                 "https://c.tenor.com/PXL1ONAO9CEAAAAC/tickle-laugh.gif",
-                "https://imgur.com/phuXt6Z",
-                "https://imgur.com/bCGFQne",
                 "https://imgur.com/bt2ZRjJ",
-                "https://64.media.tumblr.com/cb5805241c30e6ae7d05c17583f795de/tumblr_o505jxtnWk1vpbklao3_500.gifv",
-                "https://64.media.tumblr.com/e3c4b41622e3a39c5810aff8f29dc11e/tumblr_o505jxtnWk1vpbklao8_640.gifv",
-                "https://64.media.tumblr.com/eb8a0282d62c9697b93cd546b77106f8/tumblr_o505jxtnWk1vpbklao2_500.gifv",
             ],
             "poke": [
                 "https://media1.tenor.com/images/3b2bfd09965bd77f2a8cb9ba59cedbe4/tenor.gif?itemid=5607667",
