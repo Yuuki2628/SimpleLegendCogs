@@ -227,6 +227,7 @@ class Roleplay(BaseCog):
                 "https://c.tenor.com/9KCaFFBc_lkAAAAC/anime-tickle.gif",
                 "https://c.tenor.com/PXL1ONAO9CEAAAAC/tickle-laugh.gif",
                 "https://imgur.com/bt2ZRjJ",
+                "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/7bbbe46f-5285-46b1-804e-337939538ae7/dbmlvcf-8dcf9ae8-65bc-48f0-9d95-d982fd1be597.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzdiYmJlNDZmLTUyODUtNDZiMS04MDRlLTMzNzkzOTUzOGFlN1wvZGJtbHZjZi04ZGNmOWFlOC02NWJjLTQ4ZjAtOWQ5NS1kOTgyZmQxYmU1OTcuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.lv0IH_Ak5xfjRa8xbPbKRZmfGpRPuZw3aO52CHoVwKk",
             ],
             "poke": [
                 "https://media1.tenor.com/images/3b2bfd09965bd77f2a8cb9ba59cedbe4/tenor.gif?itemid=5607667",
