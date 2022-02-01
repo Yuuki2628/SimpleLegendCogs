@@ -256,6 +256,8 @@ class Roleplay(BaseCog):
         """Hugs a user!"""
 
         author = ctx.message.author
+        if author == user:
+            return ctx.send("No self hugging!")
         images = await self.config.hugs()
 
         nekos = await self.fetch_nekos_life(ctx, "hug")
@@ -277,6 +279,8 @@ class Roleplay(BaseCog):
         """Cuddles a user!"""
 
         author = ctx.message.author
+        if author == user:
+            return ctx.send("No self cuddling!")
         images = await self.config.cuddle()
 
         nekos = await self.fetch_nekos_life(ctx, "cuddle")
@@ -298,6 +302,8 @@ class Roleplay(BaseCog):
         """Kiss a user!"""
 
         author = ctx.message.author
+        if author == user:
+            return ctx.send("No self kissing!")
         images = await self.config.kiss()
 
         nekos = await self.fetch_nekos_life(ctx, "kiss")
@@ -319,6 +325,8 @@ class Roleplay(BaseCog):
         """Slaps a user!"""
 
         author = ctx.message.author
+        if author == user:
+            return ctx.send("No self slapping!")
         images = await self.config.slap()
 
         nekos = await self.fetch_nekos_life(ctx, "slap")
@@ -340,6 +348,8 @@ class Roleplay(BaseCog):
         """Pats a user!"""
 
         author = ctx.message.author
+        if author == user:
+            return ctx.send("No self patting!")
         images = await self.config.pat()
 
         nekos = await self.fetch_nekos_life(ctx, "pat")
@@ -361,6 +371,8 @@ class Roleplay(BaseCog):
         """Licks a user!"""
 
         author = ctx.message.author
+        if author == user:
+            return ctx.send("No self licking!")
         images = await self.config.lick()
         mn = len(images)
         i = randint(0, mn - 1)
@@ -378,6 +390,8 @@ class Roleplay(BaseCog):
         """Highfives a user!"""
 
         author = ctx.message.author
+        if author == user:
+            return ctx.send("No self highfiving!")
         images = await self.config.highfive()
         mn = len(images)
         i = randint(0, mn - 1)
@@ -395,6 +409,8 @@ class Roleplay(BaseCog):
         """Feeds a user!"""
 
         author = ctx.message.author
+        if author == user:
+            return ctx.send("No self feeding!")
         images = await self.config.feed()
 
         nekos = await self.fetch_nekos_life(ctx, "feed")
@@ -416,6 +432,8 @@ class Roleplay(BaseCog):
         """Tickles a user!"""
 
         author = ctx.message.author
+        if author == user:
+            return ctx.send("No self tickling!")
         images = await self.config.tickle()
 
         nekos = await self.fetch_nekos_life(ctx, "tickle")
@@ -437,6 +455,8 @@ class Roleplay(BaseCog):
         """Pokes a user!"""
 
         author = ctx.message.author
+        if author == user:
+            return ctx.send("No self poking!")
         images = await self.config.poke()
 
         nekos = await self.fetch_nekos_life(ctx, "poke")
