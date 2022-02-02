@@ -3,6 +3,7 @@ from redbot.core import commands, Config
 from random import randint
 import aiohttp
 import logging
+import re
 
 log = logging.getLogger("Roleplay")  # Thanks to Sinbad for the example code for logging
 log.setLevel(logging.DEBUG)
@@ -108,7 +109,6 @@ class Roleplay(BaseCog):
                 "https://i.imgur.com/9Ql97mO.gif",
                 "https://i.imgur.com/VBGqeIU.gif",
                 "https://i.imgur.com/uPZwGFQ.gif",
-                "https://i.imgur.com/Su0X9iF.gif",
                 "https://i.imgur.com/eNiOIMB.gif",
                 "https://i.imgur.com/gsAGyoI.gif",
                 "https://cdn.weeb.sh/images/HyPjmytDW.gif",
@@ -247,6 +247,28 @@ class Roleplay(BaseCog):
                 "https://media1.tenor.com/images/d9b3127da3f9419cbb28f9f7c00860d8/tenor.gif?itemid=9588226",
                 "https://64.media.tumblr.com/032cf8372b4aa18dcd361fb182af6e1d/tumblr_om31io9rsP1qehrvso1_540.gifv",
             ],
+            "kill": [
+                "https://c.tenor.com/G4SGjQE8wCEAAAAC/mikey-tokyo.gif",
+                re.escape("https://c.tenor.com/pwPMerSJ-6gAAAAC/happy-sugar-life-%E3%83%8F%E3%83%83%E3%83%94%E3%83%BC%E3%82%B7%E3%83%A5%E3%82%AC%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%95.gif"),
+                "https://c.tenor.com/Nn6cRTGDcrIAAAAC/danganronpa-nanami.gif",
+            ],
+            "spank": [
+                "https://c.tenor.com/gScnebhgJn4AAAAC/taritari-anime-spank.gif",
+                "https://c.tenor.com/5SPNhg5O38oAAAAC/anime-rikka-takanashi.gif",
+                "https://c.tenor.com/3HTwtAeavRIAAAAC/spank-bad.gif",
+                "https://i.makeagif.com/media/7-21-2017/IgmqSc.gif",
+                "https://c.tenor.com/Ep5dFoM0h5gAAAAC/bad-spank.gif",
+                "https://c.tenor.com/zpK3DZkGjtYAAAAC/ueno-anime.gif",
+                "https://24.media.tumblr.com/38094ad70dcf7722b7aceb6bbd82507f/tumblr_mqqu76NpRP1srsfpho1_400.gif",
+                "https://i.makeagif.com/media/11-20-2013/WveGOX.gif"
+            ],
+            "punch": [
+                "https://c.tenor.com/SwMgGqBirvcAAAAC/saki-saki-kanojo-mo-kanojo.gif",
+                "https://c.tenor.com/aEX1wE-WrEMAAAAC/anime-right-in-the-stomach.gif",
+                "https://c.tenor.com/EvBn8m3xR1cAAAAC/toradora-punch.gif",
+                "https://c.tenor.com/o8RbiF5-9dYAAAAC/killua-hxh.gif",
+                "https://c.tenor.com/UH8Jnl1W3CYAAAAC/anime-punch-anime.gif",
+            ]
         }
         self.config.register_global(**default_global)
 
@@ -490,6 +512,66 @@ class Roleplay(BaseCog):
         embed = discord.Embed()
         embed.description = f"**{author.mention} is smug**"
         embed.set_footer(text="Made with the help of nekos.life")
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    @commands.bot_has_permissions(embed_links=True)
+    async def kill(self, ctx, *, user: discord.Member):
+        """Kills a user!"""
+
+        author = ctx.message.author
+        if author == user:
+            return await ctx.send("Don't suicide man!")
+        images = await self.config.kill()
+
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.description = f"**{author.mention} just killed {user.mention}**"
+        embed.set_footer(text="Made by Yuuki")
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    @commands.bot_has_permissions(embed_links=True)
+    async def spank(self, ctx, *, user: discord.Member):
+        """Spanks a user!"""
+
+        author = ctx.message.author
+        if author == user:
+            return await ctx.send("Don't spank yourself!")
+        images = await self.config.spank()
+
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.description = f"**{author.mention} spanks {user.mention}**"
+        embed.set_footer(text="Made by Yuuki")
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    @commands.bot_has_permissions(embed_links=True)
+    async def punch(self, ctx, *, user: discord.Member):
+        """Punches a user!"""
+
+        author = ctx.message.author
+        if author == user:
+            return await ctx.send("Why are you hitting yourself?!?")
+        images = await self.config.punch()
+
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.description = f"**{author.mention} punched {user.mention}**"
+        embed.set_footer(text="Made by Yuuki")
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
 
