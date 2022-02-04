@@ -272,7 +272,10 @@ class Roleplay(BaseCog):
                 "https://c.tenor.com/EvBn8m3xR1cAAAAC/toradora-punch.gif",
                 "https://c.tenor.com/o8RbiF5-9dYAAAAC/killua-hxh.gif",
                 "https://c.tenor.com/UH8Jnl1W3CYAAAAC/anime-punch-anime.gif",
-                "//pa1.narvii.com/6252/6d73848b0d187569dd83a7a28e9cf437b11e88c3_hq.gif",
+                "pa1.narvii.com/6252/6d73848b0d187569dd83a7a28e9cf437b11e88c3_hq.gif",
+                "https://c.tenor.com/s0bU-NO1QIQAAAAC/anime-punch.gif",
+                "https://c.tenor.com/wYyB8BBA8fIAAAAM/some-guy-getting-punch-anime-punching-some-guy-anime.gif",
+                "https://c.tenor.com/F_PdE5FZAjEAAAAC/asuna-punch.gif",
             ]
         }
         self.config.register_global(**default_global)
