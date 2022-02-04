@@ -256,12 +256,15 @@ class Roleplay(BaseCog):
             "spank": [
                 "https://c.tenor.com/gScnebhgJn4AAAAC/taritari-anime-spank.gif",
                 "https://c.tenor.com/5SPNhg5O38oAAAAC/anime-rikka-takanashi.gif",
-                "https://c.tenor.com/3HTwtAeavRIAAAAC/spank-bad.gif",
+                "https://c.tenor.com/uER90n0laEEAAAAC/anime-spanking.gif",
+                "https://c.tenor.com/jq-PoRYhLYwAAAAC/anime-waifu.gif",
+                "https://c.tenor.com/4RIbgFCLRrUAAAAd/rikka-takanashi-bad-girl.gif",
+                "https://c.tenor.com/jwSXb8QcklwAAAAM/anime-waifu.gif",
                 "https://i.makeagif.com/media/7-21-2017/IgmqSc.gif",
                 "https://c.tenor.com/Ep5dFoM0h5gAAAAC/bad-spank.gif",
                 "https://c.tenor.com/zpK3DZkGjtYAAAAC/ueno-anime.gif",
                 "https://24.media.tumblr.com/38094ad70dcf7722b7aceb6bbd82507f/tumblr_mqqu76NpRP1srsfpho1_400.gif",
-                "https://i.makeagif.com/media/11-20-2013/WveGOX.gif"
+                "https://i.makeagif.com/media/11-20-2013/WveGOX.gif",
             ],
             "punch": [
                 "https://c.tenor.com/SwMgGqBirvcAAAAC/saki-saki-kanojo-mo-kanojo.gif",
