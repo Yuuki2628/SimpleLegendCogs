@@ -55,7 +55,6 @@ class Roleplay(BaseCog):
                 "https://cdn.weeb.sh/images/BkZngAYtb.gif",
                 "https://tenor.com/view/anime-happy-girl-hug-shocked-gif-15788552",
                 "https://media.giphy.com/media/lrr9rHuoJOE0w/giphy.gif",
-                "https://c.tenor.com/QLOZ4PqNz2sAAAAC/anime-slap.gif",
                 "https://cdn-live.warthunder.com/uploads/5f/8f903f513e363b978150babb9297f4be9c90d8_mq/tumblr_n8wr8siAyx1qa94xto2_500.gif",
             ],
             "cuddle": [
@@ -251,6 +250,8 @@ class Roleplay(BaseCog):
                 "https://c.tenor.com/G4SGjQE8wCEAAAAC/mikey-tokyo.gif",
                 "https://c.tenor.com/pwPMerSJ-6gAAAAC/happy-sugar-life-%E3%83%8F%E3%83%83%E3%83%94%E3%83%BC%E3%82%B7%E3%83%A5%E3%82%AC%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%95.gif",
                 "https://c.tenor.com/Nn6cRTGDcrIAAAAC/danganronpa-nanami.gif",
+                "https://data.whicdn.com/images/37008393/original.gif",
+                "https://pa1.narvii.com/6253/7d8b6ba7bea8d669ccb5877674cec57dbd9a0538_hq.gif",
             ],
             "spank": [
                 "https://c.tenor.com/gScnebhgJn4AAAAC/taritari-anime-spank.gif",
@@ -268,6 +269,7 @@ class Roleplay(BaseCog):
                 "https://c.tenor.com/EvBn8m3xR1cAAAAC/toradora-punch.gif",
                 "https://c.tenor.com/o8RbiF5-9dYAAAAC/killua-hxh.gif",
                 "https://c.tenor.com/UH8Jnl1W3CYAAAAC/anime-punch-anime.gif",
+                "//pa1.narvii.com/6252/6d73848b0d187569dd83a7a28e9cf437b11e88c3_hq.gif",
             ]
         }
         self.config.register_global(**default_global)
