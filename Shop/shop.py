@@ -119,4 +119,4 @@ class Shop(commands.Cog):
         bal = await bank.get_balance(user)
         await bank.withdraw_credits(user, price)
 
-        return ctx.send(f"You just bought {count} set loot chests for {price}")
+        return await ctx.send(f"You just bought {count} set loot chests for {price}")
