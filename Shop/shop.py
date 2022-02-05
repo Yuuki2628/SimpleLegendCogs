@@ -91,21 +91,18 @@ class Shop(commands.Cog):
 
     @buy.command(name="set")
     @commands.guild_only()
-    async def add_blacklist(self, ctx, count: int):
+    async def add_blacklist(self, ctx, count: int = 1):
         """Buy set loot"""
         user = ctx.author
         userRoles = user.roles
         price = 4000000
 
-        eliter = discord.utils.get(guild.roles,name="Elite")
+        eliter = discord.utils.get(ctx.guild.roles,name="Elite")
         if(eliter in userRoles):
             price = 2000000
 
         price = price * count
         count = count * 5
-
-        bal = await bank.get_balance(user)
-        await bank.withdraw_credits(user, price)
 
         adv = bot.get_cog("Adventure")
 
@@ -115,6 +112,10 @@ class Shop(commands.Cog):
             except Exception as exc:
                 log.exception("Error with the new character sheet", exc_info=exc)
             
-            c.treasure[5] += count * 5
+            # adds set loots
+            c.treasure[5] += count
+
+        bal = await bank.get_balance(user)
+        await bank.withdraw_credits(user, price)
 
         return ctx.send(f"You just bought {count} set loot chests for {price}")
