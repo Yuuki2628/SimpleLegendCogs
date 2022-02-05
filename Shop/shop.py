@@ -4,8 +4,8 @@ import discord
 from adventure.charsheet import Item, Character
 from redbot.core import checks
 
-class EmbedShop(commands.Cog):
-    """Embeds for the Elite Embed Updates"""
+class Shop(commands.Cog):
+    """Buy items"""
 
 #Billionaire: 815958379624529931
 #Elite: 815958696982872075
