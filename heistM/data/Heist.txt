@@ -7,17 +7,17 @@ Sentence = sentence
 Heist = heist
 Vault = vault
 
-|Good| "{} placed the P.E.K.K.A. at the right time. +100 credits.", 100
-|Good| "{} found the miner's tunnel. +200 credits", 200
-|Good| "{} upgraded the princess at the right time. +150 credits.", 150
-|Good| "{} destroyed a princess tower using a rocket. +200 credits.", 200
-|Good| "{} used the log to knock back the enemies. +150 credits.", 150
-|Good| "{} defeated the minion horde with the help of the wizard. +250 credits.", 250
-|Good| "{} sinked the enemy ship. +200 credits.", 200
-|Good| "{} sent a goblin drill on the enemy tower. +100 credits.", 100
-|Good| "{} bought 100,000,000 gems and got a maxed account. +1000 credits.", 1000
-|Good| "{} countered the enemy mega knight. +150 credits.", 150
-|Good| "{} opened a brawl box and found Leon. +200 credits.", 200
+|Good| "{} Played clan wars properly. +1000 credits.", 1000
+|Good| "{} found the miner's tunnel. +2000 credits", 2000
+|Good| "{} found the king's treasure. +15000 credits.", 15000
+|Good| "{} got 3 crowns in a battle. +200 credits.", 200
+|Good| "{} knocked back the enemies using the log. +150 credits.", 150
+|Good| "{} used a wizard to counter minions. +250 credits.", 250
+|Good| "{} completed the 20 wins challenge. +20000 credits.", 20000
+|Good| "{} cleverly defended the enemy push. +100 credits.", 100
+|Good| "{} unlocked a new champion for the battle. +1000 credits.", 1000
+|Good| "{} defended an electro giant. +150 credits.", 150
+|Good| "{} got informations about the enemy . +200 credits.", 200
 |Good| "{} teamed in showdown and got easy trophies. +250 credits.", 250
 |Good| "{} found some teamers and defeated them all. +250 credits.", 250
 |Good| "{} found a game-breaking glitch. +256 credits.", 256
