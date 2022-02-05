@@ -104,7 +104,7 @@ class Shop(commands.Cog):
         price = price * count
         count = count * 5
 
-        adv = self.bot.get_cog("Adventure")
+        adv = ctx.bot.get_cog("Adventure")
 
         async with adv.get_lock(user):
             try:
