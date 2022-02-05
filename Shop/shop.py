@@ -106,13 +106,14 @@ class Shop(commands.Cog):
         count = count * 5
 
         adv = ctx.bot.get_cog("Adventure")
-        await ctx.send(f"This is for debug: {c.treasure[5]}")
         async with adv.get_lock(user):
             try:
                 c = await Character.from_json(adv.config, user, adv._daily_bonus)
             except Exception as exc:
                 log.exception("Error with the new character sheet", exc_info=exc)
             
+            await ctx.send(f"This is for debug: {c.treasure[5]}")
+
             # adds set loots
             c.treasure[5] += count
 
