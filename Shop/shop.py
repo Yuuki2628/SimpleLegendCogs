@@ -1,7 +1,7 @@
 from redbot.core import commands
 import discord
 
-from adventure.charsheet import Item, Character
+from adventure.charsheet import Character
 from redbot.core import checks
 from redbot.core import bank
 
@@ -84,6 +84,8 @@ class Shop(commands.Cog):
         embed.add_field(name="Click here to see the full shop", value=f"<#381339305769041922>")
         await ctx.send(embed=embed)
 
+
+
     @commands.group(pass_context=True)
     @commands.guild_only()
     async def buy(self, ctx):
@@ -99,7 +101,8 @@ class Shop(commands.Cog):
         price = 4000000
 
         eliter = discord.utils.get(ctx.guild.roles,name="Elite")
-        if(eliter in userRoles):
+        bilr = discord.utils.get(ctx.guild.roles,name="Billionaire")
+        if((eliter in userRoles) or (bilr in userRoles)):
             price = 2000000
 
         price = price * count
@@ -117,7 +120,9 @@ class Shop(commands.Cog):
             # adds set loots
             c.treasure[5] += count
 
+            await adv.config.user(user).set(await c.to_json(adv.config))
+
         bal = await bank.get_balance(user)
-        #await bank.withdraw_credits(user, price)
+        await bank.withdraw_credits(user, price)
 
         return await ctx.send(f"You just bought {count} set loot chests for {price}\nThis is for debug: {c.treasure[5]}")
