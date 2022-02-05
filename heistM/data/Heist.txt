@@ -18,7 +18,7 @@ Vault = vault
 |Good| "{} unlocked a new champion for the battle. +1000 credits.", 1000
 |Good| "{} defended an electro giant. +150 credits.", 150
 |Good| "{} got informations about the enemy . +200 credits.", 200
-|Good| "{} teamed in showdown and got easy trophies. +250 credits.", 250
+|Good| "{} played adventure all night. +250 credits.", 250
 |Good| "{} found some teamers and defeated them all. +250 credits.", 250
 |Good| "{} found a game-breaking glitch. +256 credits.", 256
 |Good| "{} defeated the insane 16 boss. +1000 credits.", 1000
