@@ -56,6 +56,8 @@ class Roleplay(BaseCog):
                 "https://tenor.com/view/anime-happy-girl-hug-shocked-gif-15788552",
                 "https://media.giphy.com/media/lrr9rHuoJOE0w/giphy.gif",
                 "https://cdn-live.warthunder.com/uploads/5f/8f903f513e363b978150babb9297f4be9c90d8_mq/tumblr_n8wr8siAyx1qa94xto2_500.gif",
+                "https://c.tenor.com/FTgiqwBBvr8AAAAC/anime-kirito.gif",
+                "https://c.tenor.com/xURq6gggo18AAAAC/anime-are-you-lost.gif",
             ],
             "cuddle": [
                 "https://cdn.weeb.sh/images/BkTe8U7v-.gif",
@@ -91,6 +93,11 @@ class Roleplay(BaseCog):
                 "https://78.media.tumblr.com/7255f36b2c31fac77542e8fe6837b408/tumblr_mokq94dAXR1s05qslo1_500.gif",
                 "https://c.tenor.com/I8kWjuAtX-QAAAAC/anime-ano.gif",
                 "https://c.tenor.com/dJU8aKmPKAgAAAAC/anime-kiss.gif",
+                "https://c.tenor.com/g9HjxRZM2C8AAAAC/anime-love.gif",
+                "https://c.tenor.com/tJEMsDqIYaAAAAAd/sao-kirito.gif",
+                "https://c.tenor.com/olQHQvJ_sZUAAAAC/sword-art-online-kirito.gif",
+                "https://c.tenor.com/sJ3YEq7sQ0AAAAAC/anime-kiss.gif",
+
             ],
             "slap": [
                 "https://cdn.weeb.sh/images/H16aQJFvb.gif",
@@ -202,6 +209,7 @@ class Roleplay(BaseCog):
                 "https://c.tenor.com/JBBZ9mQntx8AAAAC/anime-high-five.gif",
                 "https://c.tenor.com/YCub_pFV2uAAAAAd/anime-high.gif",
                 "https://c.tenor.com/Ajl4l3PWf8sAAAAC/high-five-anime.gif",
+                "https://c.tenor.com/H2x6-sF50jUAAAAC/anime-kirito.gif",
 
             ],
             "feed": [
@@ -275,6 +283,17 @@ class Roleplay(BaseCog):
                 "https://c.tenor.com/s0bU-NO1QIQAAAAC/anime-punch.gif",
                 "https://c.tenor.com/wYyB8BBA8fIAAAAM/some-guy-getting-punch-anime-punching-some-guy-anime.gif",
                 "https://c.tenor.com/F_PdE5FZAjEAAAAC/asuna-punch.gif",
+                "https://c.tenor.com/H04N4qqJhZ0AAAAC/golden-boy-anime.gif",
+            ],
+            "grope": [
+                "https://c.tenor.com/Lp0DoHwREjAAAAAC/sao-sword-art-online.gif",
+                "https://c.tenor.com/Jb_F2aFPQEkAAAAC/grip-death-grip.gif",
+                "https://c.tenor.com/EvQp572ilIEAAAAC/nogamenolife-shiro.gif",
+                "https://c.tenor.com/hi_bhCiKFYgAAAAC/grope-anime.gif",
+                "https://c.tenor.com/H04N4qqJhZ0AAAAC/golden-boy-anime.gif",
+                "https://c.tenor.com/8werfp2g6sUAAAAC/oppai-anime.gif",
+                "https://c.tenor.com/19rq6zteNnQAAAAC/anime-touch.gif",
+                "https://c.tenor.com/JC4LjDJ8ZuwAAAAC/grab-meat.gif",
             ]
         }
         self.config.register_global(**default_global)
@@ -578,6 +597,26 @@ class Roleplay(BaseCog):
         # Build Embed
         embed = discord.Embed()
         embed.description = f"**{author.mention} punched {user.mention}**"
+        embed.set_footer(text="Made by Yuuki")
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    @commands.bot_has_permissions(embed_links=True)
+    async def grope(self, ctx, *, user: discord.Member):
+        """Gropes a user!"""
+
+        author = ctx.message.author
+        if author == user:
+            return await ctx.send("Go to horny jail **bonk**")
+        images = await self.config.grope()
+
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.description = f"**{author.mention} groped {user.mention}**"
         embed.set_footer(text="Made by Yuuki")
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
