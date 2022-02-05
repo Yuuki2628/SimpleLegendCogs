@@ -114,9 +114,9 @@ class Shop(commands.Cog):
                 log.exception("Error with the new character sheet", exc_info=exc)
             
             # adds set loots
-            c.treasure[4] += count
+            c.treasure[5] += count
 
         bal = await bank.get_balance(user)
-        await bank.withdraw_credits(user, price)
+        #await bank.withdraw_credits(user, price)
 
-        return await ctx.send(f"You just bought {count} set loot chests for {price}")
+        return await ctx.send(f"You just bought {count} set loot chests for {price}\nThis is for debug: {c.treasure[5]}")
