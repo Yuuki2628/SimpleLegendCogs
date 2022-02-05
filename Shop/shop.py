@@ -3,6 +3,7 @@ import discord
 
 from adventure.charsheet import Item, Character
 from redbot.core import checks
+from redbot.core import bank
 
 class Shop(commands.Cog):
     """Buy items"""
