@@ -95,7 +95,7 @@ class Shop(commands.Cog):
     @buy.command(name="set")
     @commands.guild_only()
     async def add_blacklist(self, ctx, count: int = 1):
-        """Buy set loot"""
+        """Buy set loot x5"""
         user = ctx.author
         userRoles = user.roles
         price = 4000000
@@ -114,8 +114,6 @@ class Shop(commands.Cog):
                 c = await Character.from_json(adv.config, user, adv._daily_bonus)
             except Exception as exc:
                 log.exception("Error with the new character sheet", exc_info=exc)
-            
-            await ctx.send(f"This is for debug: {c.treasure[5]}")
 
             # adds set loots
             c.treasure[5] += count
@@ -125,4 +123,4 @@ class Shop(commands.Cog):
         bal = await bank.get_balance(user)
         await bank.withdraw_credits(user, price)
 
-        return await ctx.send(f"You just bought {count} set loot chests for {price}\nThis is for debug: {c.treasure[5]}")
+        return await ctx.send(f"You just bought {count} set loot chests for {price}")
