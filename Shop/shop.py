@@ -14,7 +14,7 @@ class Shop(commands.Cog):
 #Epic: 815958568418803772
 #Rare: 815957842266816522
 
-    @commands.command(name="es_shop")
+    @commands.command(name="shop")
     async def shop(self, ctx):
         if(ctx.author.id != 295275466703503372):
             return await ctx.send("Only the true bot director shall be allowed to do this")
@@ -58,7 +58,7 @@ class Shop(commands.Cog):
                                                 "When buying <@&815958696982872075> you will receive a legendary item of choise for free")
         await ctx.send(embed=embed)
     
-    @commands.command(name="es_minishop")
+    @commands.command(name="minishop")
     async def minishop(self, ctx):
         embed = discord.Embed(title="LeGeND Shop",color=0x7289DA)
         embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/722551851891032134/853281697411629097/unknown.png")
