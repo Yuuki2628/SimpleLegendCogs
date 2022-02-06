@@ -290,7 +290,6 @@ class Roleplay(BaseCog):
                 "https://c.tenor.com/Jb_F2aFPQEkAAAAC/grip-death-grip.gif",
                 "https://c.tenor.com/EvQp572ilIEAAAAC/nogamenolife-shiro.gif",
                 "https://c.tenor.com/hi_bhCiKFYgAAAAC/grope-anime.gif",
-                "https://c.tenor.com/H04N4qqJhZ0AAAAC/golden-boy-anime.gif",
                 "https://c.tenor.com/8werfp2g6sUAAAAC/oppai-anime.gif",
                 "https://c.tenor.com/19rq6zteNnQAAAAC/anime-touch.gif",
                 "https://c.tenor.com/JC4LjDJ8ZuwAAAAC/grab-meat.gif",
