@@ -210,7 +210,7 @@ class Roleplay(BaseCog):
                 "https://c.tenor.com/YCub_pFV2uAAAAAd/anime-high.gif",
                 "https://c.tenor.com/Ajl4l3PWf8sAAAAC/high-five-anime.gif",
                 "https://c.tenor.com/H2x6-sF50jUAAAAC/anime-kirito.gif",
-
+                "https://c.tenor.com/5N0TrhayLwIAAAAC/polnareff-handshake.gif",
             ],
             "feed": [
                 "https://media1.tenor.com/images/93c4833dbcfd5be9401afbda220066ee/tenor.gif?itemid=11223742",
@@ -284,6 +284,12 @@ class Roleplay(BaseCog):
                 "https://c.tenor.com/wYyB8BBA8fIAAAAM/some-guy-getting-punch-anime-punching-some-guy-anime.gif",
                 "https://c.tenor.com/F_PdE5FZAjEAAAAC/asuna-punch.gif",
                 "https://c.tenor.com/H04N4qqJhZ0AAAAC/golden-boy-anime.gif",
+                "https://c.tenor.com/qrNB6eZr3HQAAAAC/jojo-bizarre-jojos-adventure.gif",
+                "https://c.tenor.com/Hf9MuA4oUrQAAAAC/star-platinum-ora.gif",
+                "https://c.tenor.com/mOYMcLekRWQAAAAC/hamon-punch-jojo.gif",
+                "https://c.tenor.com/_zZe_wgU1dcAAAAC/ora-jojo.gif",
+                "https://c.tenor.com/zQJvL4bppdsAAAAC/punch-diavolo.gif",
+                "https://c.tenor.com/Q2A-CA2vGpwAAAAC/jojos-bizarre-adventure-jojo.gif",
             ],
             "grope": [
                 "https://c.tenor.com/Lp0DoHwREjAAAAAC/sao-sword-art-online.gif",
@@ -293,6 +299,38 @@ class Roleplay(BaseCog):
                 "https://c.tenor.com/8werfp2g6sUAAAAC/oppai-anime.gif",
                 "https://c.tenor.com/19rq6zteNnQAAAAC/anime-touch.gif",
                 "https://c.tenor.com/JC4LjDJ8ZuwAAAAC/grab-meat.gif",
+            ],
+            "sleep": [
+                "https://c.tenor.com/qlxdd9DVMHUAAAAC/willcore-kon.gif",
+                "https://c.tenor.com/EES7ZFe56w0AAAAC/anime-sleep.gif",
+                "https://c.tenor.com/IXA8luG-tccAAAAC/anime-sleep.gif",
+                "https://c.tenor.com/HItBOocy6ikAAAAC/umaru-sleeping.gif",
+                "https://c.tenor.com/nlARLJ6M_t8AAAAC/mashiro-drool.gif",
+                "https://c.tenor.com/0i6HB03LuE4AAAAC/anime-sleeping.gif",
+                "https://c.tenor.com/hz6VBkoTLJIAAAAC/sleep-resting.gif",
+                "https://c.tenor.com/jrBQmuo2elMAAAAC/anime-sleep.gif",
+                "https://c.tenor.com/e_d1mTN6kHUAAAAC/yamaguchi-tadashi-haikyuu.gif",
+                "https://c.tenor.com/paUFtJtPwcAAAAAC/sleep-anime.gif",
+                "https://c.tenor.com/EO_k8kxEyTgAAAAC/noela-anime.gif",
+            ],
+            "kick": [
+                "https://c.tenor.com/Lyqfq7_vJnsAAAAC/kick-funny.gif",
+                "https://c.tenor.com/EcdG5oq7MHYAAAAC/shut-up-hit.gif",
+                "https://c.tenor.com/4zwRLrLMGm8AAAAC/chifuyu-chifuyu-kick.gif",
+                "https://c.tenor.com/4F6aGlGwyrwAAAAC/sdf-avatar.gif",
+                "https://c.tenor.com/kvxt9X-gXqQAAAAC/anime-clannad.gif",
+                "https://c.tenor.com/mEgexCY-65QAAAAC/toradora-taiga.gif",
+                "https://c.tenor.com/7te6q4wtcYoAAAAC/mad-angry.gif",
+                "https://c.tenor.com/2l13s2uQ6GkAAAAC/kick.gif",
+                "https://c.tenor.com/QxoBMmf2bRwAAAAC/jormungand-anime.gif",
+                "https://c.tenor.com/aAvEGbU2WK0AAAAC/maria-osawa-canaan.gif",
+                "https://c.tenor.com/bpgPEPfFlnIAAAAC/yeet-anime.gif",
+                "https://c.tenor.com/R2t36ofOQ9gAAAAC/anime.gif",
+                "https://c.tenor.com/LEgnGzli8VMAAAAC/anime-fight.gif",
+                "https://c.tenor.com/KlvWYCEumXAAAAAC/kick-anime.gif",
+                "https://c.tenor.com/b5GclJfU4e0AAAAC/anime-tough.gif",
+                "https://c.tenor.com/tuOSy0KcR6EAAAAC/kick-jotaro-kujo.gif",
+                "https://c.tenor.com/VFo0I0Po0zoAAAAC/jojos-bizarre-adventure-golden-experience.gif",
             ]
         }
         self.config.register_global(**default_global)
@@ -616,6 +654,44 @@ class Roleplay(BaseCog):
         # Build Embed
         embed = discord.Embed()
         embed.description = f"**{author.mention} groped {user.mention}**"
+        embed.set_footer(text="Made by Yuuki")
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    @commands.bot_has_permissions(embed_links=True)
+    async def sleep(self, ctx):
+        """Sleep"""
+
+        author = ctx.message.author
+        images = await self.config.sleep()
+
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.description = f"**{author.mention} is sleeping.**"
+        embed.set_footer(text="Made by Yuuki")
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    @commands.bot_has_permissions(embed_links=True)
+    async def kick(self, ctx, *, user: discord.Member):
+        """Kicks a user!"""
+
+        author = ctx.message.author
+        if author == user:
+            return await ctx.send("Don't kick yourself!")
+        images = await self.config.kick()
+
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.description = f"**{author.mention} kicked {user.mention}**"
         embed.set_footer(text="Made by Yuuki")
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
