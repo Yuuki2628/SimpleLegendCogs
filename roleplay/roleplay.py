@@ -678,7 +678,7 @@ class Roleplay(BaseCog):
 
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
-    async def kick(self, ctx, *, user: discord.Member):
+    async def kicks(self, ctx, *, user: discord.Member):
         """Kicks a user!"""
 
         author = ctx.message.author
