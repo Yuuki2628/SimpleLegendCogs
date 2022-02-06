@@ -299,6 +299,11 @@ class Roleplay(BaseCog):
                 "https://c.tenor.com/8werfp2g6sUAAAAC/oppai-anime.gif",
                 "https://c.tenor.com/19rq6zteNnQAAAAC/anime-touch.gif",
                 "https://c.tenor.com/JC4LjDJ8ZuwAAAAC/grab-meat.gif",
+                "https://c.tenor.com/O36Sl6bYnggAAAAC/anime-touch.gif",
+                "https://c.tenor.com/FtNQmchw_IwAAAAC/anime-touch.gif",
+                "https://c.tenor.com/hRCafFw1KZwAAAAC/anime-seras-victoria.gif",
+                "https://c.tenor.com/0E-ttG8cHA8AAAAC/boob-grab-anime.gif",
+                "https://c.tenor.com/5CRy73KdjjoAAAAC/tohru-dragon-maid.gif",
             ],
             "sleep": [
                 "https://c.tenor.com/qlxdd9DVMHUAAAAC/willcore-kon.gif",
