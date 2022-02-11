@@ -33,14 +33,14 @@ class Shop(commands.Cog):
         embed.add_field(name="Embed update__", value="Turn your command into a simple embed (no links or pictures).", inline=False)
         embed.add_field(name="__Elite Embed update__", value="The simple update isn't enought for you? You can add links, picture and other cool stuff to you embed with this powerful update.\nThe Elite Embed update lets you personalize your embed command almost as you wish.\n||The result will be similar to the shop, the roles or the rules embed.||", inline=False)
         embed.add_field(name="**Items**", value="```\n"
-            "Item name          Price   Commands     \n"
-            "Emoji flair:        200k   ~            \n"
-            "Custom background:  800k   ~            \n"
-            "Custom command:     500k   ~            \n"
-            "Rare:               1,5M   !buyrare     \n"
-            "Epic:               3,5M   !buyepic     \n"
-            "Legendary:           10M   !buylegendary\n"
-            "Elite:               35M   !buyelite    \n"
+            "Item name          Price   Commands      \n"
+            "Emoji flair:        200k   ~             \n"
+            "Custom background:  800k   ~             \n"
+            "Custom command:     500k   ~             \n"
+            "Rare:               1,5M   !buy rare     \n"
+            "Epic:               3,5M   !buy epic     \n"
+            "Legendary:           10M   !buy legendary\n"
+            "Elite:               35M   !buy elite    \n"
            #"-------------------------------------------------"
             "```", inline=False)
         embed.add_field(name="**Legendary Items**", value="```\n"
