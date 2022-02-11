@@ -213,7 +213,7 @@ class Shop(commands.Cog):
         if bal < price:
             return await ctx.send(f"You don't have enough credits to buy this item\nYou need {price}")
 
-        legendary = discord.utils.get(ctx.guild.roles,name="Legendary")
+        legendary = discord.utils.get(ctx.guild.roles,name="LeGeNDary")
         elite = discord.utils.get(ctx.guild.roles,name="Elite")
 
         if elite in user.roles:
