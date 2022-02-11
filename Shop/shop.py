@@ -94,8 +94,11 @@ class Shop(commands.Cog):
 
     @buy.command(name="set")
     @commands.guild_only()
-    async def buy_set(self, ctx, count: int = 1):
+    async def buy_set(self, ctx, count: int):
         """Buy set loot x5"""
+        if count is None:
+            count = 1
+
         user = ctx.author
         userRoles = user.roles
         price = 4000000
