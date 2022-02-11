@@ -128,9 +128,6 @@ class Shop(commands.Cog):
 
             await adv.config.user(user).set(await c.to_json(adv.config))
 
-        bal = await bank.get_balance(user)
-        await bank.withdraw_credits(user, price)
-
         return await ctx.send(f"You just bought {count} set loot chests for {price}")
 
 #Billionaire: 815958379624529931
