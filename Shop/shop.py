@@ -108,6 +108,11 @@ class Shop(commands.Cog):
         price = price * count
         count = count * 5
 
+        bal = await bank.get_balance(user)
+        if bal < price:
+            return await ctx.send(f"You don't have enough credits to buy this item\nYou need {price}")
+        await bank.withdraw_credits(user, price)
+
         adv = ctx.bot.get_cog("Adventure")
         async with adv.get_lock(user):
             try:
