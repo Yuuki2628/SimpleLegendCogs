@@ -223,4 +223,9 @@ class Shop(commands.Cog):
         
         await user.add_roles(elite)
         await bank.withdraw_credits(user, price)
+
+        yuuki = myguild.get_member(295275466703503372)
+        dm_channel = await yuuki.create_dm()
+        return await dm_channel.send(f"{user.name}#{user.discriminator} just bought Elite in {user.guild}")
+
         return await ctx.send(f"You just bought the {elite.mention} role for {price}", allowed_mentions = discord.AllowedMentions(roles=False))
