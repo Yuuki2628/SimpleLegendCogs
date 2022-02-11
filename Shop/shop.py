@@ -198,7 +198,7 @@ class Shop(commands.Cog):
         if not epic in user.roles:
             return await ctx.send(f"You need to have bought the {epic.mention} role first", allowed_mentions = discord.AllowedMentions(roles=False))
         
-        await user.add_roles(epic)
+        await user.add_roles(legendary)
         await bank.withdraw_credits(user, price)
         return await ctx.send(f"You just bought the {legendary.mention} role for {price}", allowed_mentions = discord.AllowedMentions(roles=False))
 
@@ -221,6 +221,6 @@ class Shop(commands.Cog):
         if not legendary in user.roles:
             return await ctx.send(f"You need to have bought the {legendary.mention} role first", allowed_mentions = discord.AllowedMentions(roles=False))
         
-        await user.add_roles(epic)
+        await user.add_roles(elite)
         await bank.withdraw_credits(user, price)
         return await ctx.send(f"You just bought the {elite.mention} role for {price}", allowed_mentions = discord.AllowedMentions(roles=False))
