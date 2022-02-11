@@ -9,10 +9,10 @@ class Shop(commands.Cog):
     """Buy items"""
 
 #Billionaire: 815958379624529931
-#Elite: 815958696982872075
-#Legendary: 815958673770807317
-#Epic: 815958568418803772
-#Rare: 815957842266816522
+#Elite:       815958696982872075
+#Legendary:   815958673770807317
+#Epic:        815958568418803772
+#Rare:        815957842266816522
 
     @commands.command(name="es_shop")
     async def shop(self, ctx):
@@ -94,7 +94,7 @@ class Shop(commands.Cog):
 
     @buy.command(name="set")
     @commands.guild_only()
-    async def add_blacklist(self, ctx, count: int = 1):
+    async def buy_set(self, ctx, count: int = 1):
         """Buy set loot x5"""
         user = ctx.author
         userRoles = user.roles
@@ -129,3 +129,89 @@ class Shop(commands.Cog):
         await bank.withdraw_credits(user, price)
 
         return await ctx.send(f"You just bought {count} set loot chests for {price}")
+
+#Billionaire: 815958379624529931
+#Elite:       815958696982872075
+#Legendary:   815958673770807317
+#Epic:        815958568418803772
+#Rare:        815957842266816522
+
+    @buy.command(name="rare")
+    @commands.guild_only()
+    async def buy_rare(self, ctx):
+        """Buy the Rare role"""
+        
+        user = ctx.author
+        price = 1500000
+        bal = await bank.get_balance(user)
+        if bal < price:
+            return await ctx.send(f"You don't have enough credits to buy this item\nYou need {price}")
+
+        rare = discord.utils.get(ctx.guild.roles,name="Rare")
+        await bank.withdraw_credits(user, price)
+        await user.add_roles(rare)
+
+        return await ctx.send(f"You just bought the <@815957842266816522> role for {price}", allowed_mentions = discord.AllowedMentions(roles=False))
+
+    @buy.command(name="epic")
+    @commands.guild_only()
+    async def buy_epic(self, ctx):
+        """Buy the Epic role"""
+        
+        user = ctx.author
+        price = 3500000
+        bal = await bank.get_balance(user)
+        if bal < price:
+            return await ctx.send(f"You don't have enough credits to buy this item\nYou need {price}")
+
+        rare = discord.utils.get(ctx.guild.roles,name="Rare")
+        epic = discord.utils.get(ctx.guild.roles,name="Epic")
+
+        if not rare in user.roles:
+            return await ctx.send(f"You need to have bought the {rare.mention} role first", allowed_mentions = discord.AllowedMentions(roles=False))
+        
+        await user.add_roles(epic)
+        await bank.withdraw_credits(user, price)
+        return await ctx.send(f"You just bought the {epic.mention} role for {price}", allowed_mentions = discord.AllowedMentions(roles=False))
+
+    @buy.command(name="legendary")
+    @commands.guild_only()
+    async def buy_legendary(self, ctx):
+        """Buy the Legendary role"""
+        
+        user = ctx.author
+        price = 10000000
+        bal = await bank.get_balance(user)
+        if bal < price:
+            return await ctx.send(f"You don't have enough credits to buy this item\nYou need {price}")
+
+        epic = discord.utils.get(ctx.guild.roles,name="Epic")
+        legendary = discord.utils.get(ctx.guild.roles,name="Legendary")
+
+        if not rare in user.roles:
+            return await ctx.send(f"You need to have bought the {epic.mention} role first", allowed_mentions = discord.AllowedMentions(roles=False))
+        
+        await user.add_roles(epic)
+        await bank.withdraw_credits(user, price)
+        return await ctx.send(f"You just bought the {legendary.mention} role for {price}", allowed_mentions = discord.AllowedMentions(roles=False))
+
+    @buy.command(name="elite")
+    @commands.guild_only()
+    async def buy_elite(self, ctx):
+        """Buy the Elite role"""
+        
+        user = ctx.author
+        price = 35000000
+        bal = await bank.get_balance(user)
+        if bal < price:
+            return await ctx.send(f"You don't have enough credits to buy this item\nYou need {price}")
+
+        legendary = discord.utils.get(ctx.guild.roles,name="Legendary")
+        elite = discord.utils.get(ctx.guild.roles,name="Elite")
+
+        if not rare in user.roles:
+            return await ctx.send(f"You need to have bought the {legendary.mention} role first", allowed_mentions = discord.AllowedMentions(roles=False))
+        
+        await user.add_roles(epic)
+        await bank.withdraw_credits(user, price)
+        return await ctx.send(f"You just bought the {elite.mention} role for {price}", allowed_mentions = discord.AllowedMentions(roles=False))
