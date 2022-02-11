@@ -148,6 +148,9 @@ class Shop(commands.Cog):
             return await ctx.send(f"You don't have enough credits to buy this item\nYou need {price}")
 
         rare = discord.utils.get(ctx.guild.roles,name="Rare")
+        if rare in user.roles:
+            return await ctx.send("You already have this role!")
+
         await bank.withdraw_credits(user, price)
         await user.add_roles(rare)
 
@@ -167,6 +170,8 @@ class Shop(commands.Cog):
         rare = discord.utils.get(ctx.guild.roles,name="Rare")
         epic = discord.utils.get(ctx.guild.roles,name="Epic")
 
+        if epic in user.roles:
+            return await ctx.send("You already have this role!")
         if not rare in user.roles:
             return await ctx.send(f"You need to have bought the {rare.mention} role first", allowed_mentions = discord.AllowedMentions(roles=False))
         
@@ -188,7 +193,9 @@ class Shop(commands.Cog):
         epic = discord.utils.get(ctx.guild.roles,name="Epic")
         legendary = discord.utils.get(ctx.guild.roles,name="Legendary")
 
-        if not rare in user.roles:
+        if legendary in user.roles:
+            return await ctx.send("You already have this role!")
+        if not epic in user.roles:
             return await ctx.send(f"You need to have bought the {epic.mention} role first", allowed_mentions = discord.AllowedMentions(roles=False))
         
         await user.add_roles(epic)
@@ -209,7 +216,9 @@ class Shop(commands.Cog):
         legendary = discord.utils.get(ctx.guild.roles,name="Legendary")
         elite = discord.utils.get(ctx.guild.roles,name="Elite")
 
-        if not rare in user.roles:
+        if elite in user.roles:
+            return await ctx.send("If you want to flex how rich you are you better go somewhere else")
+        if not legendary in user.roles:
             return await ctx.send(f"You need to have bought the {legendary.mention} role first", allowed_mentions = discord.AllowedMentions(roles=False))
         
         await user.add_roles(epic)
