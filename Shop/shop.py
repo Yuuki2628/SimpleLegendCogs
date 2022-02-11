@@ -191,7 +191,7 @@ class Shop(commands.Cog):
             return await ctx.send(f"You don't have enough credits to buy this item\nYou need {price}")
 
         epic = discord.utils.get(ctx.guild.roles,name="Epic")
-        legendary = discord.utils.get(ctx.guild.roles,name="Legendary")
+        legendary = discord.utils.get(ctx.guild.roles,name="LeGeNDary")
 
         if legendary in user.roles:
             return await ctx.send("You already have this role!")
