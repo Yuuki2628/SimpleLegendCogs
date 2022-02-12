@@ -95,7 +95,7 @@ class Shop(commands.Cog):
     @buy.command(name="set")
     @commands.guild_only()
     async def buy_set(self, ctx, count: int = 1):
-        """Buy set loot x5"""
+        """Buy set loot x5 for adventure"""
         if count is None:
             count = 1
 
@@ -137,6 +137,7 @@ class Shop(commands.Cog):
     @buy.command(name="boss")
     @commands.guild_only()
     async def buy_boss(self, ctx):
+        """Buy a custom boss for adventure"""
         user = ctx.author
         userRoles = user.roles
         price = 10000000
