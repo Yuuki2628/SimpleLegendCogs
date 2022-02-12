@@ -226,6 +226,6 @@ class Shop(commands.Cog):
 
         yuuki = ctx.guild.get_member(295275466703503372)
         dm_channel = await yuuki.create_dm()
-        return await dm_channel.send(f"{user.name}#{user.discriminator} just bought Elite in {user.guild}")
-
+        
+        await dm_channel.send(f"{user.name}#{user.discriminator} just bought Elite in {user.guild}")
         return await ctx.send(f"You just bought the {elite.mention} role for {price}", allowed_mentions = discord.AllowedMentions(roles=False))
