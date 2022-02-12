@@ -103,6 +103,10 @@ class Shop(commands.Cog):
         userRoles = user.roles
         price = 4000000
 
+        legendary = discord.utils.get(ctx.guild.roles,name="LeGeNDary")
+        if not legendary in userRoles:
+            return await ctx.send(f"You need to have bought {legendary.mention} to buy this item")
+        
         eliter = discord.utils.get(ctx.guild.roles,name="Elite")
         bilr = discord.utils.get(ctx.guild.roles,name="Billionaire")
         if((eliter in userRoles) or (bilr in userRoles)):
@@ -129,6 +133,28 @@ class Shop(commands.Cog):
             await adv.config.user(user).set(await c.to_json(adv.config))
 
         return await ctx.send(f"You just bought {count} set loot chests for {price}")
+
+    @buy.command(name="boss")
+    @commands.guild_only()
+    async def buy_boss(self, ctx):
+        user = ctx.author
+        price = 10000000
+
+        eliter = discord.utils.get(ctx.guild.roles,name="Elite")
+        bilr = discord.utils.get(ctx.guild.roles,name="Billionaire")
+        if((eliter in userRoles) or (bilr in userRoles)):
+            price = 5000000
+
+        bal = await bank.get_balance(user)
+        if bal < price:
+            return await ctx.send(f"You don't have enough credits to buy this item\nYou need {price}")
+        await bank.withdraw_credits(user, price)
+        
+        yuuki = ctx.guild.get_member(295275466703503372)
+        dm_channel = await yuuki.create_dm()
+        
+        await dm_channel.send(f"{user.name}#{user.discriminator} wants to buy a custom boss")
+        return await ctx.send(f"You paid your price of {price} and your request has been forwarded to the one above all")
 
 #Billionaire: 815958379624529931
 #Elite:       815958696982872075
