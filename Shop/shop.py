@@ -138,6 +138,7 @@ class Shop(commands.Cog):
     @commands.guild_only()
     async def buy_boss(self, ctx):
         user = ctx.author
+        userRoles = user.roles
         price = 10000000
 
         eliter = discord.utils.get(ctx.guild.roles,name="Elite")
