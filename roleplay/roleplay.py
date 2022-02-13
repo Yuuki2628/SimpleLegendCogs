@@ -252,13 +252,24 @@ class Roleplay(BaseCog):
                 "https://i.kym-cdn.com/photos/images/original/001/087/562/93c.gif",
                 "https://i.kym-cdn.com/photos/images/newsfeed/001/161/167/eda.gif",
                 "https://media1.tenor.com/images/d9b3127da3f9419cbb28f9f7c00860d8/tenor.gif?itemid=9588226",
-                "https://64.media.tumblr.com/032cf8372b4aa18dcd361fb182af6e1d/tumblr_om31io9rsP1qehrvso1_540.gifv",
+                "https://c.tenor.com/p2dWs1LsL_wAAAAC/vampire-anime-girl.gif",
+                "https://c.tenor.com/MQ610z61FU4AAAAC/chika-love-is-war.gif",
+                "https://c.tenor.com/rcDotvVDRK4AAAAC/smug-kurumi-ebisuzawa.gif",
+                "https://c.tenor.com/Zv9fBbsIWjAAAAAC/fanning-smug.gif",
+                "https://c.tenor.com/ZaxUeXcUtDkAAAAC/shrug-smug.gif",
+                "https://c.tenor.com/SGMyv6dZ2XMAAAAC/you-got-it-thumbs-up-anime.gif",
+                "https://c.tenor.com/8M4T11FxGI0AAAAC/anime-smug.gif",
+                "https://c.tenor.com/3VC5WFlytlUAAAAC/anime-anime-smug-face.gif",
+                "https://c.tenor.com/HqSfHfC6fUsAAAAC/ram-re-zero.gif",
+                "https://c.tenor.com/Thm-jFJZJ-4AAAAC/rossweisse-dxd.gif",
+                "https://c.tenor.com/nC-6JLX1EsIAAAAC/anime-smug.gif",
             ],
             "kill": [
                 "https://c.tenor.com/G4SGjQE8wCEAAAAC/mikey-tokyo.gif",
                 "https://c.tenor.com/pwPMerSJ-6gAAAAC/happy-sugar-life-%E3%83%8F%E3%83%83%E3%83%94%E3%83%BC%E3%82%B7%E3%83%A5%E3%82%AC%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%95.gif",
                 "https://c.tenor.com/Nn6cRTGDcrIAAAAC/danganronpa-nanami.gif",
                 "https://data.whicdn.com/images/37008393/original.gif",
+                "https://c.tenor.com/Ze50E1rW44UAAAAC/akudama-drive.gif",
             ],
             "spank": [
                 "https://c.tenor.com/gScnebhgJn4AAAAC/taritari-anime-spank.gif",
@@ -335,6 +346,22 @@ class Roleplay(BaseCog):
                 "https://c.tenor.com/b5GclJfU4e0AAAAC/anime-tough.gif",
                 "https://c.tenor.com/tuOSy0KcR6EAAAAC/kick-jotaro-kujo.gif",
                 "https://c.tenor.com/VFo0I0Po0zoAAAAC/jojos-bizarre-adventure-golden-experience.gif",
+            ],
+            "bow": [
+                "https://c.tenor.com/eDZrsiuxSDQAAAAC/ban-bowing.gif",
+                "https://c.tenor.com/w4SX4j1CdZkAAAAC/bow-anime.gif",
+                "https://c.tenor.com/lpxKv7slwfgAAAAC/mashu-kyrielight-fate-grand-order.gif",
+                "https://c.tenor.com/lSwVx09EvFkAAAAC/jasorry-jaanime.gif",
+                "https://c.tenor.com/2uPTZEqzFzoAAAAC/edgeworth-anime.gif",
+                "https://c.tenor.com/APIsjPJxtAUAAAAC/anime-sorry.gif",
+                "https://c.tenor.com/6NMWhoAJrQMAAAAC/anime-bow-down.gif",
+                "https://c.tenor.com/iP6_Nm7Mj7UAAAAC/boku-no-hero-academia-gomen.gif",
+                "https://c.tenor.com/TZ0cJkL8_j8AAAAC/inazuma-eleven-go-inago.gif",
+                "https://c.tenor.com/q2yqXbpuII8AAAAC/thank-you-deku-bow.gif",
+                "https://c.tenor.com/Fe0OQTDDN38AAAAC/anime-bow.gif",
+                "https://c.tenor.com/fljs-c50YBgAAAAC/black-lagoon.gif",
+                "https://c.tenor.com/47GM87fDYNYAAAAC/shouko-nishimiya-bow.gif",
+                "https://c.tenor.com/IBK2-Nd9MaUAAAAC/anime-maid.gif",
             ]
         }
         self.config.register_global(**default_global)
@@ -676,6 +703,26 @@ class Roleplay(BaseCog):
         # Build Embed
         embed = discord.Embed()
         embed.description = f"**{author.mention} is sleeping.**"
+        embed.set_footer(text="Made by Yuuki")
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    @commands.bot_has_permissions(embed_links=True)
+    async def bow(self, ctx, *, user: discord.Member):
+        """Bows down to a user!"""
+
+        author = ctx.message.author
+        if author == user:
+            return await ctx.send("Go to horny jail **bonk**")
+        images = await self.config.bow()
+
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.description = f"**{author.mention} bowed down to {user.mention}**"
         embed.set_footer(text="Made by Yuuki")
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
