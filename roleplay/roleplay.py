@@ -742,7 +742,7 @@ class Roleplay(BaseCog):
 
         author = ctx.message.author
         if author == user:
-            return await ctx.send("Go to horny jail **bonk**")
+            return await ctx.send("You're not your own King, **I AM**")
         images = await self.config.bow()
 
         mn = len(images)
