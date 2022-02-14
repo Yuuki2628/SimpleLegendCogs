@@ -265,11 +265,19 @@ class Roleplay(BaseCog):
                 "https://c.tenor.com/nC-6JLX1EsIAAAAC/anime-smug.gif",
             ],
             "kill": [
-                "https://c.tenor.com/G4SGjQE8wCEAAAAC/mikey-tokyo.gif",
+                "https://c.tenor.com/A4w9SaoFaVUAAAAC/akame.gif",
+                "https://c.tenor.com/AGTqt-wXyiEAAAAC/nichijou-minigun.gif",
+                "https://c.tenor.com/Ssauo2VG5qYAAAAC/akame-akame-of-demon-sword-murasame.gif",
+                "https://c.tenor.com/SX5B_1kKYYcAAAAC/akame-akamegakill.gif",
+                "https://c.tenor.com/bznBkYdhexcAAAAC/fire-arm-fire.gif",
+            ],
+            "murder":[
                 "https://c.tenor.com/pwPMerSJ-6gAAAAC/happy-sugar-life-%E3%83%8F%E3%83%83%E3%83%94%E3%83%BC%E3%82%B7%E3%83%A5%E3%82%AC%E3%83%BC%E3%83%A9%E3%82%A4%E3%83%95.gif",
                 "https://c.tenor.com/Nn6cRTGDcrIAAAAC/danganronpa-nanami.gif",
                 "https://data.whicdn.com/images/37008393/original.gif",
                 "https://c.tenor.com/Ze50E1rW44UAAAAC/akudama-drive.gif",
+                "https://c.tenor.com/NbBCakbfZnkAAAAC/die-kill.gif",
+                "https://c.tenor.com/G4SGjQE8wCEAAAAC/mikey-tokyo.gif",
             ],
             "spank": [
                 "https://c.tenor.com/gScnebhgJn4AAAAC/taritari-anime-spank.gif",
@@ -625,6 +633,26 @@ class Roleplay(BaseCog):
         # Build Embed
         embed = discord.Embed()
         embed.description = f"**{author.mention} just killed {user.mention}**"
+        embed.set_footer(text="Made by Yuuki")
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    @commands.bot_has_permissions(embed_links=True)
+    async def murder(self, ctx, *, user: discord.Member):
+        """Murders a user!"""
+
+        author = ctx.message.author
+        if author == user:
+            return await ctx.send("Don't suicide man!")
+        images = await self.config.murder()
+
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.description = f"**{author.mention} just murdered {user.mention}**"
         embed.set_footer(text="Made by Yuuki")
         embed.set_image(url=images[i])
         await ctx.send(embed=embed)
