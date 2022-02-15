@@ -153,21 +153,31 @@ class Shop(commands.Cog):
             return await ctx.send(f"You don't have enough credits to buy this item\nYou need {price}")
 
         await ctx.send("If you'd like to cancel at any point write `cancel`")
+
         await ctx.send("What's the enemy name?\nExample: Yuuki")
-        name = await ctx.bot.wait_for("message", check=MessagePredicate.same_context(user=ctx.author), timeout=12)
-        if "name == cancel" or name is None or name == "":
-            return
+        try:
+            name = await ctx.bot.wait_for("message", check=MessagePredicate.same_context(user=ctx.author), timeout=12)
+        except asyncio.TimeoutError:
+            return await ctx.send("Canceled")
+        if name is None or name is "canceled" or name is "Canceled":
+            return await ctx.send("Canceled")            
 
         await ctx.send("What's the enemy main weakness/strength?\nExample: weak to talk, resistant to everything else if possible\nNote: not specifying anything will result in Yuuki deciding for you")
-        stats = await ctx.bot.wait_for("message", check=MessagePredicate.same_context(user=ctx.author), timeout=12)
-        if stats == "cancel" or stats is None or stats == "":
-            return
+        try:
+            stats = await ctx.bot.wait_for("message", check=MessagePredicate.same_context(user=ctx.author), timeout=12)
+        except asyncio.TimeoutError:
+            return await ctx.send("Canceled")
+        if stats is None or stats is "canceled" or stats is "Canceled":
+            return await ctx.send("Canceled")            
 
         await ctx.send("What's the enemy image?\nExample: <https://cdn.discordapp.com/attachments/733451738643824720/943183446212218942/PFP9.png>")
-        img = await ctx.bot.wait_for("message", check=MessagePredicate.same_context(user=ctx.author), timeout=12)
-        if img == "cancel" or img is None or img == "":
-            return
-
+        try:
+            img = await ctx.bot.wait_for("message", check=MessagePredicate.same_context(user=ctx.author), timeout=12)
+        except asyncio.TimeoutError:
+            return await ctx.send("Canceled")
+        if img is None or img is "canceled" or img is "Canceled":
+            return await ctx.send("Canceled")            
+        
         await bank.withdraw_credits(user, price)
         
         yuuki = ctx.guild.get_member(295275466703503372)
