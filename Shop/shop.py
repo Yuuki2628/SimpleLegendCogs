@@ -156,27 +156,27 @@ class Shop(commands.Cog):
 
         await ctx.send("What's the enemy name?\nExample: Yuuki")
         try:
-            name = await ctx.bot.wait_for("message", check=MessagePredicate.same_context(user=ctx.author), timeout=12)
+            name = await ctx.bot.wait_for("message", check=MessagePredicate.same_context(user=ctx.author), timeout=90)
         except asyncio.TimeoutError:
-            return await ctx.send("Canceled")
-        if name is None or name is "canceled" or name is "Canceled":
-            return await ctx.send("Canceled")            
+            return await ctx.send("Cancelled")
+        if name is None or name is "cancel" or name is "Cancel":
+            return await ctx.send("Cancelled")    
 
         await ctx.send("What's the enemy main weakness/strength?\nExample: weak to talk, resistant to everything else if possible\nNote: not specifying anything will result in Yuuki deciding for you")
         try:
-            stats = await ctx.bot.wait_for("message", check=MessagePredicate.same_context(user=ctx.author), timeout=12)
+            stats = await ctx.bot.wait_for("message", check=MessagePredicate.same_context(user=ctx.author), timeout=90)
         except asyncio.TimeoutError:
-            return await ctx.send("Canceled")
-        if stats is None or stats is "canceled" or stats is "Canceled":
-            return await ctx.send("Canceled")            
+            return await ctx.send("Cancelled")
+        if stats is None or stats is "cancel" or stats is "Cancel":
+            return await ctx.send("Cancelled")
 
         await ctx.send("What's the enemy image?\nExample: <https://cdn.discordapp.com/attachments/733451738643824720/943183446212218942/PFP9.png>")
         try:
-            img = await ctx.bot.wait_for("message", check=MessagePredicate.same_context(user=ctx.author), timeout=12)
+            img = await ctx.bot.wait_for("message", check=MessagePredicate.same_context(user=ctx.author), timeout=90)
         except asyncio.TimeoutError:
-            return await ctx.send("Canceled")
-        if img is None or img is "canceled" or img is "Canceled":
-            return await ctx.send("Canceled")            
+            return await ctx.send("Cancelled")
+        if img is None or img is "cancel" or img is "Cancel":
+            return await ctx.send("Cancelled")
         
         await bank.withdraw_credits(user, price)
         
@@ -185,9 +185,9 @@ class Shop(commands.Cog):
         
         embed=discord.Embed(title="Cboss shop")
         embed.add_field(name="Someone wants to buy a custom boss", value=f"{user.name}#{user.discriminator}", inline=False)
-        embed.add_field(name="Name", value=name, inline=False)
-        embed.add_field(name="Stats", value=stats, inline=False)
-        embed.add_field(name="Img", value=img, inline=False)
+        embed.add_field(name="Name", value=name.content, inline=False)
+        embed.add_field(name="Stats", value=stats.content, inline=False)
+        embed.add_field(name="Img", value=img.content, inline=False)
 
         await dm_channel.send(embed=embed)
         return await ctx.send(f"You paid your price of {price} and your request has been forwarded to the one above all")
