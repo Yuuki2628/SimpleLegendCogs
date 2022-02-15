@@ -64,14 +64,14 @@ class Shop(commands.Cog):
         embed = discord.Embed(title="LeGeND Shop",color=0x7289DA)
         embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/722551851891032134/853281697411629097/unknown.png")
         embed.add_field(name="**Items**", value="```\n"
-            "Item name          Price   Commands     \n"
-            "Emoji flair:        200k   ~            \n"
-            "Custom background:  800k   ~            \n"
-            "Custom command:     500k   ~            \n"
-            "Rare:               1,5M   !buyrare     \n"
-            "Epic:               3,5M   !buyepic     \n"
-            "Legendary:           10M   !buylegendary\n"
-            "Elite:               35M   !buyelite    \n"
+            "Item name          Price   Commands      \n"
+            "Emoji flair:        200k   ~             \n"
+            "Custom background:  800k   ~             \n"
+            "Custom command:     500k   ~             \n"
+            "Rare:               1,5M   !buy rare     \n"
+            "Epic:               3,5M   !buy epic     \n"
+            "Legendary:           10M   !buy legendary\n"
+            "Elite:               35M   !buy elite    \n"
            #"-------------------------------------------------"
             "```", inline=False)
         embed.add_field(name="**Legendary Items**", value="```\n"
@@ -287,5 +287,5 @@ class Shop(commands.Cog):
         await bank.withdraw_credits(user, price)
 
         elite_channel = ctx.bot.get_channel(736789008121593876)
-        await elite_channel.send(f"Welcome {user.mention} to the most reserved chat in the server ||probably||\nSince you bought elite you deserver a special prize, you'll be awarded with a legendary item of choice from the shop\nBut remember to contact Yuuki to claim it, I heard he's quite lazy with this stuff")
+        await elite_channel.send(f"Welcome {user.mention} to the most reserved chat in the server ||probably||\nSince you bought {elite.mention} you deserver a special prize, you'll be awarded with a legendary item of choice from the shop\nBut remember to contact Yuuki to claim it, I heard he's quite lazy with this stuff", allowed_mentions = discord.AllowedMentions(roles=False))
         return await ctx.send(f"You just bought the {elite.mention} role for {price}", allowed_mentions = discord.AllowedMentions(roles=False))
