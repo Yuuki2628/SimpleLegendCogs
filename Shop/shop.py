@@ -4,6 +4,7 @@ import discord
 from adventure.charsheet import Character
 from redbot.core import checks
 from redbot.core import bank
+from redbot.core.utils.predicates import MessagePredicate
 
 class Shop(commands.Cog):
     """Buy items"""
