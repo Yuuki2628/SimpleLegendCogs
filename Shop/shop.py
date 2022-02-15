@@ -153,17 +153,17 @@ class Shop(commands.Cog):
 
         await ctx.send("If you'd like to cancel at any point write `cancel`")
         await ctx.send("What's the enemy name?\nExample: Yuuki")
-        name = await ctx.bot.wait_for("message", timeout=12)
+        name = await ctx.bot.wait_for("message", check=MessagePredicate.same_context(user=ctx.author), timeout=12)
         if "name == cancel" or name is None or name == "":
             return
 
         await ctx.send("What's the enemy main weakness/strength?\nExample: weak to talk, resistant to everything else if possible\nNote: not specifying anything will result in Yuuki deciding for you")
-        stats = await ctx.bot.wait_for("message", timeout=12)
+        stats = await ctx.bot.wait_for("message", check=MessagePredicate.same_context(user=ctx.author), timeout=12)
         if stats == "cancel" or stats is None or stats == "":
             return
 
         await ctx.send("What's the enemy image?\nExample: <https://cdn.discordapp.com/attachments/733451738643824720/943183446212218942/PFP9.png>")
-        img = await ctx.bot.wait_for("message", timeout=12)
+        img = await ctx.bot.wait_for("message", check=MessagePredicate.same_context(user=ctx.author), timeout=12)
         if img == "cancel" or img is None or img == "":
             return
 
