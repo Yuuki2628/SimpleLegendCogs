@@ -58,6 +58,8 @@ class Roleplay(BaseCog):
                 "https://cdn-live.warthunder.com/uploads/5f/8f903f513e363b978150babb9297f4be9c90d8_mq/tumblr_n8wr8siAyx1qa94xto2_500.gif",
                 "https://c.tenor.com/FTgiqwBBvr8AAAAC/anime-kirito.gif",
                 "https://c.tenor.com/xURq6gggo18AAAAC/anime-are-you-lost.gif",
+                "https://c.tenor.com/Q_MkEMrbdCIAAAAC/yuri-hug.gif",
+                "https://c.tenor.com/1T1B8HcWalQAAAAC/anime-hug.gif",
             ],
             "cuddle": [
                 "https://cdn.weeb.sh/images/BkTe8U7v-.gif",
@@ -308,6 +310,8 @@ class Roleplay(BaseCog):
                 "https://c.tenor.com/_zZe_wgU1dcAAAAC/ora-jojo.gif",
                 "https://c.tenor.com/zQJvL4bppdsAAAAC/punch-diavolo.gif",
                 "https://c.tenor.com/Q2A-CA2vGpwAAAAC/jojos-bizarre-adventure-jojo.gif",
+                "https://giffiles.alphacoders.com/182/182863.gif",
+                "https://i.makeagif.com/media/7-21-2015/Rl9uss.gif",
             ],
             "grope": [
                 "https://c.tenor.com/Lp0DoHwREjAAAAAC/sao-sword-art-online.gif",
@@ -322,6 +326,14 @@ class Roleplay(BaseCog):
                 "https://c.tenor.com/hRCafFw1KZwAAAAC/anime-seras-victoria.gif",
                 "https://c.tenor.com/0E-ttG8cHA8AAAAC/boob-grab-anime.gif",
                 "https://c.tenor.com/5CRy73KdjjoAAAAC/tohru-dragon-maid.gif",
+                "https://i.makeagif.com/media/2-01-2017/rn2GOR.gif",
+                "https://xxgasm.com/wp-content/upload/2018/04/anime_boob_grope-2463.gif",
+                "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0ad98814-3b03-420c-b426-7343bafd88aa/d6uvbth-b6e3fc08-1a16-4071-9ec4-f4022301db86.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzBhZDk4ODE0LTNiMDMtNDIwYy1iNDI2LTczNDNiYWZkODhhYVwvZDZ1dmJ0aC1iNmUzZmMwOC0xYTE2LTQwNzEtOWVjNC1mNDAyMjMwMWRiODYuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.-K4JHaHstEpl5Hgxn-WRy0eET5dpeUdyPH_cYqryw5I",
+                "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0ad98814-3b03-420c-b426-7343bafd88aa/d6uvds0-4dbf5ad2-5ee6-431d-80f4-cb651cedcd2c.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzBhZDk4ODE0LTNiMDMtNDIwYy1iNDI2LTczNDNiYWZkODhhYVwvZDZ1dmRzMC00ZGJmNWFkMi01ZWU2LTQzMWQtODBmNC1jYjY1MWNlZGNkMmMuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.S7FU5JzXVb6f7nsYtAhHujKhOkCxqQAj58gOg5VvQzc",
+                "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0ad98814-3b03-420c-b426-7343bafd88aa/d6uvgaw-eb43f453-f03e-4418-bbbe-2c373790c514.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzBhZDk4ODE0LTNiMDMtNDIwYy1iNDI2LTczNDNiYWZkODhhYVwvZDZ1dmdhdy1lYjQzZjQ1My1mMDNlLTQ0MTgtYmJiZS0yYzM3Mzc5MGM1MTQuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.qkqKnXO1RJbHROd8kwpiE0-7AuSXBYRHQFqE7GM2I1w",
+                "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0ad98814-3b03-420c-b426-7343bafd88aa/d6uvgaw-eb43f453-f03e-4418-bbbe-2c373790c514.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzBhZDk4ODE0LTNiMDMtNDIwYy1iNDI2LTczNDNiYWZkODhhYVwvZDZ1dmdhdy1lYjQzZjQ1My1mMDNlLTQ0MTgtYmJiZS0yYzM3Mzc5MGM1MTQuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.qkqKnXO1RJbHROd8kwpiE0-7AuSXBYRHQFqE7GM2I1w",
+                "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0ad98814-3b03-420c-b426-7343bafd88aa/d6uvg85-b5f2f360-4cc2-42b6-985a-f59ca32eb09d.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzBhZDk4ODE0LTNiMDMtNDIwYy1iNDI2LTczNDNiYWZkODhhYVwvZDZ1dmc4NS1iNWYyZjM2MC00Y2MyLTQyYjYtOTg1YS1mNTljYTMyZWIwOWQuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.eckVtkxzBdCKkbbBnH8in_0_pYnKSs9B0zPFE0X4Mq8",
+                "https://i.makeagif.com/media/7-04-2017/l1Snv4.gif",
             ],
             "sleep": [
                 "https://c.tenor.com/qlxdd9DVMHUAAAAC/willcore-kon.gif",
