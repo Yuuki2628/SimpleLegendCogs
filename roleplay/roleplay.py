@@ -334,6 +334,8 @@ class Roleplay(BaseCog):
                 "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0ad98814-3b03-420c-b426-7343bafd88aa/d6uvgaw-eb43f453-f03e-4418-bbbe-2c373790c514.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzBhZDk4ODE0LTNiMDMtNDIwYy1iNDI2LTczNDNiYWZkODhhYVwvZDZ1dmdhdy1lYjQzZjQ1My1mMDNlLTQ0MTgtYmJiZS0yYzM3Mzc5MGM1MTQuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.qkqKnXO1RJbHROd8kwpiE0-7AuSXBYRHQFqE7GM2I1w",
                 "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0ad98814-3b03-420c-b426-7343bafd88aa/d6uvg85-b5f2f360-4cc2-42b6-985a-f59ca32eb09d.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzBhZDk4ODE0LTNiMDMtNDIwYy1iNDI2LTczNDNiYWZkODhhYVwvZDZ1dmc4NS1iNWYyZjM2MC00Y2MyLTQyYjYtOTg1YS1mNTljYTMyZWIwOWQuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.eckVtkxzBdCKkbbBnH8in_0_pYnKSs9B0zPFE0X4Mq8",
                 "https://i.makeagif.com/media/7-04-2017/l1Snv4.gif",
+                "http://24.media.tumblr.com/f4174132dffe47b6ef354efe37553ece/tumblr_mjli9ixR7A1s5pmx8o1_r1_500.gif",
+                "https://img.xbooru.com//images/425/694198f6b61f05ecd4d13fac36c14bc5.gif?466768",
             ],
             "sleep": [
                 "https://c.tenor.com/qlxdd9DVMHUAAAAC/willcore-kon.gif",
