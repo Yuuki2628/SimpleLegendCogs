@@ -5,7 +5,7 @@ from adventure.charsheet import Character
 from redbot.core import checks
 from redbot.core import bank
 from redbot.core.utils.predicates import MessagePredicate
-from redbot.core.utils.chat_formatting import humanize_list
+from redbot.core.utils.chat_formatting import humanize_number
 
 class Shop(commands.Cog):
     """Buy items"""
