@@ -123,7 +123,7 @@ class Shop(commands.Cog):
 
         bal = await bank.get_balance(user)
         if bal < price:
-            return await ctx.send(f"You don't have enough credits to buy this item\nYou need {humanize_number(price)} {currency_name}")
+            return await ctx.send(f"You don't have enough {currency_name} to buy this item\nYou need {humanize_number(price)} {currency_name}")
         await bank.withdraw_credits(user, price)
 
         adv = ctx.bot.get_cog("Adventure")
@@ -157,7 +157,7 @@ class Shop(commands.Cog):
 
         bal = await bank.get_balance(user)
         if bal < price:
-            return await ctx.send(f"You don't have enough credits to buy this item\nYou need {humanize_number(price)} {currency_name}")
+            return await ctx.send(f"You don't have enough {currency_name} to buy this item\nYou need {humanize_number(price)} {currency_name}")
 
         await ctx.send("If you'd like to cancel at any point write `cancel`")
 
@@ -209,7 +209,7 @@ class Shop(commands.Cog):
         price = 3500000
         bal = await bank.get_balance(user)
         if bal < price:
-            return await ctx.send(f"You don't have enough credits to buy this item\nYou need {humanize_number(price)} {currency_name}")
+            return await ctx.send(f"You don't have enough {currency_name} to buy this item\nYou need {humanize_number(price)} {currency_name}")
 
         rare = discord.utils.get(ctx.guild.roles,name="Rare")
         if rare in user.roles:
@@ -230,7 +230,7 @@ class Shop(commands.Cog):
         price = 8000000
         bal = await bank.get_balance(user)
         if bal < price:
-            return await ctx.send(f"You don't have enough credits to buy this item\nYou need {humanize_number(price)} {currency_name}")
+            return await ctx.send(f"You don't have enough {currency_name} to buy this item\nYou need {humanize_number(price)} {currency_name}")
 
         rare = discord.utils.get(ctx.guild.roles,name="Rare")
         epic = discord.utils.get(ctx.guild.roles,name="Epic")
@@ -255,7 +255,7 @@ class Shop(commands.Cog):
         price = 20000000
         bal = await bank.get_balance(user)
         if bal < price:
-            return await ctx.send(f"You don't have enough credits to buy this item\nYou need {humanize_number(price)} {currency_name}")
+            return await ctx.send(f"You don't have enough {currency_name} to buy this item\nYou need {humanize_number(price)} {currency_name}")
 
         epic = discord.utils.get(ctx.guild.roles,name="Epic")
         legendary = discord.utils.get(ctx.guild.roles,name="LeGeNDary")
@@ -280,7 +280,7 @@ class Shop(commands.Cog):
         price = 80000000
         bal = await bank.get_balance(user)
         if bal < price:
-            return await ctx.send(f"You don't have enough credits to buy this item\nYou need {humanize_number(price)} {currency_name}")
+            return await ctx.send(f"You don't have enough {currency_name} to buy this item\nYou need {humanize_number(price)} {currency_name}")
 
         legendary = discord.utils.get(ctx.guild.roles,name="LeGeNDary")
         elite = discord.utils.get(ctx.guild.roles,name="Elite")
