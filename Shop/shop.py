@@ -216,7 +216,7 @@ class Shop(commands.Cog):
         await bank.withdraw_credits(user, price)
         await user.add_roles(rare)
 
-        return await ctx.send(f"You just bought the <@815957842266816522> role for {price}", allowed_mentions = discord.AllowedMentions(roles=False))
+        return await ctx.send(f"You just bought the {rare.mention} role for {price}", allowed_mentions = discord.AllowedMentions(roles=False))
 
     @buy.command(name="epic")
     @commands.guild_only()
