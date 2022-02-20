@@ -5,6 +5,7 @@ from adventure.charsheet import Character
 from redbot.core import checks
 from redbot.core import bank
 from redbot.core.utils.predicates import MessagePredicate
+import redbot.core.utils.chat_formatting
 
 class Shop(commands.Cog):
     """Buy items"""
@@ -99,6 +100,7 @@ class Shop(commands.Cog):
     @commands.guild_only()
     async def buy_set(self, ctx, count: int = 1):
         """Buy set loot x5 for adventure"""
+        currency_name = await bank.get_currency_name(ctx.guild,)
         if count is None:
             count = 1
 
@@ -121,7 +123,7 @@ class Shop(commands.Cog):
 
         bal = await bank.get_balance(user)
         if bal < price:
-            return await ctx.send(f"You don't have enough credits to buy this item\nYou need {price}")
+            return await ctx.send(f"You don't have enough credits to buy this item\nYou need {humanize_number(price)} {currency_name}")
         await bank.withdraw_credits(user, price)
 
         adv = ctx.bot.get_cog("Adventure")
@@ -136,12 +138,13 @@ class Shop(commands.Cog):
 
             await adv.config.user(user).set(await c.to_json(adv.config))
         
-        return await ctx.send(f"You just bought {count} set loot chests for {price}")
+        return await ctx.send(f"You just bought {count} set loot chests for {humanize_number(price)} {currency_name}")
 
     @buy.command(name="boss")
     @commands.guild_only()
     async def buy_boss(self, ctx):
         """Buy a custom boss for adventure"""
+        currency_name = await bank.get_currency_name(ctx.guild,)
         user = ctx.author
         userRoles = user.roles
         price = 10000000
@@ -154,7 +157,7 @@ class Shop(commands.Cog):
 
         bal = await bank.get_balance(user)
         if bal < price:
-            return await ctx.send(f"You don't have enough credits to buy this item\nYou need {price}")
+            return await ctx.send(f"You don't have enough credits to buy this item\nYou need {humanize_number(price)} {currency_name}")
 
         await ctx.send("If you'd like to cancel at any point write `cancel`")
 
@@ -194,18 +197,19 @@ class Shop(commands.Cog):
         embed.add_field(name="Img", value=img.content, inline=False)
 
         await dm_channel.send(embed=embed)
-        return await ctx.send(f"You paid your price of {price} and your request has been forwarded to the one above all")
+        return await ctx.send(f"You paid your price of {humanize_number(price)} {currency_name} and your request has been forwarded to the one above all")
 
     @buy.command(name="rare")
     @commands.guild_only()
     async def buy_rare(self, ctx):
         """Buy the Rare role"""
-        
+        currency_name = await bank.get_currency_name(ctx.guild,)
+
         user = ctx.author
         price = 3500000
         bal = await bank.get_balance(user)
         if bal < price:
-            return await ctx.send(f"You don't have enough credits to buy this item\nYou need {price}")
+            return await ctx.send(f"You don't have enough credits to buy this item\nYou need {humanize_number(price)} {currency_name}")
 
         rare = discord.utils.get(ctx.guild.roles,name="Rare")
         if rare in user.roles:
@@ -220,12 +224,13 @@ class Shop(commands.Cog):
     @commands.guild_only()
     async def buy_epic(self, ctx):
         """Buy the Epic role"""
-        
+        currency_name = await bank.get_currency_name(ctx.guild,)
+
         user = ctx.author
         price = 8000000
         bal = await bank.get_balance(user)
         if bal < price:
-            return await ctx.send(f"You don't have enough credits to buy this item\nYou need {price}")
+            return await ctx.send(f"You don't have enough credits to buy this item\nYou need {humanize_number(price)} {currency_name}")
 
         rare = discord.utils.get(ctx.guild.roles,name="Rare")
         epic = discord.utils.get(ctx.guild.roles,name="Epic")
@@ -244,12 +249,13 @@ class Shop(commands.Cog):
     @commands.guild_only()
     async def buy_legendary(self, ctx):
         """Buy the Legendary role"""
-        
+        currency_name = await bank.get_currency_name(ctx.guild,)
+
         user = ctx.author
         price = 20000000
         bal = await bank.get_balance(user)
         if bal < price:
-            return await ctx.send(f"You don't have enough credits to buy this item\nYou need {price}")
+            return await ctx.send(f"You don't have enough credits to buy this item\nYou need {humanize_number(price)} {currency_name}")
 
         epic = discord.utils.get(ctx.guild.roles,name="Epic")
         legendary = discord.utils.get(ctx.guild.roles,name="LeGeNDary")
@@ -268,12 +274,13 @@ class Shop(commands.Cog):
     @commands.guild_only()
     async def buy_elite(self, ctx):
         """Buy the Elite role"""
-        
+        currency_name = await bank.get_currency_name(ctx.guild,)
+
         user = ctx.author
         price = 80000000
         bal = await bank.get_balance(user)
         if bal < price:
-            return await ctx.send(f"You don't have enough credits to buy this item\nYou need {price}")
+            return await ctx.send(f"You don't have enough credits to buy this item\nYou need {humanize_number(price)} {currency_name}")
 
         legendary = discord.utils.get(ctx.guild.roles,name="LeGeNDary")
         elite = discord.utils.get(ctx.guild.roles,name="Elite")
