@@ -135,7 +135,7 @@ class Shop(commands.Cog):
             c.treasure[5] += count
 
             await adv.config.user(user).set(await c.to_json(adv.config))
-
+        
         return await ctx.send(f"You just bought {count} set loot chests for {price}")
 
     @buy.command(name="boss")
@@ -214,7 +214,7 @@ class Shop(commands.Cog):
         await bank.withdraw_credits(user, price)
         await user.add_roles(rare)
 
-        return await ctx.send(f"You just bought the {rare.mention} role for {price}", allowed_mentions = discord.AllowedMentions(roles=False))
+        return await ctx.tick()
 
     @buy.command(name="epic")
     @commands.guild_only()
@@ -237,7 +237,8 @@ class Shop(commands.Cog):
         
         await user.add_roles(epic)
         await bank.withdraw_credits(user, price)
-        return await ctx.send(f"You just bought the {epic.mention} role for {price}", allowed_mentions = discord.AllowedMentions(roles=False))
+
+        return await ctx.tick()
 
     @buy.command(name="legendary")
     @commands.guild_only()
@@ -260,7 +261,8 @@ class Shop(commands.Cog):
         
         await user.add_roles(legendary)
         await bank.withdraw_credits(user, price)
-        return await ctx.send(f"You just bought the {legendary.mention} role for {price}", allowed_mentions = discord.AllowedMentions(roles=False))
+
+        return await ctx.tick()
 
     @buy.command(name="elite")
     @commands.guild_only()
@@ -286,4 +288,5 @@ class Shop(commands.Cog):
 
         elite_channel = ctx.bot.get_channel(736789008121593876)
         await elite_channel.send(f"Welcome {user.mention} to the most reserved chat in the server ||probably||\nSince you bought {elite.mention} you deserver a special prize, you'll be awarded with a legendary item of choice from the shop\nBut remember to contact Yuuki to claim it, I heard he's quite lazy with this stuff", allowed_mentions = discord.AllowedMentions(roles=False))
-        return await ctx.send(f"You just bought the {elite.mention} role for {price}", allowed_mentions = discord.AllowedMentions(roles=False))
+        
+        return await ctx.tick()
