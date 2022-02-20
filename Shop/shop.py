@@ -100,7 +100,7 @@ class Shop(commands.Cog):
     @commands.guild_only()
     async def buy_set(self, ctx, count: int = 1):
         """Buy set loot x5 for adventure"""
-        currency_name = await bank.get_currency_name(ctx.guild,)
+        currency_name = await bank.get_currency_name(ctx.guild)
         if count is None:
             count = 1
 
@@ -144,7 +144,7 @@ class Shop(commands.Cog):
     @commands.guild_only()
     async def buy_boss(self, ctx):
         """Buy a custom boss for adventure"""
-        currency_name = await bank.get_currency_name(ctx.guild,)
+        currency_name = await bank.get_currency_name(ctx.guild)
         user = ctx.author
         userRoles = user.roles
         price = 10000000
@@ -203,7 +203,7 @@ class Shop(commands.Cog):
     @commands.guild_only()
     async def buy_rare(self, ctx):
         """Buy the Rare role"""
-        currency_name = await bank.get_currency_name(ctx.guild,)
+        currency_name = await bank.get_currency_name(ctx.guild)
 
         user = ctx.author
         price = 3500000
@@ -224,7 +224,7 @@ class Shop(commands.Cog):
     @commands.guild_only()
     async def buy_epic(self, ctx):
         """Buy the Epic role"""
-        currency_name = await bank.get_currency_name(ctx.guild,)
+        currency_name = await bank.get_currency_name(ctx.guild)
 
         user = ctx.author
         price = 8000000
@@ -249,7 +249,7 @@ class Shop(commands.Cog):
     @commands.guild_only()
     async def buy_legendary(self, ctx):
         """Buy the Legendary role"""
-        currency_name = await bank.get_currency_name(ctx.guild,)
+        currency_name = await bank.get_currency_name(ctx.guild)
 
         user = ctx.author
         price = 20000000
@@ -274,7 +274,7 @@ class Shop(commands.Cog):
     @commands.guild_only()
     async def buy_elite(self, ctx):
         """Buy the Elite role"""
-        currency_name = await bank.get_currency_name(ctx.guild,)
+        currency_name = await bank.get_currency_name(ctx.guild)
 
         user = ctx.author
         price = 80000000
@@ -297,3 +297,37 @@ class Shop(commands.Cog):
         await elite_channel.send(f"Welcome {user.mention} to the most reserved chat in the server ||probably||\nSince you bought {elite.mention} you deserver a special prize, you'll be awarded with a legendary item of choice from the shop\nBut remember to contact Yuuki to claim it, I heard he's quite lazy with this stuff", allowed_mentions = discord.AllowedMentions(roles=False))
         
         return await ctx.tick()
+
+    @buy.command(name="embed")
+    @commands.guild_only()
+    async def buy_elite(self, ctx, cc_name: str):
+        """Buy a simple embed"""
+        currency_name = await bank.get_currency_name(ctx.guild)
+
+        user = ctx.author
+        price = 3000000
+        bal = await bank.get_balance(user)
+        if bal < price:
+            return await ctx.send(f"You don't have enough {currency_name} to buy this item\nYou need {humanize_number(price)} {currency_name}")
+        
+        legendary = discord.utils.get(ctx.guild.roles,name="LeGeNDary")
+        if not legendary in user.roles:
+            return await ctx.send(f"You need to have bought the {legendary.mention} role first", allowed_mentions = discord.AllowedMentions(roles=False))
+
+        eliter = discord.utils.get(ctx.guild.roles,name="Elite")
+        bilr1 = discord.utils.get(ctx.guild.roles,name="OG Billionaire")
+        bilr2 = discord.utils.get(ctx.guild.roles,name="New Billionaire")
+        if((eliter in userRoles) or (bilr1 in userRoles) or (bilr2 in userRoles)):
+            price = 1000000
+                
+        await bank.withdraw_credits(user, price)
+
+        yuuki = ctx.guild.get_member(295275466703503372)
+        dm_channel = await yuuki.create_dm()
+        
+        embed=discord.Embed(title="Simple embed shop")
+        embed.add_field(name="Someone wants to buy a simple embed boss", value=f"{user.name}#{user.discriminator}", inline=False)
+        embed.add_field(name="CC", value=cc_name, inline=False)
+
+        await dm_channel.send(embed=embed)
+        return await ctx.send(f"You paid your price of {humanize_number(price)} {currency_name} and your request has been forwarded to the one above all")
