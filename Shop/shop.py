@@ -311,12 +311,12 @@ class Shop(commands.Cog):
             return await ctx.send(f"You don't have enough {currency_name} to buy this item\nYou need {humanize_number(price)} {currency_name}")
         
         legendary = discord.utils.get(ctx.guild.roles,name="LeGeNDary")
-        if not legendary in user.roles:
-            return await ctx.send(f"You need to have bought the {legendary.mention} role first", allowed_mentions = discord.AllowedMentions(roles=False))
-
         eliter = discord.utils.get(ctx.guild.roles,name="Elite")
         bilr1 = discord.utils.get(ctx.guild.roles,name="OG Billionaire")
         bilr2 = discord.utils.get(ctx.guild.roles,name="New Billionaire")
+
+        if not ((legendary in user.roles) or (eliter in userRoles) or (bilr1 in userRoles) or (bilr2 in userRoles)):
+            return await ctx.send(f"You need to have bought the {legendary.mention} role first", allowed_mentions = discord.AllowedMentions(roles=False))
         if((eliter in userRoles) or (bilr1 in userRoles) or (bilr2 in userRoles)):
             price = 1000000
                 
