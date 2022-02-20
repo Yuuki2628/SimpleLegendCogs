@@ -105,17 +105,16 @@ class Shop(commands.Cog):
             count = 1
 
         user = ctx.author
-        userRoles = user.roles
         price = 10000000
 
         legendary = discord.utils.get(ctx.guild.roles,name="LeGeNDary")
-        if not legendary in userRoles:
+        if not legendary in user.roles:
             return await ctx.send(f"You need to have bought {legendary.mention} to buy this item")
         
         eliter = discord.utils.get(ctx.guild.roles,name="Elite")
         bilr1 = discord.utils.get(ctx.guild.roles,name="OG Billionaire")
         bilr2 = discord.utils.get(ctx.guild.roles,name="New Billionaire")
-        if((eliter in userRoles) or (bilr1 in userRoles) or (bilr2 in userRoles)):
+        if((eliter in user.roles) or (bilr1 in user.roles) or (bilr2 in user.roles)):
             price = 5000000
 
         price = price * count
@@ -146,13 +145,12 @@ class Shop(commands.Cog):
         """Buy a custom boss for adventure"""
         currency_name = await bank.get_currency_name(ctx.guild)
         user = ctx.author
-        userRoles = user.roles
         price = 10000000
 
         eliter = discord.utils.get(ctx.guild.roles,name="Elite")
         bilr1 = discord.utils.get(ctx.guild.roles,name="OG Billionaire")
         bilr2 = discord.utils.get(ctx.guild.roles,name="New Billionaire")
-        if((eliter in userRoles) or (bilr1 in userRoles) or (bilr2 in userRoles)):
+        if((eliter in user.roles) or (bilr1 in user.roles) or (bilr2 in user.roles)):
             price = 5000000
 
         bal = await bank.get_balance(user)
@@ -315,9 +313,9 @@ class Shop(commands.Cog):
         bilr1 = discord.utils.get(ctx.guild.roles,name="OG Billionaire")
         bilr2 = discord.utils.get(ctx.guild.roles,name="New Billionaire")
 
-        if not ((legendary in user.roles) or (eliter in userRoles) or (bilr1 in userRoles) or (bilr2 in userRoles)):
+        if not ((legendary in user.roles) or (eliter in user.roles) or (bilr1 in user.roles) or (bilr2 in user.roles)):
             return await ctx.send(f"You need to have bought the {legendary.mention} role first", allowed_mentions = discord.AllowedMentions(roles=False))
-        if((eliter in userRoles) or (bilr1 in userRoles) or (bilr2 in userRoles)):
+        if((eliter in user.roles) or (bilr1 in user.roles) or (bilr2 in user.roles)):
             price = 1000000
                 
         await bank.withdraw_credits(user, price)
