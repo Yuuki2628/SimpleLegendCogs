@@ -40,17 +40,17 @@ class Shop(commands.Cog):
             "Emoji flair:        200k   ~             \n"
             "Custom background:  800k   ~             \n"
             "Custom command:     500k   ~             \n"
-            "Rare:               1,5M   !buy rare     \n"
-            "Epic:               3,5M   !buy epic     \n"
-            "Legendary:           10M   !buy legendary\n"
-            "Elite:               35M   !buy elite    \n"
+            "Rare:               3,5M   !buy rare     \n"
+            "Epic:                 8M   !buy epic     \n"
+            "Legendary:           20M   !buy legendary\n"
+            "Elite:               80M   !buy elite    \n"
            #"-------------------------------------------------"
             "```", inline=False)
         embed.add_field(name="**Legendary Items**", value="```\n"
             "Item name          Price  Elite  \n"
             "Custom adv boss:     10M     5M  \n"
-            "x5 set loot chests:   4M     2M  \n"
-            "Simple embed update:  5M     2M  \n"
+            "x5 set loot chests:  10M     5M  \n"
+            "Simple embed update:  3M     1M  \n"
             "Elite embed update:  10M    10M  \n"
            #"-------------------------------------------------"
             "```", inline=False)
@@ -70,17 +70,17 @@ class Shop(commands.Cog):
             "Emoji flair:        200k   ~             \n"
             "Custom background:  800k   ~             \n"
             "Custom command:     500k   ~             \n"
-            "Rare:               1,5M   !buy rare     \n"
-            "Epic:               3,5M   !buy epic     \n"
-            "Legendary:           10M   !buy legendary\n"
-            "Elite:               35M   !buy elite    \n"
+            "Rare:               3,5M   !buy rare     \n"
+            "Epic:                 8M   !buy epic     \n"
+            "Legendary:           20M   !buy legendary\n"
+            "Elite:               80M   !buy elite    \n"
            #"-------------------------------------------------"
             "```", inline=False)
         embed.add_field(name="**Legendary Items**", value="```\n"
             "Item name          Price  Elite  \n"
             "Custom adv boss:     10M     5M  \n"
-            "x5 set loot chests:   4M     2M  \n"
-            "Simple embed update:  5M     2M  \n"
+            "x5 set loot chests:  10M     5M  \n"
+            "Simple embed update:  3M     1M  \n"
             "Elite embed update:  10M    10M  \n"
            #"-------------------------------------------------"
             "```", inline=False)
@@ -104,7 +104,7 @@ class Shop(commands.Cog):
 
         user = ctx.author
         userRoles = user.roles
-        price = 4000000
+        price = 10000000
 
         legendary = discord.utils.get(ctx.guild.roles,name="LeGeNDary")
         if not legendary in userRoles:
@@ -114,7 +114,7 @@ class Shop(commands.Cog):
         bilr1 = discord.utils.get(ctx.guild.roles,name="OG Billionaire")
         bilr2 = discord.utils.get(ctx.guild.roles,name="New Billionaire")
         if((eliter in userRoles) or (bilr1 in userRoles) or (bilr2 in userRoles)):
-            price = 2000000
+            price = 5000000
 
         price = price * count
         count = count * 5
@@ -202,7 +202,7 @@ class Shop(commands.Cog):
         """Buy the Rare role"""
         
         user = ctx.author
-        price = 1500000
+        price = 3500000
         bal = await bank.get_balance(user)
         if bal < price:
             return await ctx.send(f"You don't have enough credits to buy this item\nYou need {price}")
@@ -222,7 +222,7 @@ class Shop(commands.Cog):
         """Buy the Epic role"""
         
         user = ctx.author
-        price = 3500000
+        price = 8000000
         bal = await bank.get_balance(user)
         if bal < price:
             return await ctx.send(f"You don't have enough credits to buy this item\nYou need {price}")
@@ -245,7 +245,7 @@ class Shop(commands.Cog):
         """Buy the Legendary role"""
         
         user = ctx.author
-        price = 10000000
+        price = 20000000
         bal = await bank.get_balance(user)
         if bal < price:
             return await ctx.send(f"You don't have enough credits to buy this item\nYou need {price}")
@@ -268,7 +268,7 @@ class Shop(commands.Cog):
         """Buy the Elite role"""
         
         user = ctx.author
-        price = 35000000
+        price = 80000000
         bal = await bank.get_balance(user)
         if bal < price:
             return await ctx.send(f"You don't have enough credits to buy this item\nYou need {price}")
