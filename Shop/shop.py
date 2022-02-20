@@ -324,7 +324,7 @@ class Shop(commands.Cog):
         dm_channel = await yuuki.create_dm()
         
         embed=discord.Embed(title="Simple embed shop")
-        embed.add_field(name="Someone wants to buy a simple embed boss", value=f"{user.name}#{user.discriminator}", inline=False)
+        embed.add_field(name="Someone wants to buy a simple embed", value=f"{user.name}#{user.discriminator}", inline=False)
         embed.add_field(name="CC", value=cc_name, inline=False)
 
         await dm_channel.send(embed=embed)
