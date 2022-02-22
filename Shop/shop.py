@@ -20,7 +20,7 @@ class Shop(commands.Cog):
         legendary = discord.utils.get(ctx.guild.roles,name="LeGeNDary")
         elite = discord.utils.get(ctx.guild.roles,name="Elite")
         bil1 = discord.utils.get(ctx.guild.roles,name="OG Billionaire")
-        bil2 = discord.utils.get(ctx.guild.roles,name="New Billionaire")
+        bil2 = discord.utils.get(ctx.guild.roles,name="Billionaire")
         
         embed = discord.Embed(title="LeGeND Shop",color=0x7289DA)
         embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/722551851891032134/853281697411629097/unknown.png")
@@ -113,7 +113,7 @@ class Shop(commands.Cog):
         
         eliter = discord.utils.get(ctx.guild.roles,name="Elite")
         bilr1 = discord.utils.get(ctx.guild.roles,name="OG Billionaire")
-        bilr2 = discord.utils.get(ctx.guild.roles,name="New Billionaire")
+        bilr2 = discord.utils.get(ctx.guild.roles,name="Billionaire")
         if((eliter in user.roles) or (bilr1 in user.roles) or (bilr2 in user.roles)):
             price = 5000000
 
@@ -149,7 +149,7 @@ class Shop(commands.Cog):
 
         eliter = discord.utils.get(ctx.guild.roles,name="Elite")
         bilr1 = discord.utils.get(ctx.guild.roles,name="OG Billionaire")
-        bilr2 = discord.utils.get(ctx.guild.roles,name="New Billionaire")
+        bilr2 = discord.utils.get(ctx.guild.roles,name="Billionaire")
         if((eliter in user.roles) or (bilr1 in user.roles) or (bilr2 in user.roles)):
             price = 5000000
 
@@ -311,7 +311,7 @@ class Shop(commands.Cog):
         legendary = discord.utils.get(ctx.guild.roles,name="LeGeNDary")
         eliter = discord.utils.get(ctx.guild.roles,name="Elite")
         bilr1 = discord.utils.get(ctx.guild.roles,name="OG Billionaire")
-        bilr2 = discord.utils.get(ctx.guild.roles,name="New Billionaire")
+        bilr2 = discord.utils.get(ctx.guild.roles,name="Billionaire")
 
         if not ((legendary in user.roles) or (eliter in user.roles) or (bilr1 in user.roles) or (bilr2 in user.roles)):
             return await ctx.send(f"You need to have bought the {legendary.mention} role first", allowed_mentions = discord.AllowedMentions(roles=False))
