@@ -298,7 +298,7 @@ class Shop(commands.Cog):
 
     @buy.command(name="embed")
     @commands.guild_only()
-    async def buy_elite(self, ctx, cc_name: str):
+    async def buy_embed(self, ctx, cc_name: str):
         """Buy a simple embed"""
         currency_name = await bank.get_currency_name(ctx.guild)
 
