@@ -22,32 +22,32 @@ class BobAlice(commands.Cog):
     async def setbobkey(self, ctx, key: int):
         """Set bob's private key"""
         await self.config.guild(ctx.guild).bobkey.set(key)
-        return ctx.send("Key set")
+        return await ctx.send("Key set")
 
     @commands.command()
     @commands.guild_only()
     async def setalicekey(self, ctx, key: int):
-        """Set bob's private key"""
+        """Set alice's private key"""
         await self.config.guild(ctx.guild).alicekey.set(key)
-        return ctx.send("Key set")
+        return await ctx.send("Key set")
 
     @commands.command()
     @commands.guild_only()
-    async def setpublickey(self, ctx, key: int = 0):
-        """generate a new public key key"""
+    async def setpublicgen(self, ctx, key: int = 0):
+        """generate a new public gen"""
         if key == 0:
             key = random.randint(0, 1000)
         await self.config.guild(ctx.guild).publicgen.set(key)
-        return ctx.send(f"Key set to {key}")
+        return await ctx.send(f"Key set to {key}")
 
     @commands.command()
     @commands.guild_only()
     async def setpublicmod(self, ctx, key: int = 0):
-        """generate a new public key"""
+        """generate a new public mod"""
         if key == 0:
             key = random.randint(0, 1000)
         await self.config.guild(ctx.guild).publicmod.set(key)
-        return ctx.send(f"Key set to {key}")
+        return await ctx.send(f"Key set to {key}")
 
     @commands.command()
     @commands.guild_only()
@@ -67,4 +67,4 @@ class BobAlice(commands.Cog):
         embed.add_field(name="Chiave privata di Bob", value=f"```\n{bobkeypriv}\n```")
         embed.add_field(name="Chiave privata di Alice", value=f"```\n{alicekeypriv}\n```")
         embed.add_field(name="Chiave privata", value=f"```\n{bobkeypriv%publicmod}\n```")
-        return ctx.send(embed=embed)
+        return await ctx.send(embed=embed)
