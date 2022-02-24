@@ -63,8 +63,9 @@ class BobAlice(commands.Cog):
         
         bobkeypriv = (publicgen ** bobkey) % publicmod
         alicekeypriv = (publicgen ** alicekey) % publicmod
+        finalkey = (bobkeypriv ** alicekey) % publicmod
         embed = discord.Embed(title="Comunicazione Bob Alice", color=0xFFD700)
         embed.add_field(name="Chiave privata di Bob", value=f"```\n{bobkeypriv}\n```")
         embed.add_field(name="Chiave privata di Alice", value=f"```\n{alicekeypriv}\n```")
-        embed.add_field(name="Chiave privata", value=f"```\n{bobkeypriv%publicmod}\n```")
+        embed.add_field(name="Chiave privata", value=f"```\n{finalkey}\n```")
         return await ctx.send(embed=embed)
