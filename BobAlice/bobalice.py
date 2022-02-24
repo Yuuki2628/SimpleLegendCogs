@@ -12,7 +12,7 @@ class BobAlice(commands.Cog):
             "bobkey": 0,
             "alicekey": 0,
             "publicgen": 0,
-            "public": 0
+            "publicmod": 0
         }
 
         self.config.register_guild(**default_guild)
@@ -42,11 +42,11 @@ class BobAlice(commands.Cog):
 
     @commands.command()
     @commands.guild_only()
-    async def setpublic(self, ctx, key: int = 0):
+    async def setpublicmod(self, ctx, key: int = 0):
         """generate a new public key"""
         if key == 0:
             key = random.randint(0, 1000)
-        await self.config.guild(ctx.guild).public.set(key)
+        await self.config.guild(ctx.guild).publicmod.set(key)
         return ctx.send(f"Key set to {key}")
 
     @commands.command()
@@ -54,8 +54,12 @@ class BobAlice(commands.Cog):
     async def elaborate(self, ctx, key: int = 0):
         """Elaborates the data inputted"""
         bobkey = await self.config.guild(ctx.guild).bobkey()
-        alicekey = await self.config.guild(ctx.guild).bobkey()
-        publicgen = await self.config.guild(ctx.guild).bobkey()
-        public = await self.config.guild(ctx.guild).bobkey()
+        alicekey = await self.config.guild(ctx.guild).alicekey()
+        publicgen = await self.config.guild(ctx.guild).publicgen()
+        publicmod = await self.config.guild(ctx.guild).publicmod()
 
-    
+        if bobkey == 0 or alicekey == 0 or publicgen == 0 or public mod == 0:
+            return await ctx.send("Devi impostare tutti i valori)
+        
+        embed = discord.Embed(title=Comunicazione Bob Alice, color=0xFFD700)
+        embed.add_field(name="Chiave privata di Bob", value=""
