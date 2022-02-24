@@ -58,7 +58,7 @@ class BobAlice(commands.Cog):
         publicgen = await self.config.guild(ctx.guild).publicgen()
         publicmod = await self.config.guild(ctx.guild).publicmod()
 
-        if bobkey == 0 or alicekey == 0 or publicgen == 0 or public mod == 0:
+        if bobkey == 0 or alicekey == 0 or publicgen == 0 or publicmod == 0:
             return await ctx.send("Devi impostare tutti i valori)
         
         bobkeypriv = publicgen ** bobkey
