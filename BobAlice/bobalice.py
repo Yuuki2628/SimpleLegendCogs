@@ -61,5 +61,10 @@ class BobAlice(commands.Cog):
         if bobkey == 0 or alicekey == 0 or publicgen == 0 or public mod == 0:
             return await ctx.send("Devi impostare tutti i valori)
         
+        bobkeypriv = publicgen ** bobkey
+        alicekeypriv = publicgen ** alicekey
         embed = discord.Embed(title=Comunicazione Bob Alice, color=0xFFD700)
-        embed.add_field(name="Chiave privata di Bob", value=""
+        embed.add_field(name="Chiave privata di Bob", value=f"```\n{bobkeypriv}\n```")
+        embed.add_field(name="Chiave privata di Alice", value=f"```\n{alicekeypriv}\n```")
+        embed.add_field(name="Chiave privata", value=f"```\n{bobkeypriv%publicmod}\n```")
+        return ctx.send(embed=embed)
