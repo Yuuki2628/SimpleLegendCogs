@@ -704,8 +704,8 @@ class Leveler(commands.Cog):
             msg = await ctx.bot.wait_for("message", check=MessagePredicate.same_context(user=ctx.author), timeout=90)
         except asyncio.TimeoutError:
             return await ctx.send("Cancelled")
-        if msg.content is not "yes":
-            return await ctx.send("Cancelled")
+        if not msg.content == "yes":
+            return await ctx.send("Cancelled!")
            
         await ctx.send("Deleting all leveler data...")
 
