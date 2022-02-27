@@ -1,4 +1,5 @@
 from redbot.core import Config
+import redbot.core.config
 import asyncio
 import discord
 
