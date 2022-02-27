@@ -1,0 +1,294 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2019-01-18 18:48+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=cp1252\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: redgettext 2.1\n"
+
+
+#: leveler.py:95
+msgid "Resets in 30 seconds max"
+msgstr ""
+
+#: leveler.py:175 leveler.py:349
+msgid "Level:"
+msgstr ""
+
+#: leveler.py:176
+msgid "Ranking:"
+msgstr ""
+
+#: leveler.py:177
+msgid "Role:"
+msgstr ""
+
+#: leveler.py:178
+msgid "Progress:"
+msgstr ""
+
+#: leveler.py:223 leveler.py:242
+msgid "New"
+msgstr ""
+
+#: leveler.py:253
+#, docstring
+msgid "Show your leveler progress. Default to yourself."
+msgstr ""
+
+#: leveler.py:329
+#, docstring
+msgid "Allow you to start earning experience !"
+msgstr ""
+
+#: leveler.py:331
+msgid "You are already registered !"
+msgstr ""
+
+#: leveler.py:335
+msgid "You have been successfully registered !"
+msgstr ""
+
+#: leveler.py:340
+#, docstring
+msgid "Show the server leaderboard !"
+msgstr ""
+
+#: leveler.py:342
+msgid "Ranking"
+msgstr ""
+
+#: leveler.py:351
+msgid "Messages Today!"
+msgstr ""
+
+#: leveler.py:358
+#, docstring
+msgid "Configuration commands."
+msgstr ""
+
+#: leveler.py:364
+#, docstring
+msgid "Configure channels whitelist/blacklist."
+msgstr ""
+
+#: leveler.py:370
+#, docstring
+msgid "Whitelist configuration."
+msgstr ""
+
+#: leveler.py:376
+#, docstring
+msgid "Blacklist configuration."
+msgstr ""
+
+#: leveler.py:382
+#, docstring
+msgid "Configuration of roles obtainable from experience."
+msgstr ""
+
+#: leveler.py:387
+#, docstring
+msgid "Change settings of your profile."
+msgstr ""
+
+#: leveler.py:392
+#, docstring
+msgid "Change background image of your profile."
+msgstr ""
+
+#: leveler.py:394
+msgid "Background image is now:"
+msgstr ""
+
+#: leveler.py:398
+#, docstring
+msgid "Change your profile description"
+msgstr ""
+
+#: leveler.py:400
+msgid "Profile description set to: "
+msgstr ""
+
+#: leveler.py:405
+#, docstring
+msgid "Add a role to the list of roles you can get with experience."
+msgstr ""
+
+#: leveler.py:407
+msgid "Role configured"
+msgstr ""
+
+#: leveler.py:412
+#, docstring
+msgid "Remove a role from the whitelist."
+msgstr ""
+
+#: leveler.py:415
+msgid "Role deleted."
+msgstr ""
+
+#: leveler.py:417
+msgid "Remove a role from the list."
+msgstr ""
+
+#: leveler.py:422
+#, docstring
+msgid "Allow you to move a role."
+msgstr ""
+
+#: leveler.py:425
+msgid "Role moved"
+msgstr ""
+
+#: leveler.py:427
+msgid "Remove a role from the list"
+msgstr ""
+
+#: leveler.py:432
+#, docstring
+msgid "Show the list of roles in the order which you get them from experience."
+msgstr ""
+
+#: leveler.py:434
+msgid "List of roles configured for this server."
+msgstr ""
+
+#: leveler.py:435
+msgid "Guaranteed 100% almost no bugs."
+msgstr ""
+
+#: leveler.py:446
+#, docstring
+msgid "Add a channel to the whitelist."
+msgstr ""
+
+#: leveler.py:451
+msgid "Channel added"
+msgstr ""
+
+#: leveler.py:453
+msgid "Channel already whitelisted"
+msgstr ""
+
+#: leveler.py:459 leveler.py:504
+msgid "activated."
+msgstr ""
+
+#: leveler.py:459 leveler.py:504
+msgid "deactivated."
+msgstr ""
+
+#: leveler.py:460
+msgid "Whitelist is {verb}"
+msgstr ""
+
+#: leveler.py:465
+#, docstring
+msgid "Delete a channel from the whitelist.."
+msgstr ""
+
+#: leveler.py:469 leveler.py:514
+msgid "This channel isn't whitelisted."
+msgstr ""
+
+#: leveler.py:472 leveler.py:517
+msgid "Channel deleted"
+msgstr ""
+
+#: leveler.py:477
+#, docstring
+msgid "Show the list of channels configured to allow earning experience."
+msgstr ""
+
+#: leveler.py:479
+msgid "List of channels configured to allow earning experience on this server."
+msgstr ""
+
+#: leveler.py:480 leveler.py:525
+msgid "More or less, it's not an exact science"
+msgstr ""
+
+#: leveler.py:483 leveler.py:528
+msgid "No channels configured"
+msgstr ""
+
+#: leveler.py:491
+#, docstring
+msgid "Add a channel to the blacklist."
+msgstr ""
+
+#: leveler.py:496
+msgid "Channel blacklisted"
+msgstr ""
+
+#: leveler.py:498
+msgid "Channel already blacklisted"
+msgstr ""
+
+#: leveler.py:505
+msgid "Blacklist is {verb}"
+msgstr ""
+
+#: leveler.py:510
+#, docstring
+msgid "Remove a channel from the blacklist."
+msgstr ""
+
+#: leveler.py:522
+#, docstring
+msgid "Show the list of blacklisted channels."
+msgstr ""
+
+#: leveler.py:524
+msgid "List of blacklisted channels on this server."
+msgstr ""
+
+#: leveler.py:534
+#, docstring
+msgid "Toggle auto register of users"
+msgstr ""
+
+#: leveler.py:537
+msgid "Auto register turned off"
+msgstr ""
+
+#: leveler.py:540
+msgid "Auto register turned on"
+msgstr ""
+
+#: leveler.py:544
+#, docstring
+msgid "Modify the cooldown of xp gain, default to 60 seconds"
+msgstr ""
+
+#: leveler.py:546
+msgid "Cooldown is now: "
+msgstr ""
+
+#: leveler.py:551
+#, docstring
+msgid "Modify an user's level"
+msgstr ""
+
+#: leveler.py:555
+msgid " Level set to "
+msgstr ""
+
+#: leveler.py:560
+#, docstring
+msgid "Modify an user's xp."
+msgstr ""
+
+#: leveler.py:564
+msgid "'s XP set to "
+msgstr ""
+
