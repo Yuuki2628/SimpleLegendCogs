@@ -52,7 +52,7 @@ class Shop(commands.Cog):
             "Custom adv boss:       5M     2M  \n"
             "x5 set loot chests:    5M     2M  \n"
             "Simple embed update:   2M     1M  \n"
-            "Champion embed update: 10M     5M \n"
+            "Champion embed update: 10M    5M  \n"
            #"-------------------------------------------------"
             "```", inline=False)
 
@@ -82,7 +82,7 @@ class Shop(commands.Cog):
             "Custom adv boss:       5M     2M  \n"
             "x5 set loot chests:    5M     2M  \n"
             "Simple embed update:   2M     1M  \n"
-            "Champion embed update: 10M     5M \n"
+            "Champion embed update: 10M    5M  \n"
            #"-------------------------------------------------"
             "```", inline=False)
         embed.add_field(name="Click here to see the full shop", value=f"<#381339305769041922>")
