@@ -7,7 +7,7 @@ import discord
 class UserProfile:
 
     def __init__(self):
-        self.data = Config.get_conf(self, identifier=1099710897114110101)
+        self.data = Config.get_conf(self, identifier=1099710897114110102)
         default_guild = {
             "wlchannels": [],
             "blchannels": [],
