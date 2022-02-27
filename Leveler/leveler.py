@@ -708,6 +708,6 @@ class Leveler(commands.Cog):
             return await ctx.send("Cancelled")
            
         await ctx.send("Deleting all leveler data...")
-        await UserProfile.config.clear_all()
+        await self.profiles.config.clear_all()
         await ctx.tick()
         return await ctx.send("Successfully deleted all leveler data.")
