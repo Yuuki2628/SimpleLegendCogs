@@ -249,7 +249,3 @@ class UserProfile:
             for member in data[guild]:
                 await self.data.member_from_ids(int(guild), int(member)).monthlyexp.set(0)
         return 
-
-    async def _reset_all(self):
-        await self.config.clear_all()
-        await ctx.tick()

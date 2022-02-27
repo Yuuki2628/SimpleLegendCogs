@@ -709,6 +709,6 @@ class Leveler(commands.Cog):
            
         await ctx.send("Deleting all leveler data...")
 
-        await self.profiles._reset_all()
+        self.profiles = UserProfile()
 
         return await ctx.send("Successfully deleted all leveler data.")
