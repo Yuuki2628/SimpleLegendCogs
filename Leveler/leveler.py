@@ -704,10 +704,11 @@ class Leveler(commands.Cog):
             msg = await ctx.bot.wait_for("message", check=MessagePredicate.same_context(user=ctx.author), timeout=90)
         except asyncio.TimeoutError:
             return await ctx.send("Cancelled")
-        if msg is None or msg.content == "cancel" or msg.content == "Cancel":
+        if msg.content is not "yes":
             return await ctx.send("Cancelled")
            
         await ctx.send("Deleting all leveler data...")
-        await self.profiles.config.clear_all()
-        await ctx.tick()
+
+        await self.profiles.data.guild(ctx.guild)._reset_all()
+
         return await ctx.send("Successfully deleted all leveler data.")
