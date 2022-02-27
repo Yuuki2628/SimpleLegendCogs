@@ -44,15 +44,15 @@ class Shop(commands.Cog):
             "Rare:                 1M   !buy rare     \n"
             "Epic:                 4M   !buy epic     \n"
             "Legendary:           10M   !buy legendary\n"
-            "Champion:               50M   !buy champion    \n"
+            "Champion:            50M   !buy champion \n"
            #"-------------------------------------------------"
             "```", inline=False)
         embed.add_field(name="**Legendary Items**", value="```\n"
-            "Item name          Price  Champion  \n"
-            "Custom adv boss:      5M     2M  \n"
-            "x5 set loot chests:   5M     2M  \n"
-            "Simple embed update:  2M     1M  \n"
-            "Champion embed update:  10M     5M  \n"
+            "Item name           Price  Champion  \n"
+            "Custom adv boss:       5M     2M  \n"
+            "x5 set loot chests:    5M     2M  \n"
+            "Simple embed update:   2M     1M  \n"
+            "Champion embed update: 10M     5M \n"
            #"-------------------------------------------------"
             "```", inline=False)
 
@@ -74,15 +74,15 @@ class Shop(commands.Cog):
             "Rare:                 1M   !buy rare     \n"
             "Epic:                 4M   !buy epic     \n"
             "Legendary:           10M   !buy legendary\n"
-            "Champion:               50M   !buy champion    \n"
+            "Champion:            50M   !buy champion \n"
            #"-------------------------------------------------"
             "```", inline=False)
         embed.add_field(name="**Legendary Items**", value="```\n"
-            "Item name          Price  Champion  \n"
-            "Custom adv boss:      5M     2M  \n"
-            "x5 set loot chests:   5M     2M  \n"
-            "Simple embed update:  2M     1M  \n"
-            "Champion embed update:  10M     5M  \n"
+            "Item name           Price  Champion  \n"
+            "Custom adv boss:       5M     2M  \n"
+            "x5 set loot chests:    5M     2M  \n"
+            "Simple embed update:   2M     1M  \n"
+            "Champion embed update: 10M     5M \n"
            #"-------------------------------------------------"
             "```", inline=False)
         embed.add_field(name="Click here to see the full shop", value=f"<#381339305769041922>")
