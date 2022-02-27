@@ -6,6 +6,7 @@ from redbot.core import commands
 from redbot.core.data_manager import bundled_data_path
 from redbot.core.utils.menus import menu, DEFAULT_CONTROLS
 from redbot.core.utils.predicates import MessagePredicate
+import redbot.core.config
 import asyncio
 import datetime
 from .userprofile import UserProfile
