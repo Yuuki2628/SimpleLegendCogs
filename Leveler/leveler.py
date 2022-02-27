@@ -709,6 +709,6 @@ class Leveler(commands.Cog):
            
         await ctx.send("Deleting all leveler data...")
 
-        await self.profiles.data.guild(ctx.guild)._reset_all()
+        await self.profiles._reset_all()
 
         return await ctx.send("Successfully deleted all leveler data.")
