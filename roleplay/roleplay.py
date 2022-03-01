@@ -336,6 +336,7 @@ class Roleplay(BaseCog):
                 "https://i.makeagif.com/media/7-04-2017/l1Snv4.gif",
                 "http://24.media.tumblr.com/f4174132dffe47b6ef354efe37553ece/tumblr_mjli9ixR7A1s5pmx8o1_r1_500.gif",
                 "https://img.xbooru.com//images/425/694198f6b61f05ecd4d13fac36c14bc5.gif?466768",
+                "https://img3.gelbooru.com//images/96/78/9678d4d3a2a33536bb5452f5110fc289.gif", 
             ],
             "sleep": [
                 "https://c.tenor.com/qlxdd9DVMHUAAAAC/willcore-kon.gif",
