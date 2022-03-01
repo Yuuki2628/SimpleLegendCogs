@@ -336,6 +336,7 @@ class Roleplay(BaseCog):
                 "https://i.makeagif.com/media/7-04-2017/l1Snv4.gif",
                 "http://24.media.tumblr.com/f4174132dffe47b6ef354efe37553ece/tumblr_mjli9ixR7A1s5pmx8o1_r1_500.gif",
                 "https://img.xbooru.com//images/425/694198f6b61f05ecd4d13fac36c14bc5.gif?466768",
+                "https://img3.gelbooru.com//images/96/78/9678d4d3a2a33536bb5452f5110fc289.gif", 
             ],
             "sleep": [
                 "https://c.tenor.com/qlxdd9DVMHUAAAAC/willcore-kon.gif",
@@ -398,11 +399,12 @@ class Roleplay(BaseCog):
             return await ctx.send("No self hugging!")
         images = await self.config.hugs()
 
-        nekos = await self.fetch_nekos_life(ctx, "hug")
-        images.extend(nekos)
-
-        mn = len(images)
-        i = randint(0, mn - 1)
+        try:
+            nekos = await self.fetch_nekos_life(ctx, "hug")
+            images.extend(nekos)
+        finally:
+            mn = len(images)
+            i = randint(0, mn - 1)
 
         # Build Embed
         embed = discord.Embed()
@@ -421,11 +423,12 @@ class Roleplay(BaseCog):
             return await ctx.send("No self cuddling!")
         images = await self.config.cuddle()
 
-        nekos = await self.fetch_nekos_life(ctx, "cuddle")
-        images.extend(nekos)
-
-        mn = len(images)
-        i = randint(0, mn - 1)
+        try:
+            nekos = await self.fetch_nekos_life(ctx, "cuddle")
+            images.extend(nekos)
+        finally:
+            mn = len(images)
+            i = randint(0, mn - 1)
 
         # Build Embed
         embed = discord.Embed()
@@ -444,11 +447,12 @@ class Roleplay(BaseCog):
             return await ctx.send("No self kissing!")
         images = await self.config.kiss()
 
-        nekos = await self.fetch_nekos_life(ctx, "kiss")
-        images.extend(nekos)
-
-        mn = len(images)
-        i = randint(0, mn - 1)
+        try:
+            nekos = await self.fetch_nekos_life(ctx, "kiss")
+            images.extend(nekos)
+        finally:
+            mn = len(images)
+            i = randint(0, mn - 1)
 
         # Build Embed
         embed = discord.Embed()
@@ -467,11 +471,12 @@ class Roleplay(BaseCog):
             return await ctx.send("No self slapping!")
         images = await self.config.slap()
 
-        nekos = await self.fetch_nekos_life(ctx, "slap")
-        images.extend(nekos)
-
-        mn = len(images)
-        i = randint(0, mn - 1)
+        try:
+            nekos = await self.fetch_nekos_life(ctx, "slap")
+            images.extend(nekos)
+        finally:
+            mn = len(images)
+            i = randint(0, mn - 1)
 
         # Build Embed
         embed = discord.Embed()
@@ -490,11 +495,12 @@ class Roleplay(BaseCog):
             return await ctx.send("No self patting!")
         images = await self.config.pat()
 
-        nekos = await self.fetch_nekos_life(ctx, "pat")
-        images.extend(nekos)
-
-        mn = len(images)
-        i = randint(0, mn - 1)
+        try:
+            nekos = await self.fetch_nekos_life(ctx, "pat")
+            images.extend(nekos)
+        finally:
+            mn = len(images)
+            i = randint(0, mn - 1)
 
         # Build Embed
         embed = discord.Embed()
@@ -551,11 +557,12 @@ class Roleplay(BaseCog):
             return await ctx.send("No self feeding!")
         images = await self.config.feed()
 
-        nekos = await self.fetch_nekos_life(ctx, "feed")
-        images.extend(nekos)
-
-        mn = len(images)
-        i = randint(0, mn - 1)
+        try:
+            nekos = await self.fetch_nekos_life(ctx, "feed")
+            images.extend(nekos)
+        finally:
+            mn = len(images)
+            i = randint(0, mn - 1)
 
         # Build Embed
         embed = discord.Embed()
@@ -574,11 +581,12 @@ class Roleplay(BaseCog):
             return await ctx.send("No self tickling!")
         images = await self.config.tickle()
 
-        nekos = await self.fetch_nekos_life(ctx, "tickle")
-        images.extend(nekos)
-
-        mn = len(images)
-        i = randint(0, mn - 1)
+        try:
+            nekos = await self.fetch_nekos_life(ctx, "tickle")
+            images.extend(nekos)
+        finally:
+            mn = len(images)
+            i = randint(0, mn - 1)
 
         # Build Embed
         embed = discord.Embed()
@@ -597,11 +605,12 @@ class Roleplay(BaseCog):
             return await ctx.send("No self poking!")
         images = await self.config.poke()
 
-        nekos = await self.fetch_nekos_life(ctx, "poke")
-        images.extend(nekos)
-
-        mn = len(images)
-        i = randint(0, mn - 1)
+        try:
+            nekos = await self.fetch_nekos_life(ctx, "poke")
+            images.extend(nekos)
+        finally:
+            mn = len(images)
+            i = randint(0, mn - 1)
 
         # Build Embed
         embed = discord.Embed()
@@ -618,18 +627,19 @@ class Roleplay(BaseCog):
         author = ctx.message.author
         images = await self.config.smug()
 
-        smug = await self.fetch_nekos_life(ctx, "smug")
-        images.extend(smug)
+        try:
+            smug = await self.fetch_nekos_life(ctx, "smug")
+            images.extend(smug)
+        finally:
+            mn = len(images)
+            i = randint(0, mn - 1)
 
-        mn = len(images)
-        i = randint(0, mn - 1)
-
-        # Build Embed
-        embed = discord.Embed()
-        embed.description = f"**{author.mention} is smug**"
-        embed.set_footer(text="Made with the help of nekos.life")
-        embed.set_image(url=images[i])
-        await ctx.send(embed=embed)
+            # Build Embed
+            embed = discord.Embed()
+            embed.description = f"**{author.mention} is smug**"
+            embed.set_footer(text="Made with the help of nekos.life")
+            embed.set_image(url=images[i])
+            await ctx.send(embed=embed)
 
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
@@ -798,8 +808,6 @@ class Roleplay(BaseCog):
                 except (ValueError, aiohttp.ContentTypeError) as ex:
                     log.debug("Pruned by exception, error below:")
                     log.debug(ex)
-                    return []
-                except:
                     return []
 
         if content["data"]["status"]["code"] == 200:
