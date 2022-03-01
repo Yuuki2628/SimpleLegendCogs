@@ -792,7 +792,7 @@ class Roleplay(BaseCog):
     async def fetch_nekos_life(self, ctx, rp_action):
 
         async with aiohttp.ClientSession() as session:
-            async with session.get(f"https://api.nekos.dev/api/v3/images/sfw/gif/{rp_action}/?count=20", timeout=5.0) as resp:
+            async with session.get(f"https://api.nekos.dev/api/v3/images/sfw/gif/{rp_action}/?count=20") as resp:
                 try:
                     content = await resp.json(content_type=None)
                 except (ValueError, aiohttp.ContentTypeError) as ex:
