@@ -401,16 +401,18 @@ class Roleplay(BaseCog):
         try:
             nekos = await self.fetch_nekos_life(ctx, "hug")
             images.extend(nekos)
-        finally:
-            mn = len(images)
-            i = randint(0, mn - 1)
+        except:
+            pass
 
-            # Build Embed
-            embed = discord.Embed()
-            embed.description = f"**{author.mention} hugs {user.mention}**"
-            embed.set_footer(text="Made with the help of nekos.life")
-            embed.set_image(url=images[i])
-            await ctx.send(embed=embed)
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.description = f"**{author.mention} hugs {user.mention}**"
+        embed.set_footer(text="Made with the help of nekos.life")
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
 
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
@@ -425,16 +427,18 @@ class Roleplay(BaseCog):
         try:
             nekos = await self.fetch_nekos_life(ctx, "cuddle")
             images.extend(nekos)
-        finally:
-            mn = len(images)
-            i = randint(0, mn - 1)
+        except:
+            pass
 
-            # Build Embed
-            embed = discord.Embed()
-            embed.description = f"**{author.mention} cuddles {user.mention}**"
-            embed.set_footer(text="Made with the help of nekos.life")
-            embed.set_image(url=images[i])
-            await ctx.send(embed=embed)
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.description = f"**{author.mention} cuddles {user.mention}**"
+        embed.set_footer(text="Made with the help of nekos.life")
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
 
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
@@ -449,16 +453,18 @@ class Roleplay(BaseCog):
         try:
             nekos = await self.fetch_nekos_life(ctx, "kiss")
             images.extend(nekos)
-        finally:
-            mn = len(images)
-            i = randint(0, mn - 1)
+        except:
+            pass
 
-            # Build Embed
-            embed = discord.Embed()
-            embed.description = f"**{author.mention} kisses {user.mention}**"
-            embed.set_footer(text="Made with the help of nekos.life")
-            embed.set_image(url=images[i])
-            await ctx.send(embed=embed)
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.description = f"**{author.mention} kisses {user.mention}**"
+        embed.set_footer(text="Made with the help of nekos.life")
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
 
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
@@ -473,16 +479,18 @@ class Roleplay(BaseCog):
         try:
             nekos = await self.fetch_nekos_life(ctx, "slap")
             images.extend(nekos)
-        finally:
-            mn = len(images)
-            i = randint(0, mn - 1)
+        except:
+            pass
 
-            # Build Embed
-            embed = discord.Embed()
-            embed.description = f"**{author.mention} slaps {user.mention}**"
-            embed.set_footer(text="Made with the help of nekos.life")
-            embed.set_image(url=images[i])
-            await ctx.send(embed=embed)
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.description = f"**{author.mention} slaps {user.mention}**"
+        embed.set_footer(text="Made with the help of nekos.life")
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
 
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
@@ -497,16 +505,18 @@ class Roleplay(BaseCog):
         try:
             nekos = await self.fetch_nekos_life(ctx, "pat")
             images.extend(nekos)
-        finally:
-            mn = len(images)
-            i = randint(0, mn - 1)
+        except:
+            pass
 
-            # Build Embed
-            embed = discord.Embed()
-            embed.description = f"**{author.mention} pats {user.mention}**"
-            embed.set_footer(text="Made with the help of nekos.life")
-            embed.set_image(url=images[i])
-            await ctx.send(embed=embed)
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.description = f"**{author.mention} pats {user.mention}**"
+        embed.set_footer(text="Made with the help of nekos.life")
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
 
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
@@ -559,16 +569,18 @@ class Roleplay(BaseCog):
         try:
             nekos = await self.fetch_nekos_life(ctx, "feed")
             images.extend(nekos)
-        finally:
-            mn = len(images)
-            i = randint(0, mn - 1)
+        except:
+            pass
 
-            # Build Embed
-            embed = discord.Embed()
-            embed.description = f"**{author.mention} feeds {user.mention}**"
-            embed.set_footer(text="Made with the help of nekos.life")
-            embed.set_image(url=images[i])
-            await ctx.send(embed=embed)
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.description = f"**{author.mention} feeds {user.mention}**"
+        embed.set_footer(text="Made with the help of nekos.life")
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
 
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
@@ -583,16 +595,18 @@ class Roleplay(BaseCog):
         try:
             nekos = await self.fetch_nekos_life(ctx, "tickle")
             images.extend(nekos)
-        finally:
-            mn = len(images)
-            i = randint(0, mn - 1)
+        except:
+            pass
 
-            # Build Embed
-            embed = discord.Embed()
-            embed.description = f"**{author.mention} tickles {user.mention}**"
-            embed.set_footer(text="Made with the help of nekos.life")
-            embed.set_image(url=images[i])
-            await ctx.send(embed=embed)
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.description = f"**{author.mention} tickles {user.mention}**"
+        embed.set_footer(text="Made with the help of nekos.life")
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
 
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
@@ -607,16 +621,18 @@ class Roleplay(BaseCog):
         try:
             nekos = await self.fetch_nekos_life(ctx, "poke")
             images.extend(nekos)
-        finally:
-            mn = len(images)
-            i = randint(0, mn - 1)
+        except:
+            pass
 
-            # Build Embed
-            embed = discord.Embed()
-            embed.description = f"**{author.mention} pokes {user.mention}**"
-            embed.set_footer(text="Made with the help of nekos.life")
-            embed.set_image(url=images[i])
-            await ctx.send(embed=embed)
+        mn = len(images)
+        i = randint(0, mn - 1)
+
+        # Build Embed
+        embed = discord.Embed()
+        embed.description = f"**{author.mention} pokes {user.mention}**"
+        embed.set_footer(text="Made with the help of nekos.life")
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
 
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
@@ -629,16 +645,18 @@ class Roleplay(BaseCog):
         try:
             smug = await self.fetch_nekos_life(ctx, "smug")
             images.extend(smug)
-        finally:
-            mn = len(images)
-            i = randint(0, mn - 1)
+        except:
+            pass
+        
+        mn = len(images)
+        i = randint(0, mn - 1)
 
-            # Build Embed
-            embed = discord.Embed()
-            embed.description = f"**{author.mention} is smug**"
-            embed.set_footer(text="Made with the help of nekos.life")
-            embed.set_image(url=images[i])
-            await ctx.send(embed=embed)
+        # Build Embed
+        embed = discord.Embed()
+        embed.description = f"**{author.mention} is smug**"
+        embed.set_footer(text="Made with the help of nekos.life")
+        embed.set_image(url=images[i])
+        await ctx.send(embed=embed)
 
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
