@@ -400,7 +400,7 @@ class Roleplay(BaseCog):
         images = await self.config.hugs()
 
         try:
-            nekos = await self.fetch_nekos_life(ctx, "hug", timeout=3)
+            nekos = await self.fetch_nekos_life(ctx, "hug")
             images.extend(nekos)
         finally:
             mn = len(images)
@@ -424,7 +424,7 @@ class Roleplay(BaseCog):
         images = await self.config.cuddle()
 
         try:
-            nekos = await self.fetch_nekos_life(ctx, "cuddle", timeout=3)
+            nekos = await self.fetch_nekos_life(ctx, "cuddle")
             images.extend(nekos)
         finally:
             mn = len(images)
@@ -448,7 +448,7 @@ class Roleplay(BaseCog):
         images = await self.config.kiss()
 
         try:
-            nekos = await self.fetch_nekos_life(ctx, "kiss", timeout=3)
+            nekos = await self.fetch_nekos_life(ctx, "kiss")
             images.extend(nekos)
         finally:
             mn = len(images)
@@ -472,7 +472,7 @@ class Roleplay(BaseCog):
         images = await self.config.slap()
 
         try:
-            nekos = await self.fetch_nekos_life(ctx, "slap", timeout=3)
+            nekos = await self.fetch_nekos_life(ctx, "slap")
             images.extend(nekos)
         finally:
             mn = len(images)
@@ -496,7 +496,7 @@ class Roleplay(BaseCog):
         images = await self.config.pat()
 
         try:
-            nekos = await self.fetch_nekos_life(ctx, "pat", timeout=3)
+            nekos = await self.fetch_nekos_life(ctx, "pat")
             images.extend(nekos)
         finally:
             mn = len(images)
@@ -558,7 +558,7 @@ class Roleplay(BaseCog):
         images = await self.config.feed()
 
         try:
-            nekos = await self.fetch_nekos_life(ctx, "feed", timeout=3)
+            nekos = await self.fetch_nekos_life(ctx, "feed")
             images.extend(nekos)
         finally:
             mn = len(images)
@@ -582,7 +582,7 @@ class Roleplay(BaseCog):
         images = await self.config.tickle()
 
         try:
-            nekos = await self.fetch_nekos_life(ctx, "tickle", timeout=3)
+            nekos = await self.fetch_nekos_life(ctx, "tickle")
             images.extend(nekos)
         finally:
             mn = len(images)
@@ -606,7 +606,7 @@ class Roleplay(BaseCog):
         images = await self.config.poke()
 
         try:
-            nekos = await self.fetch_nekos_life(ctx, "poke", timeout=3)
+            nekos = await self.fetch_nekos_life(ctx, "poke")
             images.extend(nekos)
         finally:
             mn = len(images)
@@ -628,18 +628,18 @@ class Roleplay(BaseCog):
         images = await self.config.smug()
 
         try:
-            smug = await self.fetch_nekos_life(ctx, "smug", timeout=3)
+            smug = await self.fetch_nekos_life(ctx, "smug")
             images.extend(smug)
         finally:
             mn = len(images)
             i = randint(0, mn - 1)
 
-        # Build Embed
-        embed = discord.Embed()
-        embed.description = f"**{author.mention} is smug**"
-        embed.set_footer(text="Made with the help of nekos.life")
-        embed.set_image(url=images[i])
-        await ctx.send(embed=embed)
+            # Build Embed
+            embed = discord.Embed()
+            embed.description = f"**{author.mention} is smug**"
+            embed.set_footer(text="Made with the help of nekos.life")
+            embed.set_image(url=images[i])
+            await ctx.send(embed=embed)
 
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
@@ -801,7 +801,7 @@ class Roleplay(BaseCog):
 
     async def fetch_nekos_life(self, ctx, rp_action):
 
-        async with aiohttp.ClientSession() as session:
+        async with aiohttp.ClientSession(timeout=5.0) as session:
             async with session.get(f"https://api.nekos.dev/api/v3/images/sfw/gif/{rp_action}/?count=20") as resp:
                 try:
                     content = await resp.json(content_type=None)
