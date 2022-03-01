@@ -398,11 +398,8 @@ class Roleplay(BaseCog):
             return await ctx.send("No self hugging!")
         images = await self.config.hugs()
 
-        try:
-            nekos = await self.fetch_nekos_life(ctx, "hug")
-            images.extend(nekos)
-        except:
-            pass
+        nekos = await self.fetch_nekos_life(ctx, "hug")
+        images.extend(nekos)
 
         mn = len(images)
         i = randint(0, mn - 1)
@@ -424,11 +421,8 @@ class Roleplay(BaseCog):
             return await ctx.send("No self cuddling!")
         images = await self.config.cuddle()
 
-        try:
-            nekos = await self.fetch_nekos_life(ctx, "cuddle")
-            images.extend(nekos)
-        except:
-            pass
+        nekos = await self.fetch_nekos_life(ctx, "cuddle")
+        images.extend(nekos)
 
         mn = len(images)
         i = randint(0, mn - 1)
@@ -450,11 +444,8 @@ class Roleplay(BaseCog):
             return await ctx.send("No self kissing!")
         images = await self.config.kiss()
 
-        try:
-            nekos = await self.fetch_nekos_life(ctx, "kiss")
-            images.extend(nekos)
-        except:
-            pass
+        nekos = await self.fetch_nekos_life(ctx, "kiss")
+        images.extend(nekos)
 
         mn = len(images)
         i = randint(0, mn - 1)
@@ -476,11 +467,8 @@ class Roleplay(BaseCog):
             return await ctx.send("No self slapping!")
         images = await self.config.slap()
 
-        try:
-            nekos = await self.fetch_nekos_life(ctx, "slap")
-            images.extend(nekos)
-        except:
-            pass
+        nekos = await self.fetch_nekos_life(ctx, "slap")
+        images.extend(nekos)
 
         mn = len(images)
         i = randint(0, mn - 1)
@@ -502,11 +490,8 @@ class Roleplay(BaseCog):
             return await ctx.send("No self patting!")
         images = await self.config.pat()
 
-        try:
-            nekos = await self.fetch_nekos_life(ctx, "pat")
-            images.extend(nekos)
-        except:
-            pass
+        nekos = await self.fetch_nekos_life(ctx, "pat")
+        images.extend(nekos)
 
         mn = len(images)
         i = randint(0, mn - 1)
@@ -566,11 +551,8 @@ class Roleplay(BaseCog):
             return await ctx.send("No self feeding!")
         images = await self.config.feed()
 
-        try:
-            nekos = await self.fetch_nekos_life(ctx, "feed")
-            images.extend(nekos)
-        except:
-            pass
+        nekos = await self.fetch_nekos_life(ctx, "feed")
+        images.extend(nekos)
 
         mn = len(images)
         i = randint(0, mn - 1)
@@ -592,11 +574,8 @@ class Roleplay(BaseCog):
             return await ctx.send("No self tickling!")
         images = await self.config.tickle()
 
-        try:
-            nekos = await self.fetch_nekos_life(ctx, "tickle")
-            images.extend(nekos)
-        except:
-            pass
+        nekos = await self.fetch_nekos_life(ctx, "tickle")
+        images.extend(nekos)
 
         mn = len(images)
         i = randint(0, mn - 1)
@@ -618,11 +597,8 @@ class Roleplay(BaseCog):
             return await ctx.send("No self poking!")
         images = await self.config.poke()
 
-        try:
-            nekos = await self.fetch_nekos_life(ctx, "poke")
-            images.extend(nekos)
-        except:
-            pass
+        nekos = await self.fetch_nekos_life(ctx, "poke")
+        images.extend(nekos)
 
         mn = len(images)
         i = randint(0, mn - 1)
@@ -642,12 +618,9 @@ class Roleplay(BaseCog):
         author = ctx.message.author
         images = await self.config.smug()
 
-        try:
-            smug = await self.fetch_nekos_life(ctx, "smug")
-            images.extend(smug)
-        except:
-            pass
-        
+        smug = await self.fetch_nekos_life(ctx, "smug")
+        images.extend(smug)
+
         mn = len(images)
         i = randint(0, mn - 1)
 
