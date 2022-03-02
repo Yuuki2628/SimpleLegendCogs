@@ -791,7 +791,7 @@ class Roleplay(BaseCog):
 
     async def fetch_nekos_life(self, ctx, rp_action):
 
-        session_timeout = aiohttp.ClientTimeout(total=5.0)
+        session_timeout = aiohttp.ClientTimeout(total=1.5)
 
         try:
             async with aiohttp.ClientSession(timeout = session_timeout) as session:
