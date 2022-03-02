@@ -802,7 +802,7 @@ class Roleplay(BaseCog):
                         log.debug("Pruned by exception, error below:")
                         log.debug(ex)
                         return []
-        except TimeoutError(ex):
+        except:
             return []
 
         if content["data"]["status"]["code"] == 200:
