@@ -793,14 +793,17 @@ class Roleplay(BaseCog):
 
         session_timeout = aiohttp.ClientTimeout(total=5.0)
 
-        async with aiohttp.ClientSession(timeout = session_timeout) as session:
-            async with session.get(f"https://api.nekos.dev/api/v3/images/sfw/gif/{rp_action}/?count=20") as resp:
-                try:
-                    content = await resp.json(content_type=None)
-                except (ValueError, aiohttp.ContentTypeError) as ex:
-                    log.debug("Pruned by exception, error below:")
-                    log.debug(ex)
-                    return []
+        try:
+            async with aiohttp.ClientSession(timeout = session_timeout) as session:
+                async with session.get(f"https://api.nekos.dev/api/v3/images/sfw/gif/{rp_action}/?count=20") as resp:
+                    try:
+                        content = await resp.json(content_type=None)
+                    except (ValueError, aiohttp.ContentTypeError) as ex:
+                        log.debug("Pruned by exception, error below:")
+                        log.debug(ex)
+                        return []
+        except TimeoutError(ex):
+            return []
 
         if content["data"]["status"]["code"] == 200:
             return content["data"]["response"]["urls"]
