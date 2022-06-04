@@ -175,7 +175,7 @@ class Shop(commands.Cog):
         if stats is None or stats.content == "cancel" or stats.content == "Cancel":
             return await ctx.send("Cancelled")
 
-        await ctx.send("What's the enemy image?\nExample: <https://cdn.discordapp.com/attachments/733451738643824720/943183446212218942/PFP9.png>")
+        await ctx.send("What's the enemy image? Submit a link, sending a whole image will not work\nExample: <https://cdn.discordapp.com/attachments/733451738643824720/943183446212218942/PFP9.png>")
         try:
             img = await ctx.bot.wait_for("message", check=MessagePredicate.same_context(user=ctx.author), timeout=90)
         except asyncio.TimeoutError:
