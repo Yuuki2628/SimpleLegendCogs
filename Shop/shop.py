@@ -10,16 +10,17 @@ from redbot.core.utils.chat_formatting import humanize_number
 class Shop(commands.Cog):
     """Buy items"""
 
-    price = {
-        'rare': 1000000, 
-        'epic': 4000000, 
-        'legendary': 10000000, 
-        'champion': 50000000, 
-        'custom_boss': 8000000, 
-        'set': 5000000, 
-        'simple_embed': 2000000, 
-        'full_embed': 10000000
-    }
+    def __init__(self, price):
+        price = {
+            'rare': 1000000, 
+            'epic': 4000000, 
+            'legendary': 10000000, 
+            'champion': 50000000, 
+            'custom_boss': 8000000, 
+            'set': 5000000, 
+            'simple_embed': 2000000, 
+            'full_embed': 10000000
+        }
 
     @commands.command(name="es_shop")
     async def shop(self, ctx):
@@ -112,14 +113,12 @@ class Shop(commands.Cog):
     @commands.guild_only()
     async def buy_set(self, ctx, count: int = 1):
         """Buy set loot x5 for adventure"""
-        global price
-
         currency_name = await bank.get_currency_name(ctx.guild)
         if count is None:
             count = 1
 
         user = ctx.author
-        priceL = price["set"]
+        priceL = self.price["set"]
 
         legendary = discord.utils.get(ctx.guild.roles,name="LeGeNDary")
         if not legendary in user.roles:
@@ -157,11 +156,9 @@ class Shop(commands.Cog):
     @commands.guild_only()
     async def buy_boss(self, ctx):
         """Buy a custom boss for adventure"""
-        global price
-
         currency_name = await bank.get_currency_name(ctx.guild)
         user = ctx.author
-        priceL = price["custom_boss"]
+        priceL = self.price["custom_boss"]
 
         championr = discord.utils.get(ctx.guild.roles,name="Champion")
         bilr1 = discord.utils.get(ctx.guild.roles,name="OG Billionaire")
@@ -217,12 +214,10 @@ class Shop(commands.Cog):
     @commands.guild_only()
     async def buy_rare(self, ctx):
         """Buy the Rare role"""
-        global price
-
         currency_name = await bank.get_currency_name(ctx.guild)
 
         user = ctx.author
-        priceL = price["rare"]
+        priceL = self.price["rare"]
         bal = await bank.get_balance(user)
         if bal < priceL:
             return await ctx.send(f"You don't have enough {currency_name} to buy this item\nYou need {humanize_number(priceL)} {currency_name}")
@@ -240,12 +235,10 @@ class Shop(commands.Cog):
     @commands.guild_only()
     async def buy_epic(self, ctx):
         """Buy the Epic role"""
-        global price
-
         currency_name = await bank.get_currency_name(ctx.guild)
 
         user = ctx.author
-        priceL = price["epic"]
+        priceL = self.price["epic"]
         bal = await bank.get_balance(user)
         if bal < priceL:
             return await ctx.send(f"You don't have enough {currency_name} to buy this item\nYou need {humanize_number(priceL)} {currency_name}")
@@ -267,12 +260,10 @@ class Shop(commands.Cog):
     @commands.guild_only()
     async def buy_legendary(self, ctx):
         """Buy the Legendary role"""
-        global price
-
         currency_name = await bank.get_currency_name(ctx.guild)
 
         user = ctx.author
-        priceL = price["legendary"]
+        priceL = self.price["legendary"]
         bal = await bank.get_balance(user)
         if bal < priceL:
             return await ctx.send(f"You don't have enough {currency_name} to buy this item\nYou need {humanize_number(priceL)} {currency_name}")
@@ -294,12 +285,10 @@ class Shop(commands.Cog):
     @commands.guild_only()
     async def buy_champion(self, ctx):
         """Buy the Champion role"""
-        global price
-
         currency_name = await bank.get_currency_name(ctx.guild)
 
         user = ctx.author
-        priceL = price["champion"]
+        priceL = self.price["champion"]
         bal = await bank.get_balance(user)
         if bal < priceL:
             return await ctx.send(f"You don't have enough {currency_name} to buy this item\nYou need {humanize_number(priceL)} {currency_name}")
@@ -324,12 +313,10 @@ class Shop(commands.Cog):
     @commands.guild_only()
     async def buy_embed(self, ctx, cc_name: str):
         """Buy a simple embed"""
-        global price
-
         currency_name = await bank.get_currency_name(ctx.guild)
 
         user = ctx.author
-        priceL = price["simple_embed"]
+        priceL = self.price["simple_embed"]
         bal = await bank.get_balance(user)
         if bal < priceL:
             return await ctx.send(f"You don't have enough {currency_name} to buy this item\nYou need {humanize_number(priceL)} {currency_name}")
