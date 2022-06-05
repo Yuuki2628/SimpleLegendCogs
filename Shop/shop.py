@@ -11,14 +11,14 @@ class Shop(commands.Cog):
     """Buy items"""
 
     price = {
-        "rare": 1000000,
-        "epic": 4000000,
-        "legendary": 10000000,
-        "champion": 50000000,
-        "custom_boss": 8000000,
-        "set": 5000000,
-        "simple_embed": 2000000,
-        "full_embed": 10000000
+        'rare': 1000000, 
+        'epic': 4000000, 
+        'legendary': 10000000, 
+        'champion': 50000000, 
+        'custom_boss': 8000000, 
+        'set': 5000000, 
+        'simple_embed': 2000000, 
+        'full_embed': 10000000
     }
 
     @commands.command(name="es_shop")
@@ -112,6 +112,8 @@ class Shop(commands.Cog):
     @commands.guild_only()
     async def buy_set(self, ctx, count: int = 1):
         """Buy set loot x5 for adventure"""
+        global price
+
         currency_name = await bank.get_currency_name(ctx.guild)
         if count is None:
             count = 1
@@ -155,6 +157,8 @@ class Shop(commands.Cog):
     @commands.guild_only()
     async def buy_boss(self, ctx):
         """Buy a custom boss for adventure"""
+        global price
+
         currency_name = await bank.get_currency_name(ctx.guild)
         user = ctx.author
         priceL = price["custom_boss"]
@@ -213,6 +217,8 @@ class Shop(commands.Cog):
     @commands.guild_only()
     async def buy_rare(self, ctx):
         """Buy the Rare role"""
+        global price
+
         currency_name = await bank.get_currency_name(ctx.guild)
 
         user = ctx.author
@@ -234,6 +240,8 @@ class Shop(commands.Cog):
     @commands.guild_only()
     async def buy_epic(self, ctx):
         """Buy the Epic role"""
+        global price
+
         currency_name = await bank.get_currency_name(ctx.guild)
 
         user = ctx.author
@@ -259,6 +267,8 @@ class Shop(commands.Cog):
     @commands.guild_only()
     async def buy_legendary(self, ctx):
         """Buy the Legendary role"""
+        global price
+
         currency_name = await bank.get_currency_name(ctx.guild)
 
         user = ctx.author
@@ -284,6 +294,8 @@ class Shop(commands.Cog):
     @commands.guild_only()
     async def buy_champion(self, ctx):
         """Buy the Champion role"""
+        global price
+
         currency_name = await bank.get_currency_name(ctx.guild)
 
         user = ctx.author
@@ -312,6 +324,8 @@ class Shop(commands.Cog):
     @commands.guild_only()
     async def buy_embed(self, ctx, cc_name: str):
         """Buy a simple embed"""
+        global price
+
         currency_name = await bank.get_currency_name(ctx.guild)
 
         user = ctx.author
