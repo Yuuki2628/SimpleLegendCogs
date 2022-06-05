@@ -128,7 +128,7 @@ class Shop(commands.Cog):
         bilr1 = discord.utils.get(ctx.guild.roles,name="OG Billionaire")
         bilr2 = discord.utils.get(ctx.guild.roles,name="Billionaire")
         if((championr in user.roles) or (bilr1 in user.roles) or (bilr2 in user.roles)):
-            priceL = priceL * 0.6
+            priceL = int(priceL * 0.6)
 
         priceL = priceL * count
         count = count * 5
@@ -164,7 +164,7 @@ class Shop(commands.Cog):
         bilr1 = discord.utils.get(ctx.guild.roles,name="OG Billionaire")
         bilr2 = discord.utils.get(ctx.guild.roles,name="Billionaire")
         if((championr in user.roles) or (bilr1 in user.roles) or (bilr2 in user.roles)):
-            priceL = priceL * 0.6
+            priceL = int(priceL * 0.6)
 
         bal = await bank.get_balance(user)
         if bal < priceL:
