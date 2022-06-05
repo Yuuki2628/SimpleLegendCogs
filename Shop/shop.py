@@ -10,7 +10,7 @@ from redbot.core.utils.chat_formatting import humanize_number
 class Shop(commands.Cog):
     """Buy items"""
 
-    def __init__(self, price):
+    def __init__(self):
         price = {
             'rare': 1000000, 
             'epic': 4000000, 
