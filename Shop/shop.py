@@ -329,7 +329,7 @@ class Shop(commands.Cog):
         if not ((legendary in user.roles) or (championr in user.roles) or (bilr1 in user.roles) or (bilr2 in user.roles)):
             return await ctx.send(f"You need to have bought the {legendary.mention} role first", allowed_mentions = discord.AllowedMentions(roles=False))
         if((championr in user.roles) or (bilr1 in user.roles) or (bilr2 in user.roles)):
-            priceL = priceL * 0.6
+            priceL = int(priceL * 0.6)
                 
         await bank.withdraw_credits(user, priceL)
 
