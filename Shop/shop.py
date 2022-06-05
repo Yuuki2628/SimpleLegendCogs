@@ -11,7 +11,7 @@ class Shop(commands.Cog):
     """Buy items"""
 
     def __init__(self):
-        price = {
+        self.price = {
             'rare': 1000000, 
             'epic': 4000000, 
             'legendary': 10000000, 
