@@ -10,6 +10,17 @@ from redbot.core.utils.chat_formatting import humanize_number
 class Shop(commands.Cog):
     """Buy items"""
 
+    price = {
+        "rare": 1000000,
+        "epic": 4000000,
+        "legendary": 10000000,
+        "champion": 50000000,
+        "custom_boss": 8000000,
+        "set": 5000000,
+        "simple_embed": 2000000,
+        "full_embed": 10000000
+    }
+
     @commands.command(name="es_shop")
     async def shop(self, ctx):
         if(ctx.author.id != 295275466703503372):
@@ -37,7 +48,7 @@ class Shop(commands.Cog):
         embed.add_field(name="Embed update__", value=f"Turn your command into a simple embed (no links or pictures).", inline=False)
         embed.add_field(name="__Champion Embed update__", value=f"The simple update isn't enought for you? You can add links, picture and other cool stuff to you embed with this powerful update.\nThe Champion Embed update lets you personalize your embed command almost as you wish.\n||The result will be similar to the shop, the roles or the rules embed.||", inline=False)
         embed.add_field(name="**Items**", value="```\n"
-            "Item name          Price   Commands      \n"
+            "Item name           Cost   Commands      \n"
             "Emoji flair:        200k   ~             \n"
             "Custom background:  800k   ~             \n"
             "Custom command:     500k   ~             \n"
@@ -48,18 +59,19 @@ class Shop(commands.Cog):
            #"-------------------------------------------------"
             "```", inline=False)
         embed.add_field(name="**Legendary Items**", value="```\n"
-            "Item name           Price  Champion  \n"
-            "Custom adv boss:       5M     2M  \n"
-            "x5 set loot chests:    5M     2M  \n"
-            "Simple embed update:   2M     1M  \n"
-            "Champion embed update: 10M    5M  \n"
+            "Item name            Cost\n"
+            "Custom adv boss:       8M\n"
+            "x5 set loot chests:    5M\n"
+            "Simple embed update:   2M\n"
+            "Champion embed update: 10M\n"
            #"-------------------------------------------------"
             "```", inline=False)
 
         embed.add_field(name="**Note**", value="`M` stands for million/s, `k` stands for thousand/s\n"
-                                                "To purchase any item that doesn't have a command specified, dm <@598662722821029888>\n"
-                                                f"{champion.mention}, {bil1.mention} and {bil2.mention} are equivalent regarding shop purchases\n"
-                                                f"When buying {champion.mention} you will receive a legendary item of choise for free")
+                                                "To purchase any item that doesn't have a command specified, dm <@598662722821029888>.\n"
+                                                f"{champion.mention}, {bil1.mention} and {bil2.mention} are equivalent regarding shop purchases.\n"
+                                                f"When buying {champion.mention} you will receive a legendary item of choise for free.\n"
+                                                f"When buying any Legendary items while having the {champion.mention} role you will receive a 40% discount.")
         await ctx.send(embed=embed)
     
     @commands.command(name="es_minishop")
@@ -67,7 +79,7 @@ class Shop(commands.Cog):
         embed = discord.Embed(title="LeGeND Shop",color=0x7289DA)
         embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/722551851891032134/853281697411629097/unknown.png")
         embed.add_field(name="**Items**", value="```\n"
-            "Item name          Price   Commands      \n"
+            "Item name           Cost   Commands      \n"
             "Emoji flair:        200k   ~             \n"
             "Custom background:  800k   ~             \n"
             "Custom command:     500k   ~             \n"
@@ -78,11 +90,11 @@ class Shop(commands.Cog):
            #"-------------------------------------------------"
             "```", inline=False)
         embed.add_field(name="**Legendary Items**", value="```\n"
-            "Item name           Price  Champion  \n"
-            "Custom adv boss:       5M     2M  \n"
-            "x5 set loot chests:    5M     2M  \n"
-            "Simple embed update:   2M     1M  \n"
-            "Champion embed update: 10M    5M  \n"
+            "Item name            Cost\n"
+            "Custom adv boss:       8M\n"
+            "x5 set loot chests:    5M\n"
+            "Simple embed update:   2M\n"
+            "Champion embed update: 10M\n"
            #"-------------------------------------------------"
             "```", inline=False)
         embed.add_field(name="Click here to see the full shop", value=f"<#381339305769041922>")
@@ -105,7 +117,7 @@ class Shop(commands.Cog):
             count = 1
 
         user = ctx.author
-        price = 5000000
+        priceL = price["set"]
 
         legendary = discord.utils.get(ctx.guild.roles,name="LeGeNDary")
         if not legendary in user.roles:
@@ -115,15 +127,15 @@ class Shop(commands.Cog):
         bilr1 = discord.utils.get(ctx.guild.roles,name="OG Billionaire")
         bilr2 = discord.utils.get(ctx.guild.roles,name="Billionaire")
         if((championr in user.roles) or (bilr1 in user.roles) or (bilr2 in user.roles)):
-            price = 2000000
+            priceL = priceL * 0.6
 
-        price = price * count
+        priceL = priceL * count
         count = count * 5
 
         bal = await bank.get_balance(user)
-        if bal < price:
-            return await ctx.send(f"You don't have enough {currency_name} to buy this item\nYou need {humanize_number(price)} {currency_name}")
-        await bank.withdraw_credits(user, price)
+        if bal < priceL:
+            return await ctx.send(f"You don't have enough {currency_name} to buy this item\nYou need {humanize_number(priceL)} {currency_name}")
+        await bank.withdraw_credits(user, priceL)
 
         adv = ctx.bot.get_cog("Adventure")
         async with adv.get_lock(user):
@@ -137,7 +149,7 @@ class Shop(commands.Cog):
 
             await adv.config.user(user).set(await c.to_json(adv.config))
         
-        return await ctx.send(f"You just bought {count} set loot chests for {humanize_number(price)} {currency_name}")
+        return await ctx.send(f"You just bought {count} set loot chests for {humanize_number(priceL)} {currency_name}")
 
     @buy.command(name="boss")
     @commands.guild_only()
@@ -145,17 +157,17 @@ class Shop(commands.Cog):
         """Buy a custom boss for adventure"""
         currency_name = await bank.get_currency_name(ctx.guild)
         user = ctx.author
-        price = 5000000
+        priceL = price["custom_boss"]
 
         championr = discord.utils.get(ctx.guild.roles,name="Champion")
         bilr1 = discord.utils.get(ctx.guild.roles,name="OG Billionaire")
         bilr2 = discord.utils.get(ctx.guild.roles,name="Billionaire")
         if((championr in user.roles) or (bilr1 in user.roles) or (bilr2 in user.roles)):
-            price = 2000000
+            priceL = priceL * 0.6
 
         bal = await bank.get_balance(user)
-        if bal < price:
-            return await ctx.send(f"You don't have enough {currency_name} to buy this item\nYou need {humanize_number(price)} {currency_name}")
+        if bal < priceL:
+            return await ctx.send(f"You don't have enough {currency_name} to buy this item\nYou need {humanize_number(priceL)} {currency_name}")
 
         await ctx.send("If you'd like to cancel at any point write `cancel`")
 
@@ -183,7 +195,7 @@ class Shop(commands.Cog):
         if img is None or img.content == "cancel" or img.content == "Cancel":
             return await ctx.send("Cancelled")
         
-        await bank.withdraw_credits(user, price)
+        await bank.withdraw_credits(user, priceL)
         
         yuuki = ctx.guild.get_member(295275466703503372)
         dm_channel = await yuuki.create_dm()
@@ -195,7 +207,7 @@ class Shop(commands.Cog):
         embed.add_field(name="Img", value=img.content, inline=False)
 
         await dm_channel.send(embed=embed)
-        return await ctx.send(f"You paid your price of {humanize_number(price)} {currency_name} and your request has been forwarded to the one above all")
+        return await ctx.send(f"You paid your price of {humanize_number(priceL)} {currency_name} and your request has been forwarded to the one above all")
 
     @buy.command(name="rare")
     @commands.guild_only()
@@ -204,16 +216,16 @@ class Shop(commands.Cog):
         currency_name = await bank.get_currency_name(ctx.guild)
 
         user = ctx.author
-        price = 1000000
+        priceL = price["rare"]
         bal = await bank.get_balance(user)
-        if bal < price:
-            return await ctx.send(f"You don't have enough {currency_name} to buy this item\nYou need {humanize_number(price)} {currency_name}")
+        if bal < priceL:
+            return await ctx.send(f"You don't have enough {currency_name} to buy this item\nYou need {humanize_number(priceL)} {currency_name}")
 
         rare = discord.utils.get(ctx.guild.roles,name="Rare")
         if rare in user.roles:
             return await ctx.send("You already have this role!")
 
-        await bank.withdraw_credits(user, price)
+        await bank.withdraw_credits(user, priceL)
         await user.add_roles(rare)
 
         return await ctx.tick()
@@ -225,10 +237,10 @@ class Shop(commands.Cog):
         currency_name = await bank.get_currency_name(ctx.guild)
 
         user = ctx.author
-        price = 4000000
+        priceL = price["epic"]
         bal = await bank.get_balance(user)
-        if bal < price:
-            return await ctx.send(f"You don't have enough {currency_name} to buy this item\nYou need {humanize_number(price)} {currency_name}")
+        if bal < priceL:
+            return await ctx.send(f"You don't have enough {currency_name} to buy this item\nYou need {humanize_number(priceL)} {currency_name}")
 
         rare = discord.utils.get(ctx.guild.roles,name="Rare")
         epic = discord.utils.get(ctx.guild.roles,name="Epic")
@@ -239,7 +251,7 @@ class Shop(commands.Cog):
             return await ctx.send(f"You need to have bought the {rare.mention} role first", allowed_mentions = discord.AllowedMentions(roles=False))
         
         await user.add_roles(epic)
-        await bank.withdraw_credits(user, price)
+        await bank.withdraw_credits(user, priceL)
 
         return await ctx.tick()
 
@@ -250,10 +262,10 @@ class Shop(commands.Cog):
         currency_name = await bank.get_currency_name(ctx.guild)
 
         user = ctx.author
-        price = 10000000
+        priceL = price["legendary"]
         bal = await bank.get_balance(user)
-        if bal < price:
-            return await ctx.send(f"You don't have enough {currency_name} to buy this item\nYou need {humanize_number(price)} {currency_name}")
+        if bal < priceL:
+            return await ctx.send(f"You don't have enough {currency_name} to buy this item\nYou need {humanize_number(priceL)} {currency_name}")
 
         epic = discord.utils.get(ctx.guild.roles,name="Epic")
         legendary = discord.utils.get(ctx.guild.roles,name="LeGeNDary")
@@ -264,7 +276,7 @@ class Shop(commands.Cog):
             return await ctx.send(f"You need to have bought the {epic.mention} role first", allowed_mentions = discord.AllowedMentions(roles=False))
         
         await user.add_roles(legendary)
-        await bank.withdraw_credits(user, price)
+        await bank.withdraw_credits(user, priceL)
 
         return await ctx.tick()
 
@@ -275,10 +287,10 @@ class Shop(commands.Cog):
         currency_name = await bank.get_currency_name(ctx.guild)
 
         user = ctx.author
-        price = 50000000
+        priceL = price["champion"]
         bal = await bank.get_balance(user)
-        if bal < price:
-            return await ctx.send(f"You don't have enough {currency_name} to buy this item\nYou need {humanize_number(price)} {currency_name}")
+        if bal < priceL:
+            return await ctx.send(f"You don't have enough {currency_name} to buy this item\nYou need {humanize_number(priceL)} {currency_name}")
 
         legendary = discord.utils.get(ctx.guild.roles,name="LeGeNDary")
         champion = discord.utils.get(ctx.guild.roles,name="Champion")
@@ -289,7 +301,7 @@ class Shop(commands.Cog):
             return await ctx.send(f"You need to have bought the {legendary.mention} role first", allowed_mentions = discord.AllowedMentions(roles=False))
         
         await user.add_roles(champion)
-        await bank.withdraw_credits(user, price)
+        await bank.withdraw_credits(user, priceL)
 
         champion_channel = ctx.bot.get_channel(736789008121593876)
         await champion_channel.send(f"Welcome {user.mention} to the most reserved chat in the server ||probably||\nSince you bought {champion.mention} you deserver a special prize, you'll be awarded with a legendary item of choice from the shop\nBut remember to contact Yuuki to claim it, I heard he's quite lazy with this stuff", allowed_mentions = discord.AllowedMentions(roles=False))
@@ -303,10 +315,10 @@ class Shop(commands.Cog):
         currency_name = await bank.get_currency_name(ctx.guild)
 
         user = ctx.author
-        price = 2000000
+        priceL = price["simple_embed"]
         bal = await bank.get_balance(user)
-        if bal < price:
-            return await ctx.send(f"You don't have enough {currency_name} to buy this item\nYou need {humanize_number(price)} {currency_name}")
+        if bal < priceL:
+            return await ctx.send(f"You don't have enough {currency_name} to buy this item\nYou need {humanize_number(priceL)} {currency_name}")
         
         legendary = discord.utils.get(ctx.guild.roles,name="LeGeNDary")
         championr = discord.utils.get(ctx.guild.roles,name="Champion")
@@ -316,9 +328,9 @@ class Shop(commands.Cog):
         if not ((legendary in user.roles) or (championr in user.roles) or (bilr1 in user.roles) or (bilr2 in user.roles)):
             return await ctx.send(f"You need to have bought the {legendary.mention} role first", allowed_mentions = discord.AllowedMentions(roles=False))
         if((championr in user.roles) or (bilr1 in user.roles) or (bilr2 in user.roles)):
-            price = 1000000
+            priceL = priceL * 0.6
                 
-        await bank.withdraw_credits(user, price)
+        await bank.withdraw_credits(user, priceL)
 
         yuuki = ctx.guild.get_member(295275466703503372)
         dm_channel = await yuuki.create_dm()
@@ -328,4 +340,4 @@ class Shop(commands.Cog):
         embed.add_field(name="CC", value=cc_name, inline=False)
 
         await dm_channel.send(embed=embed)
-        return await ctx.send(f"You paid your price of {humanize_number(price)} {currency_name} and your request has been forwarded to the one above all")
+        return await ctx.send(f"You paid your price of {humanize_number(priceL)} {currency_name} and your request has been forwarded to the one above all")
