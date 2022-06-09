@@ -72,7 +72,7 @@ class Shop(commands.Cog):
                                                 "To purchase any item that doesn't have a command specified, dm <@598662722821029888>.\n"
                                                 f"{champion.mention}, {bil1.mention} and {bil2.mention} are equivalent regarding shop purchases.\n"
                                                 f"When buying {champion.mention} you will receive a legendary item of choise for free.\n"
-                                                f"When buying any Legendary items while having the {champion.mention} role you will receive a 40% discount.")
+                                                f"When buying any Legendary items while having the {champion.mention} role you will receive a 60% discount.")
         await ctx.send(embed=embed)
     
     @commands.command(name="es_minishop")
@@ -128,7 +128,7 @@ class Shop(commands.Cog):
         bilr1 = discord.utils.get(ctx.guild.roles,name="OG Billionaire")
         bilr2 = discord.utils.get(ctx.guild.roles,name="Billionaire")
         if((championr in user.roles) or (bilr1 in user.roles) or (bilr2 in user.roles)):
-            priceL = int(priceL * 0.6)
+            priceL = int(priceL * 0.4)
 
         priceL = priceL * count
         count = count * 5
@@ -164,7 +164,7 @@ class Shop(commands.Cog):
         bilr1 = discord.utils.get(ctx.guild.roles,name="OG Billionaire")
         bilr2 = discord.utils.get(ctx.guild.roles,name="Billionaire")
         if((championr in user.roles) or (bilr1 in user.roles) or (bilr2 in user.roles)):
-            priceL = int(priceL * 0.6)
+            priceL = int(priceL * 0.4)
 
         bal = await bank.get_balance(user)
         if bal < priceL:
@@ -329,7 +329,7 @@ class Shop(commands.Cog):
         if not ((legendary in user.roles) or (championr in user.roles) or (bilr1 in user.roles) or (bilr2 in user.roles)):
             return await ctx.send(f"You need to have bought the {legendary.mention} role first", allowed_mentions = discord.AllowedMentions(roles=False))
         if((championr in user.roles) or (bilr1 in user.roles) or (bilr2 in user.roles)):
-            priceL = int(priceL * 0.6)
+            priceL = int(priceL * 0.4)
                 
         await bank.withdraw_credits(user, priceL)
 
