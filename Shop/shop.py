@@ -305,7 +305,7 @@ class Shop(commands.Cog):
         await bank.withdraw_credits(user, priceL)
 
         champion_channel = ctx.bot.get_channel(736789008121593876)
-        await champion_channel.send(f"Welcome {user.mention} to the most reserved chat in the server ||probably||\nSince you bought {champion.mention} you deserver a special prize, you'll be awarded with a legendary item of choice from the shop\nBut remember to contact Yuuki to claim it, I heard he's quite lazy with this stuff", allowed_mentions = discord.AllowedMentions(roles=False))
+        await champion_channel.send(f"Welcome {user.mention} to the most reserved chat in the server ||probably||\nSince you bought {champion.mention} you deserve a special prize, you'll be awarded with a legendary item of choice from the shop\nBut remember to contact Yuuki to claim it, I heard he's quite inattentive", allowed_mentions = discord.AllowedMentions(roles=False))
         
         return await ctx.tick()
 
