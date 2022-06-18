@@ -121,12 +121,13 @@ class Shop(commands.Cog):
         priceL = self.price["set"]
 
         legendary = discord.utils.get(ctx.guild.roles,name="LeGeNDary")
-        if not legendary in user.roles:
-            return await ctx.send(f"You need to have bought {legendary.mention} to buy this item")
-        
         championr = discord.utils.get(ctx.guild.roles,name="Champion")
         bilr1 = discord.utils.get(ctx.guild.roles,name="OG Billionaire")
         bilr2 = discord.utils.get(ctx.guild.roles,name="Billionaire")
+
+        if not ((legendary in user.roles) or (bilr1 in user.roles) or (bilr2 in user.roles)):
+            return await ctx.send(f"You need to have bought {legendary.mention} to buy this item")
+        
         if((championr in user.roles) or (bilr1 in user.roles) or (bilr2 in user.roles)):
             priceL = int(priceL * 0.4)
 
