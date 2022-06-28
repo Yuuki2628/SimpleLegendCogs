@@ -29,7 +29,7 @@ class RussianRoulette(commands.Cog):
         "Chamber_Size": 6,
         "Wait_Time": 300,
         "useable_cost": None,
-        "roulette_role": 737857454095990825, 
+        "roulette_role": 815998988137267270, 
         "Session": {"Pot": 0, "Players": [], "Active": False},
     }
 
