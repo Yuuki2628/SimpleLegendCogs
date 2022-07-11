@@ -6,6 +6,7 @@ class AdventureZ(commands.Cog):
 
     @commands.command(name="z")
     async def zCMD(self, ctx, *, msg):
+        msg = msg.under()
         """Followed by a personality value it'll return it's multiplier"""
         if msg == "absolutely-brutal-looking":
             await ctx.send("1.9 / 1.1")
