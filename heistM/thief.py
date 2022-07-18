@@ -6,6 +6,7 @@ import random
 import asyncio
 from operator import itemgetter
 from ast import literal_eval
+import discord
 
 
 # Thanks stack overflow http://stackoverflow.com/questions/21872366/plural-string-formatting
