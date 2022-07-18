@@ -425,16 +425,16 @@ class Thief:
         targets[target]["Vault"] -= credits_stolen * len(crew)
         credit_data = list(zip(names, stolen_data, bonuses, total_winnings))
         deposits = list(zip(players, total_winnings))
-        await self.award_credits(deposits)
+        await self.award_credits(deposits, guild)
         return credit_data
 
-    async def award_credits(self, deposits):
-        rare = discord.utils.get(ctx.guild.roles,name="Rare")
-        epic = discord.utils.get(ctx.guild.roles,name="Epic")
-        legendary = discord.utils.get(ctx.guild.roles,name="LeGeNDary")
-        Champion = discord.utils.get(ctx.guild.roles,name="Champion")
-        bilr1 = discord.utils.get(ctx.guild.roles,name="Billionaire")
-        bilr2 = discord.utils.get(ctx.guild.roles,name="OG Billionaire")
+    async def award_credits(self, deposits, guild):
+        rare = discord.utils.get(guild.roles,name="Rare")
+        epic = discord.utils.get(guild.roles,name="Epic")
+        legendary = discord.utils.get(guild.roles,name="LeGeNDary")
+        Champion = discord.utils.get(guild.roles,name="Champion")
+        bilr1 = discord.utils.get(guild.roles,name="Billionaire")
+        bilr2 = discord.utils.get(guild.roles,name="OG Billionaire")
 
         for player in deposits:
             bonus = 1
