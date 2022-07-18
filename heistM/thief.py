@@ -439,13 +439,13 @@ class Thief:
 
         for player in deposits:
             bonus = 1
-            if rare in player[0]:
+            if rare in player[0].roles:
                 bonus += 0.3
-            if epic in player[0]:
+            if epic in player[0].roles:
                 bonus += 0.3
-            if legendary in player[0]:
+            if legendary in player[0].roles:
                 bonus += 0.4
-            if champion in player[0]:
+            if champion in player[0].roles:
                 bonus += 0.5
             
             await bank.deposit_credits(player[0], player[1] * bonus)
