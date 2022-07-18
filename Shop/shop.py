@@ -13,12 +13,12 @@ class Shop(commands.Cog):
     def __init__(self):
         self.price = {
             'rare': 1000000, 
-            'epic': 4000000, 
-            'legendary': 10000000, 
-            'champion': 50000000, 
-            'custom_boss': 8000000, 
-            'set': 5000000, 
-            'simple_embed': 2000000, 
+            'epic': 2000000, 
+            'legendary': 6000000, 
+            'champion': 25000000, 
+            'custom_boss': 5000000, 
+            'set': 3000000, 
+            'simple_embed': 1000000, 
             'full_embed': 10000000
         }
 
@@ -54,16 +54,16 @@ class Shop(commands.Cog):
             "Custom background:  800k   ~             \n"
             "Custom command:     500k   ~             \n"
             "Rare:                 1M   !buy rare     \n"
-            "Epic:                 4M   !buy epic     \n"
-            "Legendary:           10M   !buy legendary\n"
-            "Champion:            50M   !buy champion \n"
+            "Epic:                 2M   !buy epic     \n"
+            "Legendary:            6M   !buy legendary\n"
+            "Champion:            25M   !buy champion \n"
            #"-------------------------------------------------"
             "```", inline=False)
         embed.add_field(name="**Legendary Items**", value="```\n"
-            "Item name            Cost\n"
-            "Custom adv boss:       8M\n"
-            "x5 set loot chests:    5M\n"
-            "Simple embed update:   2M\n"
+            "Item name             Cost\n"
+            "Custom adv boss:        5M\n"
+            "x5 set loot chests:     3M\n"
+            "Simple embed update:    1M\n"
             "Champion embed update: 10M\n"
            #"-------------------------------------------------"
             "```", inline=False)
@@ -85,16 +85,16 @@ class Shop(commands.Cog):
             "Custom background:  800k   ~             \n"
             "Custom command:     500k   ~             \n"
             "Rare:                 1M   !buy rare     \n"
-            "Epic:                 4M   !buy epic     \n"
-            "Legendary:           10M   !buy legendary\n"
-            "Champion:            50M   !buy champion \n"
+            "Epic:                 2M   !buy epic     \n"
+            "Legendary:            6M   !buy legendary\n"
+            "Champion:            25M   !buy champion \n"
            #"-------------------------------------------------"
             "```", inline=False)
         embed.add_field(name="**Legendary Items**", value="```\n"
-            "Item name            Cost\n"
-            "Custom adv boss:       8M\n"
-            "x5 set loot chests:    5M\n"
-            "Simple embed update:   2M\n"
+            "Item name             Cost\n"
+            "Custom adv boss:        5M\n"
+            "x5 set loot chests:     3M\n"
+            "Simple embed update:    1M\n"
             "Champion embed update: 10M\n"
            #"-------------------------------------------------"
             "```", inline=False)
