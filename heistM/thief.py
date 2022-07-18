@@ -429,8 +429,25 @@ class Thief:
         return credit_data
 
     async def award_credits(self, deposits):
+        rare = discord.utils.get(ctx.guild.roles,name="Rare")
+        epic = discord.utils.get(ctx.guild.roles,name="Epic")
+        legendary = discord.utils.get(ctx.guild.roles,name="LeGeNDary")
+        Champion = discord.utils.get(ctx.guild.roles,name="Champion")
+        bilr1 = discord.utils.get(ctx.guild.roles,name="Billionaire")
+        bilr2 = discord.utils.get(ctx.guild.roles,name="OG Billionaire")
+
         for player in deposits:
-            await bank.deposit_credits(player[0], player[1])
+            bonus = 1
+            if rare in player[0]:
+                bonus += 0.3
+            if epic in player[0]:
+                bonus += 0.3
+            if legendary in player[0]:
+                bonus += 0.4
+            if champion in player[0]:
+                bonus += 0.5
+            
+            await bank.deposit_credits(player[0], player[1] * bonus)
 
     async def check_server_settings(self, guild):
         cur = await self.config.guild(guild).Config()
