@@ -433,7 +433,7 @@ class Thief:
         rare = discord.utils.get(guild.roles,name="Rare")
         epic = discord.utils.get(guild.roles,name="Epic")
         legendary = discord.utils.get(guild.roles,name="LeGeNDary")
-        Champion = discord.utils.get(guild.roles,name="Champion")
+        champion = discord.utils.get(guild.roles,name="Champion")
         bilr1 = discord.utils.get(guild.roles,name="Billionaire")
         bilr2 = discord.utils.get(guild.roles,name="OG Billionaire")
 
