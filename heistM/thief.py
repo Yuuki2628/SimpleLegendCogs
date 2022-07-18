@@ -448,7 +448,9 @@ class Thief:
             if champion in player[0].roles:
                 bonus += 0.5
             
-            await bank.deposit_credits(player[0], player[1] * bonus)
+            player[1] = int(player[1] * bonus)
+
+            await bank.deposit_credits(player[0], player[1])
 
     async def check_server_settings(self, guild):
         cur = await self.config.guild(guild).Config()
