@@ -436,7 +436,7 @@ class Double:
 
     def __init__(self, old_message_cache):
         self.old_message_cache = old_message_cache
-        self.chance = 99
+        self.chance = 75
 
     @game_engine("Double")
     async def play(self, ctx, bet):
