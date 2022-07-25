@@ -451,7 +451,7 @@ class Double:
 
             flip = random.randint(0, 100)
 
-            if flip > self.chance:
+            if flip >= self.chance:
                 bet = 0
                 break
 
@@ -506,7 +506,7 @@ class Double:
         embed.add_field(name="\u200b", value=options, inline=False)
         if not outcome:
             embed.add_field(
-                name="\u200b", value="Chance to succeed your next double: "+(str(self.chance))[0:5]+"%", inline=False
+                name="\u200b", value="Chance to succeed on your next double: "+(str(self.chance))[0:5]+"%", inline=False
             )
         embed.set_footer(text="Try again and test your luck!")
         return embed
