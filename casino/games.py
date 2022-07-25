@@ -458,7 +458,7 @@ class Double:
             else:
                 bet *= 2
                 self.chance *= 2/3
-                await ctx.send(str(self.chance))
+                # await ctx.send(str(self.chance)) debug line
 
             pred = MessagePredicate.lower_contained_in((_("double"), _("cash out")), ctx=ctx)
 
