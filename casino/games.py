@@ -508,7 +508,7 @@ class Double:
             embed.add_field(
                 name="\u200b", value="Remember, you can cash out at anytime.", inline=False
             )
-            limit=5
+            limit= "5"
             embed.add_field(
                 name="\u200b", value="Chance to succeed a double: "+(str(self.chance)).format("%." + limit + "f", f).substring(0, limit)+"%", inline=False
             )
