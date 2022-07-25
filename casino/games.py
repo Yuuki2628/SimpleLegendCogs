@@ -463,7 +463,7 @@ class Double:
 
             pred = MessagePredicate.lower_contained_in((_("double"), _("cash out")), ctx=ctx)
 
-            embed = self.double_embed(ctx, count, bet)
+            embed = self.double_embed(ctx, count, bet, self.chance)
             if (not await self.old_message_cache.get_guild(ctx.guild)) and message:
                 await message.edit(content=ctx.author.mention, embed=embed)
             else:
@@ -490,7 +490,7 @@ class Double:
         return result, amount, embed, message
 
     @staticmethod
-    def double_embed(ctx, count, amount, outcome=None):
+    def double_embed(ctx, count, amount, outcome=None, chance=0):
         double = _("{}\n**DOUBLE!:** x{}")
         zero = _("{}\n**NOTHING!**")
         choice = _("**Options:** double or cash out")
@@ -507,6 +507,9 @@ class Double:
         if not outcome:
             embed.add_field(
                 name="\u200b", value="Remember, you can cash out at anytime.", inline=False
+            )
+            embed.add_field(
+                name="\u200b", value="Chance to succeed a double: "+chance.format("%." + limit + "f", f).substring(0, limit)+"%", inline=False
             )
         embed.set_footer(text="Try again and test your luck!")
         return embed
