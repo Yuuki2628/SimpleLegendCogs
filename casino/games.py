@@ -451,7 +451,7 @@ class Double:
 
             flip = random.randint(0, 100)
 
-            if False:
+            if flip > self.chance:
                 bet = 0
                 break
 
@@ -459,7 +459,7 @@ class Double:
                 bet *= 2
                 if self.chance > 10:
                     self.chance *= 2/3
-                await ctx.send(str(self.chance))
+                # await ctx.send(str(self.chance)) debug line
 
             pred = MessagePredicate.lower_contained_in((_("double"), _("cash out")), ctx=ctx)
 
