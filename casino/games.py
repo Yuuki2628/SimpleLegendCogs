@@ -451,7 +451,7 @@ class Double:
 
             flip = random.randint(0, 100)
 
-            if flip > self.chance:
+            if False:
                 bet = 0
                 break
 
