@@ -463,7 +463,7 @@ class Double:
 
             pred = MessagePredicate.lower_contained_in((_("double"), _("cash out")), ctx=ctx)
 
-            embed = self.double_embed(ctx, count, bet)
+            embed = self.double_embed(self, ctx, count, bet)
             if (not await self.old_message_cache.get_guild(ctx.guild)) and message:
                 await message.edit(content=ctx.author.mention, embed=embed)
             else:
@@ -486,11 +486,11 @@ class Double:
         else:
             outcome = _("You Lost It All!")
             result = False
-        embed = self.double_embed(ctx, count, amount, outcome=outcome)
+        embed = self.double_embed(self, ctx, count, amount, outcome=outcome)
         return result, amount, embed, message
 
     @staticmethod
-    def double_embed(ctx, count, amount, outcome=None):
+    def double_embed(self, ctx, count, amount, outcome=None):
         double = _("{}\n**DOUBLE!:** x{}")
         zero = _("{}\n**NOTHING!**")
         choice = _("**Options:** double or cash out")
