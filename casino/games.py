@@ -509,7 +509,7 @@ class Double:
                 name="\u200b", value="Remember, you can cash out at anytime.", inline=False
             )
             embed.add_field(
-                name="\u200b", value="Chance to succeed a double: "+str(chance).format("%." + limit + "f", f).substring(0, limit)+"%", inline=False
+                name="\u200b", value="Chance to succeed a double: "+(str(chance)).format("%." + limit + "f", f).substring(0, limit)+"%", inline=False
             )
         embed.set_footer(text="Try again and test your luck!")
         return embed
