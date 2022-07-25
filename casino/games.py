@@ -506,10 +506,7 @@ class Double:
         embed.add_field(name="\u200b", value=options, inline=False)
         if not outcome:
             embed.add_field(
-                name="\u200b", value="Remember, you can cash out at anytime.", inline=False
-            )
-            embed.add_field(
-                name="\u200b", value="Chance to succeed a double: "+(str(self.chance))[0:5]+"%", inline=False
+                name="\u200b", value="Chance to succeed your next double: "+(str(self.chance))[0:5]+"%", inline=False
             )
         embed.set_footer(text="Try again and test your luck!")
         return embed
