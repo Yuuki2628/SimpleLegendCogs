@@ -436,7 +436,7 @@ class Double:
 
     def __init__(self, old_message_cache):
         self.old_message_cache = old_message_cache
-        self.chance = 75
+        self.chance = 50
 
     @game_engine("Double")
     async def play(self, ctx, bet):
@@ -457,7 +457,8 @@ class Double:
 
             else:
                 bet *= 2
-                self.chance *= 2/3
+                if self.chance > 10:
+                    self.chance *= 2/3
                 # await ctx.send(str(self.chance)) debug line
 
             pred = MessagePredicate.lower_contained_in((_("double"), _("cash out")), ctx=ctx)
