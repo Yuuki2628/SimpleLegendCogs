@@ -9,7 +9,7 @@ class CustomEmbeds(commands.Cog):
         embed = discord.Embed(color=0x8A42F5)
         embed.add_field(name="", value="""```ansi
 [1;35m┌──────────────────────────────────┐
-│Emilia                  [35m[[36mEmily[35m]                 │
+│Emilia            [35m[[36mEmily[35m]                 │
 │[34mSpecter           [35m[[34mSpecter[35m]       │
 └──────────────────────────────────┘```        """, inline=False)
         embed.add_field(name="", value="""```ansi
