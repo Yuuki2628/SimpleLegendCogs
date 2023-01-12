@@ -34,6 +34,7 @@ class CustomEmbeds(commands.Cog):
 │[32mShadow Ball     Calm Mind [35m│
 │[35mBlack Hole[35m                │
 └──────────────────────────┘```""", inline=True)
+        embed.add_field(name="", value="", inline=False)
         embed.add_field(name="", value="""```ansi
 [1;30m┌────────────────────────┐
 │Lairon        [Gundam]  │
@@ -52,6 +53,7 @@ class CustomEmbeds(commands.Cog):
 │[0;32mDisarming voice Icy wind    [34m│
 │[0;32mSparkling Aria  Sing        [34m│
 └────────────────────────────┘```        """, inline=True)
+        embed.add_field(name="", value="", inline=False)
         embed.add_field(name="", value="""```ansi
 [1;36m┌─────────────────────────┐
 │Bagon         [Blueberry]│
