@@ -447,6 +447,9 @@ class Roleplay(BaseCog):
         author = ctx.message.author
         if author == user:
             return await ctx.send("No self kissing!")
+        bott = ctx.guild.get_member(1062825060651515965)
+        if user == bott:
+            return await ctx.send("You're not allowed to do that... Are you trying to cheat on Emilia?")
         images = await self.config.kiss()
 
         nekos = await self.fetch_nekos_life(ctx, "kiss")
@@ -577,6 +580,9 @@ class Roleplay(BaseCog):
         author = ctx.message.author
         if author == user:
             return await ctx.send("No self tickling!")
+        bott = ctx.guild.get_member(1062825060651515965)
+        if user == bott:
+            return await ctx.send("I can't feel your tickles...")
         images = await self.config.tickle()
 
         nekos = await self.fetch_nekos_life(ctx, "tickle")
@@ -724,6 +730,9 @@ class Roleplay(BaseCog):
         author = ctx.message.author
         if author == user:
             return await ctx.send("Go to horny jail **bonk**")
+        bott = ctx.guild.get_member(1062825060651515965)
+        if user == bott:
+            return await ctx.send("Emilia told me you're not allowed to touch me like that")
         images = await self.config.grope()
 
         mn = len(images)
