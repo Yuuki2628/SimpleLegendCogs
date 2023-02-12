@@ -50,7 +50,7 @@ class JoinLeave(commands.Cog):
             bl = await self.config.guild(ctx.guild).enabled()
             bl = not bl
             await self.config.guild(ctx.guild).enabled.set(bl)
-        if bl == true:
+        if bl == True:
             await ctx.send("Logs are now enabled")
         else:
             await ctx.send("Logs are now disabled")
