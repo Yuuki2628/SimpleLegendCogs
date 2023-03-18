@@ -189,6 +189,6 @@ Specter's [Theme](https://youtu.be/K0GkcT7ReKs)""", inline=False)
 │                          [1;34mThemes                           [0;37m│
 └───────────────────────────────────────────────────────────┘```
 Monarch's [Theme](https://youtu.be/VaIEZb_D2ko)
-Dragalisk's [Theme](https://youtu.be/ocGrewzxOuw)""", inline=False)
+Dragalisk's [Theme](https://youtu.be/cqf-M2I_Hdw)""", inline=False)
         embed.set_footer(text="")        
         await ctx.send(embed=embed)
