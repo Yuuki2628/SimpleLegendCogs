@@ -90,7 +90,7 @@ Specter's [Theme](https://youtu.be/K0GkcT7ReKs)""", inline=False)
 
     @commands.command(name="ayaka")
     async def Ayaka(self, ctx):
-        embed = discord.Embed(color=0x8A42F5)
+        embed = discord.Embed(color=0x268BD2)
         embed.add_field(name="", value="""```ansi
 [1;34m┌───────────────────────────┐
 │         Kamisato          │
@@ -166,7 +166,7 @@ Specter's [Theme](https://youtu.be/K0GkcT7ReKs)""", inline=False)
 
     @commands.command(name="monarch")
     async def Monarch(self, ctx):
-        embed = discord.Embed(color=0x8A42F5)
+        embed = discord.Embed(color=0xFFFFFF)
         embed.add_field(name="", value="""```ansi
 [37m┌───────────────────────────┐
 │          [1;34mMonarch          [0;37m│
