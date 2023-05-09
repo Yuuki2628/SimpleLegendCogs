@@ -172,7 +172,7 @@ Specter's [Theme](https://youtu.be/K0GkcT7ReKs)""", inline=False)
 │          [1;34mMonarch          [0;37m│
 │           [1m[[34m???[0;37m]           │
 └───────────────────────────┘``````ansi
-┌───────────────────────────┐
+[37m┌───────────────────────────┐
 │      [1;35mHisuian Zoroark      [0;37m│
 ├───────────────────────────┤
 │     [1;36mAbility: [30mIllusion     [0;37m│
@@ -264,8 +264,11 @@ Specter's [Theme](https://youtu.be/K0GkcT7ReKs)""", inline=False)
 [37m┌───────────────────────────────────────────────────────────┐
 │                          [1;34mThemes                           [0;37m│
 └───────────────────────────────────────────────────────────┘```
-Monarch's [Theme](https://youtu.be/BsXHynqIgoc)
-Dragalisk's [Theme](https://youtu.be/HM31xHREKic)
-Dragalisk possessed Emilia [Theme](https://youtu.be/ocGrewzxOuw)""", inline=False)
+[Amanda](https://youtu.be/EZ_YlKqEQRE)
+[Monarch](https://youtu.be/bI9A-Ulb-4I)
+[Dragalisk](https://youtu.be/FMlUKd7DyPk)
+[Complete Dragalisk](https://youtu.be/b6WhRKOMUq0)
+[Final Phase](https://youtu.be/ocGrewzxOuw)
+""", inline=False)
         embed.set_footer(text="")
         await ctx.send(embed=embed)
