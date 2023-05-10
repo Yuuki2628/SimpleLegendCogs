@@ -265,7 +265,7 @@ Specter's [Theme](https://youtu.be/K0GkcT7ReKs)""", inline=False)
 │                          [1;34mThemes                           [0;37m│
 └───────────────────────────────────────────────────────────┘```
 [Amanda](https://youtu.be/EZ_YlKqEQRE)
-[Monarch](https://youtu.be/bI9A-Ulb-4I)
+[Monarch](https://youtu.be/US8JrKjHYvc)
 [Dragalisk](https://youtu.be/FMlUKd7DyPk)
 [Complete Dragalisk](https://youtu.be/b6WhRKOMUq0)
 [Final Phase](https://youtu.be/ocGrewzxOuw)
