@@ -1,5 +1,5 @@
 from .embedshop import EmbedShop
 
 
-def setup(bot):
-    bot.add_cog(EmbedShop())
+async def setup(bot):
+    await bot.add_cog(EmbedShop())

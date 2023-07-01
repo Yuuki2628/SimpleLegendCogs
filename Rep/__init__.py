@@ -1,5 +1,4 @@
 from .rep import Reputation
 
-def setup(bot):
-    cog = Reputation(bot)
-    bot.add_cog(cog)
+async def setup(bot):
+    await bot.add_cog(Reputation(bot))
