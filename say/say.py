@@ -321,10 +321,7 @@ class Say(BaseCog):
             # That error doesn't belong to the cog
             return
         with DisabledConsoleOutput(log):
-            log.error(
-                f"Exception in command '{ctx.command.qualified_name}'.\n\n",
-                exc_info=error.original,
-            )
+            log.error(f"Exception in command '{ctx.command.qualified_name}'.\n\n",exc_info=error.original,)
 
     async def stop_interaction(self, user):
         self.interaction.remove(user)
