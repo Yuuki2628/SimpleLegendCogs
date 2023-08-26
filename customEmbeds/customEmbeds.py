@@ -219,7 +219,7 @@ Specter's [Theme](https://youtu.be/K0GkcT7ReKs)""", inline=False)
 ╞═════════════╬═════════════╡
 │[1m  Iron Head  [0;37m║[1m Shadow Claw [0;37m│
 ╞═════════════╩═════════════╡
-│     Venomous Edge         │
+│       Venomous Edge       │
 └───────────────────────────┘```""", inline=True)
         embed.add_field(name="", value="", inline=False)
         embed.add_field(name="", value="""```ansi
