@@ -228,7 +228,6 @@ Specter's [Theme](https://youtu.be/K0GkcT7ReKs)""", inline=False)
 ╞═════════════╬═════════════╡
 │[1m    Toxic    [0;37m║[1m Shadow Ball [0;37m│
 └─────────────╨─────────────┘```        """, inline=True)
-        embed.add_field(name="", value="", inline=False)
         embed.add_field(name="", value="""```ansi
 [1;32m┌───────────────────────────┐
 │         [0;32mRayquaza          [1m│
@@ -239,6 +238,8 @@ Specter's [Theme](https://youtu.be/K0GkcT7ReKs)""", inline=False)
 ╞═════════════╬═════════════╡
 │[0;32mExtreme Speed[1m║[0;32m   Outrage   [1m│
 └─────────────╨─────────────┘```""", inline=True)
+        embed.add_field(name="", value="", inline=False)
+        embed.add_field(name="", value="", inline=True)
         embed.add_field(name="", value="""```ansi
 [37m┌───────────────────────────┐
 │[1;34;40m         Dragalisk         [0;37m│
