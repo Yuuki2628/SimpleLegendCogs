@@ -231,7 +231,6 @@ Specter's [Theme](https://youtu.be/K0GkcT7ReKs)""", inline=False)
 │       Venomous Edge       │
 └───────────────────────────┘```""", inline=True)
         embed.add_field(name="", value="", inline=False)
-        embed.add_field(name="", value="", inline=True)
         embed.add_field(name="", value="""```ansi
 [1;32m┌───────────────────────────┐
 │         [0;32mRayquaza          [1m│
