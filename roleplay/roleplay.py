@@ -1,5 +1,5 @@
 import discord
-from redbot.core import commands, Config
+from redbot.core import commands, app_commands, Config
 from random import randint
 import aiohttp
 import logging
@@ -393,6 +393,7 @@ class Roleplay(BaseCog):
         }
         self.config.register_global(**default_global)
 
+    @app_commands.command()
     @commands.command()
     @commands.bot_has_permissions(embed_links=True)
     async def hugs(self, ctx, *, user: discord.Member):
