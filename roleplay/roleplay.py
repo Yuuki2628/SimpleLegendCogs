@@ -394,13 +394,11 @@ class Roleplay(BaseCog):
         self.config.register_global(**default_global)
 
     @app_commands.command()
-    @commands.command()
-    async def testcomm(self, interaction):
+    async def testcomm(self, interaction: discord.Interaction):
         await interaction.response.send_message("Hello World!", ephemeral=True)
 
     @app_commands.command()
-    @commands.command()
-    async def hugs(self, interaction, user: discord.Member):
+    async def hugs(self, interaction: discord.Interaction, user: discord.Member):
         """Hugs a user!"""
 
         author = interaction.author
